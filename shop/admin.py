@@ -2,19 +2,25 @@ from django.contrib import admin
 
 from shop.models import Book, Autor, Publisher, Category, Rating
 
-# Register your models here.
+
+class AuthorInline(admin.TabularInline):
+    model = Book.author.through
+    extra = 1
+
+class CategoryInline(admin.TabularInline):
+    model = Book.category.through
+    extra = 1
+
 @admin.register(Book)
 class BookAdmin(admin.ModelAdmin):
     list_display = ('title', 'show_autors', 'publisher',
                     'published_year', 'price', 'amount', 'calculated_rating', 'show_categories')
     list_filter = ('publisher', 'published_year', 'author', 'category')
     search_fields = ('title', 'author', 'publisher', 'published_year')
-
+    inlines = [AuthorInline, CategoryInline]
     fieldsets = (
         (None, {"fields":
                     ('title',
-                     'author',
-                     'category',
                      'publisher',
                      'published_year',
                      'added_at',
