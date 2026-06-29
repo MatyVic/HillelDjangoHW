@@ -15,8 +15,12 @@ class CategoryInline(admin.TabularInline):
 class BookAdmin(admin.ModelAdmin):
     list_display = ('title', 'show_autors', 'publisher',
                     'published_year', 'price', 'amount', 'calculated_rating', 'show_categories')
-    list_filter = ('publisher__name', 'published_year', 'author__first_name','author__last_name', 'category__name')
-    search_fields = ('title', 'author', 'publisher', 'published_year')
+    list_filter = ('publisher', 'published_year', 'author', 'category')
+    search_fields = ('title',
+                     'author__first_name',
+                     'author__last_name',
+                     'publisher__name',
+                     'published_year')
     inlines = [AuthorInline, CategoryInline]
     fieldsets = (
         (None, {"fields":
