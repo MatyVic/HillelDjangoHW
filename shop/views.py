@@ -15,16 +15,25 @@ class AllBooksView(ListView):
     model = Book
     template_name = "books.html"
     context_object_name = "books"
+    paginate_by = 4
 
     def get_absolute_url(self):
         return reverse('book', kwargs={'pk': self.kwargs["book_id"]})
 
     def get_queryset(self):
-        return Book.objects.prefetch_related("author", "category").all()
+        query = self.request.GET.get("q")
+        qs = Book.objects.prefetch_related("author", "category").all()
+        if query:
+            qs = qs.filter(Q(title__icontains=query) | Q(author__last_name__icontains=query))
+        return qs
 
-def get_cheap_books(request):
-    cheap_books = Book.objects.filter(price__lt=5)
-    return render(request, "my_template.html", {"books": cheap_books})
+class AllCheapBooksView(ListView):
+    model = Book
+    template_name = "books.html"
+    context_object_name = "books"
+
+    def get_queryset(self):
+        return Book.objects.filter(price__lt=500)
 
 class SpecificBookView(DetailView):
     model = Book

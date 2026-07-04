@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.views import View
@@ -7,7 +8,7 @@ from order.form import NewOrderForm
 
 # Create your views here.
 
-class NewOrderView(View):
+class NewOrderView(LoginRequiredMixin, View):
 
     def get(self, request):
         order_form = NewOrderForm()

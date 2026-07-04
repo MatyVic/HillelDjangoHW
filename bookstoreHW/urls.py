@@ -23,7 +23,6 @@ handler404 = 'bookstoreHW.views.error_404'
 handler403= 'bookstoreHW.views.error_403'
 
 urlpatterns = [
-    path("", include("shop.urls")),
     path('admin/', admin.site.urls),
     path("shop/", include("shop.urls")),
     path('order/', include("order.urls")),
