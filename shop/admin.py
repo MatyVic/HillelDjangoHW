@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from shop.models import Book, Autor, Publisher, Category, Rating
+from shop.models import Book, Author, Publisher, Category, Rating
 
 
 class AuthorInline(admin.TabularInline):
@@ -58,7 +58,7 @@ class PublisherAdmin(admin.ModelAdmin):
     )
 
 
-@admin.register(Autor)
+@admin.register(Author)
 class AutorAdmin(admin.ModelAdmin):
     list_display = ('first_name', 'last_name', 'country', 'birth_date')
     list_filter = ('first_name', 'last_name', 'country')

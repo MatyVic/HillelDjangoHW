@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Books list</title>
+</head>
+<body>
+    <h2>Books List</h2>
+    {% for book in books %}
+        <p>
+            <strong>{{ book.title }}</strong> —
+            Authors:
+            {% for author in book.author.all %}
+                {{ author }}{% if not forloop.last %}, {% endif %}
+            {% empty %}
+                No authors
+            {% endfor %}
+            | Categories:
+            {% for category in book.category.all %}
+                {{ category }}{% if not forloop.last %}, {% endif %}
+            {% empty %}
+                No categories
+            {% endfor %}
+            | Price: {{ book.price }}
+            | <a href="{% url 'book' book.id %}">View</a>
+        </p>
+    {% empty %}
+        <p>No books available.</p>
+    {% endfor %}
+</body>
+</html>

@@ -11,7 +11,7 @@ class Category(models.Model):
         return self.name
 
 
-class Autor(models.Model):
+class Author(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     country = models.CharField(max_length=100)
@@ -34,7 +34,7 @@ class Publisher(models.Model):
 
 class Book(models.Model):
     title = models.CharField(max_length=100)
-    author = models.ManyToManyField(Autor)
+    author = models.ManyToManyField(Author)
     category = models.ManyToManyField(Category)
     publisher = models.ForeignKey('Publisher', on_delete=models.CASCADE)
     published_year = models.IntegerField()
@@ -49,3 +49,6 @@ class Rating(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     rating = models.IntegerField()
     feedback = models.TextField()
+
+    def get_absolute_url(self):
+        return reverse("book", args=[self.book.id])

@@ -1,26 +1,46 @@
-from django.utils import timezone
-from django.views.generic import ListView
+from django.contrib.auth.models import User
 from django.shortcuts import render
 from django.db.models import Q, Avg, Count
-from shop.models import Book, Category
+from django.urls import reverse, reverse_lazy
+from django.contrib.auth import get_user_model
+from django.views.generic import ListView, DetailView, CreateView
 
+from shop.models import Book, Category, Rating
 
-class BookList(ListView):
+# Class based views
+class AllBooksView(ListView):
     model = Book
-    paginate_by = 100
+    template_name = "books.html"
+    context_object_name = "books"
 
-    def get_context_data(self, *, object_list=None, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['now'] = timezone.now()
-        return context
+    def get_absolute_url(self):
+        return reverse('book', kwargs={'pk': self.kwargs["book_id"]})
 
-
+    def get_queryset(self):
+        return Book.objects.prefetch_related("author", "category").all()
 
 def get_cheap_books(request):
     cheap_books = Book.objects.filter(price__lt=5)
     return render(request, "my_template.html", {"books": cheap_books})
 
+class SpecificBookView(DetailView):
+    model = Book
+    pk_url_kwarg = "book_id"
+    template_name = "book.html"
 
+class CreateFeedBackView(CreateView):
+    model = Rating
+    template_name = "FeedBack.html"
+    fields = ['rating', 'feedback']
+    success_url = reverse_lazy('book')
+
+    def form_valid(self, form):
+        form.instance.book = Book.objects.get(pk=self.kwargs["book_id"])
+        User = get_user_model()
+        form.instance.user = User.objects.get(pk=1)
+        return super().form_valid(form)
+
+# Function views
 def search_books(request):
     search_text = request.GET.get("q", "")
     amount = request.GET.get("amount", 1)
