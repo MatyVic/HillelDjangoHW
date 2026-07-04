@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.db.models import Q, Avg, Count
 from django.urls import reverse, reverse_lazy
 from django.contrib.auth import get_user_model
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
 from shop.models import Book, Category, Rating
 
@@ -30,7 +30,22 @@ class SpecificBookView(DetailView):
 
 class CreateFeedBackView(CreateView):
     model = Rating
-    template_name = "FeedBack.html"
+    template_name = "feedback.html"
+    fields = ['rating', 'feedback']
+
+    def form_valid(self, form):
+        form.instance.book = Book.objects.get(pk=self.kwargs["book_id"])
+        User = get_user_model()
+        form.instance.user = User.objects.get(pk=1)
+        return super().form_valid(form)
+
+    def get_success_url(self):
+        return reverse_lazy("book", args=[self.object.book.id])
+
+
+class FeedBackUpdateView(UpdateView):
+    model = Rating
+    template_name = "feedback_update.html"
     fields = ['rating', 'feedback']
     success_url = reverse_lazy('book')
 
@@ -39,6 +54,15 @@ class CreateFeedBackView(CreateView):
         User = get_user_model()
         form.instance.user = User.objects.get(pk=1)
         return super().form_valid(form)
+
+class DeleteFeedBackView(DeleteView):
+    model = Rating
+    template_name = "feedback_delete.html"
+
+    def get_success_url(self):
+        return reverse_lazy("book", args=[self.object.book.id])
+
+
 
 # Function views
 def search_books(request):

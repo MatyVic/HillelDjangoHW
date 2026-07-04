@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-from .views import AllBooksView, SpecificBookView, CreateFeedBackView
+from .views import AllBooksView, SpecificBookView, CreateFeedBackView, FeedBackUpdateView, DeleteFeedBackView
 
 urlpatterns = [
     path("cheap-books/", views.get_cheap_books, name="cheap_books"),
@@ -10,5 +10,7 @@ urlpatterns = [
     path("count-books/", views.count_books_by_price, name="count_books"),
     path("book/", AllBooksView.as_view(), name="book"),
     path("book/<int:book_id>", SpecificBookView.as_view(), name="book"),
-    path("book/<int:book_id>/feedback", CreateFeedBackView.as_view(), name="new_feedback"),
+    path("book/<int:book_id>/feedback/", CreateFeedBackView.as_view(), name="new_feedback"),
+    path("book/<int:book_id>/feedback/<int:pk>/", FeedBackUpdateView.as_view(), name="update_feedback"),
+    path("book/<int:book_id>/feedback/<int:pk>/delete", DeleteFeedBackView.as_view(), name="delete_feedback"),
     ]
