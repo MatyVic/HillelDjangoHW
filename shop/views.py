@@ -1,6 +1,19 @@
+from django.utils import timezone
+from django.views.generic import ListView
 from django.shortcuts import render
 from django.db.models import Q, Avg, Count
 from shop.models import Book, Category
+
+
+class BookList(ListView):
+    model = Book
+    paginate_by = 100
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['now'] = timezone.now()
+        return context
+
 
 
 def get_cheap_books(request):

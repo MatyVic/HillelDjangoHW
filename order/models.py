@@ -1,4 +1,6 @@
 from enum import Enum
+
+from django.conf import settings
 from django.utils import timezone
 from django.db import models
 
@@ -30,7 +32,7 @@ class PaymentMethod(Enum):
 
 
 class Order(models.Model):
-    owner = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     created_at = models.DateTimeField(default=timezone.now)
     delivery_address = models.ForeignKey('user_management.DeliveryData', on_delete=models.CASCADE)
     total_price = models.DecimalField(max_digits=10, decimal_places=2)
