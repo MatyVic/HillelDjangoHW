@@ -1,4 +1,5 @@
-from django.contrib.auth.models import User
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.exceptions import PermissionDenied
 from django.shortcuts import render
 from django.db.models import Q, Avg, Count
 from django.urls import reverse, reverse_lazy
@@ -6,6 +7,8 @@ from django.contrib.auth import get_user_model
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
 from shop.models import Book, Category, Rating
+
+#Mixin
 
 # Class based views
 class AllBooksView(ListView):
@@ -28,22 +31,28 @@ class SpecificBookView(DetailView):
     pk_url_kwarg = "book_id"
     template_name = "book.html"
 
-class CreateFeedBackView(CreateView):
+class CreateFeedBackView(LoginRequiredMixin, CreateView):
     model = Rating
     template_name = "feedback.html"
     fields = ['rating', 'feedback']
 
     def form_valid(self, form):
         form.instance.book = Book.objects.get(pk=self.kwargs["book_id"])
-        User = get_user_model()
-        form.instance.user = User.objects.get(pk=1)
+        user = get_user_model()
+        form.instance.user = user.objects.get(pk=1)
         return super().form_valid(form)
 
     def get_success_url(self):
         return reverse_lazy("book", args=[self.object.book.id])
 
+class EditDeleteByOwnerMixin:
+    def dispatch(self, request, *args, **kwargs):
+        rating = Rating.objects.filter(user=request.user, id=kwargs["pk"]).first()
+        if rating:
+            return super().dispatch(request, *args, **kwargs)
+        raise PermissionDenied
 
-class FeedBackUpdateView(UpdateView):
+class FeedBackUpdateView(EditDeleteByOwnerMixin ,UpdateView):
     model = Rating
     template_name = "feedback_update.html"
     fields = ['rating', 'feedback']
@@ -51,11 +60,11 @@ class FeedBackUpdateView(UpdateView):
 
     def form_valid(self, form):
         form.instance.book = Book.objects.get(pk=self.kwargs["book_id"])
-        User = get_user_model()
-        form.instance.user = User.objects.get(pk=1)
+        user = get_user_model()
+        form.instance.user = user.objects.get(pk=1)
         return super().form_valid(form)
 
-class DeleteFeedBackView(DeleteView):
+class DeleteFeedBackView(EditDeleteByOwnerMixin, DeleteView):
     model = Rating
     template_name = "feedback_delete.html"
 
