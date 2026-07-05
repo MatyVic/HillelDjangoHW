@@ -31,9 +31,14 @@ class AllCheapBooksView(ListView):
     model = Book
     template_name = "books.html"
     context_object_name = "books"
+    paginate = 4
 
     def get_queryset(self):
-        return Book.objects.filter(price__lt=500)
+        query = self.request.GET.get("q")
+        qs =  Book.objects.filter(price__lt=500).prefetch_related("author", "category")
+        if query:
+            qs = qs.filter(Q(title__icontains=query) | Q(author__last_name__icontains=query))
+        return qs
 
 class SpecificBookView(DetailView):
     model = Book
@@ -65,13 +70,15 @@ class FeedBackUpdateView(EditDeleteByOwnerMixin ,UpdateView):
     model = Rating
     template_name = "feedback_update.html"
     fields = ['rating', 'feedback']
-    success_url = reverse_lazy('book')
 
     def form_valid(self, form):
         form.instance.book = Book.objects.get(pk=self.kwargs["book_id"])
         user = get_user_model()
         form.instance.user = user.objects.get(pk=1)
         return super().form_valid(form)
+
+    def get_success_url(self):
+        return reverse_lazy("book", args=[self.object.book.id])
 
 class DeleteFeedBackView(EditDeleteByOwnerMixin, DeleteView):
     model = Rating
