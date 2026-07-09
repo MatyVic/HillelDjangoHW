@@ -28,3 +28,5 @@ urlpatterns = [
     path('order/', include("order.urls")),
     path('user/', include("user_management.urls")),
 ]
+
+urlpatterns += [path('silk/', include('silk.urls', namespace='silk'))]

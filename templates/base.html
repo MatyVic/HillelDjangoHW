@@ -17,7 +17,16 @@
                     <li class="nav-item"><a class="nav-link" href="{% url 'shop:cheap_books' %}">Дешеві книги</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'shop:avg_price' %}">Середня ціна по категоріям</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'order:new_order' %}">Замовлення</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'user:user_feedback' %}">Користувач</a></li>
+
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    {% if user.is_authenticated %}
+                    <li class="nav-item"><a class="nav-link" href="{% url 'user:user_feedback' %}">Логаут</a></li>
+                    {% else %}
+                    <li class="nav-item"><a class="nav-link" href="{% url 'user:user_feedback' %}">Реэстрація</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'user:user_feedback' %}">Логін</a></li>
+                    {% endif %}
+
                 </ul>
             </div>
         </div>

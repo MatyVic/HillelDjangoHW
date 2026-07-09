@@ -1,0 +1,9 @@
+.navbar-brand {
+    font-weight: bold;
+}
+.list-group-item:hover {
+    background-color: #f8f9fa;
+}
+.pagination .page-link {
+    color: #212529;
+}

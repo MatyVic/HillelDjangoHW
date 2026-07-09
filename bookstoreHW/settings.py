@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'shop.apps.ShopConfig',
     'order.apps.OrderConfig',
     'user_management.apps.UserManagementConfig',
+    'silk',
 ]
 
 MIDDLEWARE = [
@@ -55,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'silk.middleware.SilkyMiddleware',
 ]
 
 ROOT_URLCONF = 'bookstoreHW.urls'
@@ -107,6 +109,10 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 AUTH_USER_MODEL = 'user_management.CustomUser'
+
+LOGIN_URL = 'user:login'
+LOGIN_REDIRECT_URL = 'shop:all_books'
+LOGOUT_REDIRECT_URL = 'shop:all_books'
 
 # Internationalization
 # https://docs.djangoproject.com/en/6.0/topics/i18n/

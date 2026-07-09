@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    {{ register_form.as_p }}
+
+        {% if register_form.errors %}
+        <div class="alert alert-danger">
+            <ul>
+                {% for field, errors in register_form.errors.items %}
+                    {% for error in errors %}
+                        <li>{{ field }}: {{ error }}</li>
+                    {% endfor %}
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+    <button type="submit">Зареєструватися</button>
+</form>
+{% endblock %}
