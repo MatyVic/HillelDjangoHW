@@ -1,4 +1,4 @@
-from django.contrib.auth import authenticate, logout
+from django.contrib.auth import authenticate, logout, login
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 from django.http import HttpResponse
@@ -17,30 +17,30 @@ def user_register(request):
         register_form = RegisterForm(request.POST)
         if register_form.is_valid():
             register_form.save()
-            return HttpResponse("success")
+            return redirect('shop:all_books')
         else:
-            return render(request, "register.html")
+            return render(request, "register.html", context={"register_form": register_form})
     return render(request, "register.html", context={"register_form": RegisterForm()})
 
 def user_login(request):
     if request.method == "POST":
         login_data = LoginForm(request.POST)
         if login_data.is_valid():
-            login = login_data.cleaned_data["login"]
+            username  = login_data.cleaned_data["login"]
             password = login_data.cleaned_data["password"]
-            user = authenticate(request, username=login, password=password)
+            user = authenticate(request, username=username , password=password)
             if user is not None:
                 login(request, user)
                 return redirect('shop:all_books')
             else:
                 error = "Invalid login details"
-                return render(request, "login.html", context={"register_form": LoginForm(), 'error': error})
+                return render(request, "login.html", context={"login_form": LoginForm(), 'error': error})
         else:
             error = "Invalid form data"
-            return render(request, "login.html", context={"register_form": LoginForm(), 'error': error})
+            return render(request, "login.html", context={"login_form": LoginForm(), 'error': error})
 
     else:
-        return render(request, "login.html", context={"register_form": LoginForm()})
+        return render(request, "login.html", context={"login_form": LoginForm()})
 
 def user_logout(request):
     logout(request)
