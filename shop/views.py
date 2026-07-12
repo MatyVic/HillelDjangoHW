@@ -5,6 +5,7 @@ from django.db.models import Q, Avg, Count
 from django.urls import reverse, reverse_lazy
 from django.contrib.auth import get_user_model
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.contrib.auth.decorators import permission_required
 
 from shop.models import Book, Category, Rating
 
@@ -99,7 +100,7 @@ def search_books(request):
     ).distinct()
     return render(request, "my_template.html", {"books": search_books_res})
 
-
+@permission_required('books.view_avg_price', raise_exception=True)
 def get_avg_price_per_category(request):
     avg_price_per_category = Category.objects.annotate(avg_price=Avg("book__price"))
     return render(request, "avg_price.html", {"categories": avg_price_per_category})

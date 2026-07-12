@@ -6,3 +6,68 @@
 2026-07-12 19:37:05,664 [INFO] user_management.views: New user registered: newUser
 2026-07-12 19:37:05,674 [INFO] django.server: "POST /user/register/ HTTP/1.1" 302 0
 2026-07-12 19:37:05,704 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 3628
+2026-07-12 20:07:35,726 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-07-12 20:07:37,177 [WARNING] django.server: "GET / HTTP/1.1" 404 2755
+2026-07-12 20:07:41,365 [INFO] django.server: "GET /admin/ HTTP/1.1" 302 0
+2026-07-12 20:07:41,407 [INFO] django.server: "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4080
+2026-07-12 20:07:41,581 [INFO] django.server: "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+2026-07-12 20:07:41,583 [INFO] django.server: "GET /static/admin/css/responsive.css HTTP/1.1" 200 16273
+2026-07-12 20:07:41,591 [INFO] django.server: "GET /static/admin/css/base.css HTTP/1.1" 200 23100
+2026-07-12 20:07:41,605 [INFO] django.server: "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 3538
+2026-07-12 20:07:41,748 [INFO] django.server: "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+2026-07-12 20:07:41,752 [INFO] django.server: "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+2026-07-12 20:07:41,753 [INFO] django.server: "GET /static/admin/css/login.css HTTP/1.1" 200 951
+2026-07-12 20:07:44,536 [INFO] django.server: "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4248
+2026-07-12 20:07:46,303 [INFO] django.server: "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+2026-07-12 20:07:46,342 [INFO] django.server: "GET /admin/ HTTP/1.1" 200 15903
+2026-07-12 20:07:46,377 [INFO] django.server: "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+2026-07-12 20:07:46,427 [INFO] django.server: "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 593
+2026-07-12 20:07:46,427 [INFO] django.server: "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 978
+2026-07-12 20:07:56,049 [INFO] django.server: "GET /admin/auth/group/add/ HTTP/1.1" 200 20246
+2026-07-12 20:07:56,082 [INFO] django.server: "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+2026-07-12 20:07:56,082 [INFO] django.server: "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+2026-07-12 20:07:56,083 [INFO] django.server: "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 200 16428
+2026-07-12 20:07:56,084 [INFO] django.server: "GET /static/admin/js/SelectBox.js HTTP/1.1" 200 4530
+2026-07-12 20:07:56,084 [INFO] django.server: "GET /static/admin/css/forms.css HTTP/1.1" 200 8831
+2026-07-12 20:07:56,085 [INFO] django.server: "GET /static/admin/js/core.js HTTP/1.1" 304 0
+2026-07-12 20:07:56,086 [INFO] django.server: "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+2026-07-12 20:07:56,087 [INFO] django.server: "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+2026-07-12 20:07:56,087 [INFO] django.server: "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+2026-07-12 20:07:56,088 [INFO] django.server: "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+2026-07-12 20:07:56,088 [INFO] django.server: "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+2026-07-12 20:07:56,089 [INFO] django.server: "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+2026-07-12 20:07:56,089 [INFO] django.server: "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+2026-07-12 20:07:56,094 [WARNING] silk.model_factory: Response to request with pk 5a953665-be66-4673-84c3-57ed36ca4979 has content type text/javascript but was unable to parse it
+2026-07-12 20:07:56,105 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2026-07-12 20:07:56,130 [INFO] django.server: "GET /static/admin/css/widgets.css HTTP/1.1" 200 11811
+2026-07-12 20:07:56,200 [INFO] django.server: "GET /static/admin/img/search.svg HTTP/1.1" 200 607
+2026-07-12 20:07:56,201 [INFO] django.server: "GET /static/admin/img/selector-icons.svg HTTP/1.1" 200 2387
+2026-07-12 20:08:26,535 [INFO] django.server: "POST /admin/auth/group/add/ HTTP/1.1" 302 0
+2026-07-12 20:08:26,579 [INFO] django.server: "GET /admin/auth/group/ HTTP/1.1" 200 14400
+2026-07-12 20:08:26,606 [INFO] django.server: "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+2026-07-12 20:08:26,606 [INFO] django.server: "GET /static/admin/css/changelists.css HTTP/1.1" 200 7498
+2026-07-12 20:08:26,613 [WARNING] silk.model_factory: Response to request with pk f8d389e4-43d7-4cab-b14d-e007288d9cb5 has content type text/javascript but was unable to parse it
+2026-07-12 20:08:26,625 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2026-07-12 20:08:26,676 [INFO] django.server: "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 558
+2026-07-12 20:08:26,676 [INFO] django.server: "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 593
+2026-07-12 20:08:28,337 [INFO] django.server: "GET /admin/auth/group/1/change/ HTTP/1.1" 200 20501
+2026-07-12 20:08:28,372 [WARNING] silk.model_factory: Response to request with pk e7092e10-a0e8-4586-9228-b50d9987b087 has content type text/javascript but was unable to parse it
+2026-07-12 20:08:28,382 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2026-07-12 20:08:36,762 [INFO] django.server: "GET /admin/auth/group/ HTTP/1.1" 200 14202
+2026-07-12 20:08:36,799 [WARNING] silk.model_factory: Response to request with pk f9143b4a-2237-4c4f-88e1-7f6fd965e136 has content type text/javascript but was unable to parse it
+2026-07-12 20:08:36,812 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2026-07-12 20:08:38,536 [INFO] django.server: "GET /admin/auth/ HTTP/1.1" 200 5480
+2026-07-12 20:08:40,835 [INFO] django.server: "GET /admin/auth/group/ HTTP/1.1" 200 14202
+2026-07-12 20:08:40,870 [WARNING] silk.model_factory: Response to request with pk 8b7f2b7a-9dff-47a9-aa96-8ffcf752af07 has content type text/javascript but was unable to parse it
+2026-07-12 20:08:40,881 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2026-07-12 20:08:42,142 [INFO] django.server: "GET /admin/auth/group/1/change/ HTTP/1.1" 200 20501
+2026-07-12 20:08:42,176 [WARNING] silk.model_factory: Response to request with pk 86eb4e00-36e1-423e-8272-aeb61ff1047e has content type text/javascript but was unable to parse it
+2026-07-12 20:08:42,187 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2026-07-12 20:08:50,269 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 3699
+2026-07-12 20:08:56,004 [INFO] django.server: "GET /shop/avg-price/ HTTP/1.1" 200 839
+2026-07-12 20:08:59,184 [INFO] django.server: "GET /user/logout/ HTTP/1.1" 302 0
+2026-07-12 20:08:59,217 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 3628
+2026-07-12 20:09:01,255 [INFO] django.server: "GET /user/login/ HTTP/1.1" 200 1989
+2026-07-12 20:09:05,128 [INFO] django.server: "POST /user/login/ HTTP/1.1" 302 0
+2026-07-12 20:09:05,163 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 3700
+2026-07-12 20:09:06,959 [WARNING] django.server: "GET /shop/avg-price/ HTTP/1.1" 403 292
