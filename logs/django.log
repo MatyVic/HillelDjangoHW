@@ -1,0 +1,8 @@
+2026-07-12 19:35:57,648 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-07-12 19:36:06,537 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-07-12 19:36:08,666 [WARNING] django.server: "GET / HTTP/1.1" 404 2755
+2026-07-12 19:36:13,784 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 3628
+2026-07-12 19:36:17,732 [INFO] django.server: "GET /user/register/ HTTP/1.1" 200 3411
+2026-07-12 19:37:05,664 [INFO] user_management.views: New user registered: newUser
+2026-07-12 19:37:05,674 [INFO] django.server: "POST /user/register/ HTTP/1.1" 302 0
+2026-07-12 19:37:05,704 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 3628

@@ -1,11 +1,13 @@
 from django.contrib.auth import authenticate, logout, login
 from django.contrib.auth.mixins import LoginRequiredMixin
-
-from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views import View
-
 from user_management.forms import RegisterForm, LoginForm
+import logging
+
+logger = logging.getLogger(__name__)
+
+
 # Create your views here.
 class UserFeedBackView(LoginRequiredMixin, View):
 
@@ -16,9 +18,11 @@ def user_register(request):
     if request.method == "POST":
         register_form = RegisterForm(request.POST)
         if register_form.is_valid():
-            register_form.save()
+            user = register_form.save()
+            logger.info("New user registered: %s", user.username)
             return redirect('shop:all_books')
         else:
+            logger.warning("Invalid registration attempt: %s", register_form.errors)
             return render(request, "register.html", context={"register_form": register_form})
     return render(request, "register.html", context={"register_form": RegisterForm()})
 
