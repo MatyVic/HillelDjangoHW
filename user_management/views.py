@@ -1,17 +1,11 @@
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, logout
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.auth.views import LogoutView
+
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views import View
 
 from user_management.forms import RegisterForm, LoginForm
-
-
-class CustomLogoutView(LogoutView):
-    next_page = "shop:all_books"
-
-
 # Create your views here.
 class UserFeedBackView(LoginRequiredMixin, View):
 
@@ -47,3 +41,7 @@ def user_login(request):
 
     else:
         return render(request, "login.html", context={"register_form": LoginForm()})
+
+def user_logout(request):
+    logout(request)
+    return redirect('shop:all_books')
