@@ -20,7 +20,9 @@ def user_register(request):
         register_form = RegisterForm(request.POST)
         if register_form.is_valid():
             user = register_form.save()
-            client_group, _ = Group.objects.get_or_create(name='Client')
+            client_group, _ = Group.objects.get_or_create(name='Users_test')
+            user.groups.add(client_group)
+            login(request, user)
             logger.info("New user registered: %s", user.username)
             return redirect('shop:all_books')
         else:

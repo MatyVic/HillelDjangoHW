@@ -71,3 +71,74 @@
 2026-07-12 20:09:05,128 [INFO] django.server: "POST /user/login/ HTTP/1.1" 302 0
 2026-07-12 20:09:05,163 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 3700
 2026-07-12 20:09:06,959 [WARNING] django.server: "GET /shop/avg-price/ HTTP/1.1" 403 292
+2026-07-12 20:17:50,297 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-07-12 20:17:53,069 [WARNING] django.server: "GET / HTTP/1.1" 404 2755
+2026-07-12 20:18:00,552 [INFO] django.server: "GET /admin/ HTTP/1.1" 302 0
+2026-07-12 20:18:00,614 [INFO] django.server: "GET /admin/login/?next=/admin/ HTTP/1.1" 200 3595
+2026-07-12 20:18:04,898 [INFO] django.server: "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+2026-07-12 20:18:04,934 [INFO] django.server: "GET /admin/ HTTP/1.1" 200 15894
+2026-07-12 20:18:07,590 [INFO] django.server: "GET /admin/auth/group/ HTTP/1.1" 200 14202
+2026-07-12 20:18:07,631 [WARNING] silk.model_factory: Response to request with pk 58d32811-a449-418a-998f-2758d745633d has content type text/javascript but was unable to parse it
+2026-07-12 20:18:07,644 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2026-07-12 20:18:51,246 [INFO] django.server: "GET /admin/auth/group/1/change/ HTTP/1.1" 200 20501
+2026-07-12 20:18:51,295 [WARNING] silk.model_factory: Response to request with pk 9d2c0f56-87ad-497f-bbd0-e76c0c17dd7f has content type text/javascript but was unable to parse it
+2026-07-12 20:18:51,307 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2026-07-12 20:18:57,690 [INFO] django.utils.autoreload: H:\DjangoHW\user_management\views.py changed, reloading.
+2026-07-12 20:18:58,134 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-07-12 20:19:04,152 [INFO] django.server: "GET /admin/auth/group/ HTTP/1.1" 200 14202
+2026-07-12 20:19:11,619 [INFO] django.server: "GET /admin/ HTTP/1.1" 200 15894
+2026-07-12 20:19:14,447 [WARNING] django.server: "GET / HTTP/1.1" 404 2755
+2026-07-12 20:19:18,123 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 3699
+2026-07-12 20:19:19,799 [INFO] django.server: "GET /user/logout/ HTTP/1.1" 302 0
+2026-07-12 20:19:19,831 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 3628
+2026-07-12 20:19:21,322 [INFO] django.server: "GET /user/register/ HTTP/1.1" 200 3411
+2026-07-12 20:20:22,354 [WARNING] user_management.views: Invalid registration attempt: <ul class="errorlist"><li>password2<ul class="errorlist" id="id_password2_error"><li>This password is too short. It must contain at least 8 characters.</li></ul></li></ul>
+2026-07-12 20:20:22,368 [INFO] django.server: "POST /user/register/ HTTP/1.1" 200 3942
+2026-07-12 20:20:42,183 [INFO] user_management.views: New user registered: newUser2
+2026-07-12 20:20:42,194 [INFO] django.server: "POST /user/register/ HTTP/1.1" 302 0
+2026-07-12 20:20:42,226 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 3628
+2026-07-12 20:20:46,849 [WARNING] django.server: "GET /shop/avg-price/ HTTP/1.1" 403 292
+2026-07-12 20:20:57,989 [INFO] django.server: "GET /user/login/ HTTP/1.1" 200 1989
+2026-07-12 20:21:02,269 [INFO] django.server: "POST /user/login/ HTTP/1.1" 302 0
+2026-07-12 20:21:02,303 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 3702
+2026-07-12 20:21:04,348 [WARNING] django.server: "GET /shop/avg-price/ HTTP/1.1" 403 292
+2026-07-12 20:23:40,591 [INFO] django.utils.autoreload: H:\DjangoHW\user_management\views.py changed, reloading.
+2026-07-12 20:23:41,042 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-07-12 20:23:50,752 [INFO] django.server: "GET /admin/ HTTP/1.1" 302 0
+2026-07-12 20:23:50,828 [INFO] django.server: "GET /admin/login/?next=/admin/ HTTP/1.1" 200 3597
+2026-07-12 20:23:54,215 [INFO] django.server: "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+2026-07-12 20:23:54,251 [INFO] django.server: "GET /admin/ HTTP/1.1" 200 15894
+2026-07-12 20:23:55,600 [INFO] django.server: "GET /admin/auth/group/ HTTP/1.1" 200 14202
+2026-07-12 20:23:55,635 [WARNING] silk.model_factory: Response to request with pk c28bf594-6f28-4d8a-9590-ff71fedeeb40 has content type text/javascript but was unable to parse it
+2026-07-12 20:23:55,648 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2026-07-12 20:24:39,608 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-07-12 20:24:41,212 [WARNING] django.server: "GET / HTTP/1.1" 404 2755
+2026-07-12 20:24:48,803 [WARNING] django.server: "GET /user/ HTTP/1.1" 404 3706
+2026-07-12 20:24:58,184 [INFO] django.server: "GET /user/login/ HTTP/1.1" 200 2060
+2026-07-12 20:25:00,544 [INFO] django.server: "GET /user/logout/ HTTP/1.1" 302 0
+2026-07-12 20:25:00,580 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 3628
+2026-07-12 20:25:01,334 [INFO] django.server: "GET /user/register/ HTTP/1.1" 200 3411
+2026-07-12 20:25:37,583 [INFO] user_management.views: New user registered: newUser3
+2026-07-12 20:25:37,596 [INFO] django.server: "POST /user/register/ HTTP/1.1" 302 0
+2026-07-12 20:25:37,641 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 3628
+2026-07-12 20:25:39,977 [WARNING] django.server: "GET /shop/avg-price/ HTTP/1.1" 403 292
+2026-07-12 20:27:02,393 [INFO] django.server: "GET /admin/auth/group/1/change/ HTTP/1.1" 302 0
+2026-07-12 20:27:02,423 [INFO] django.server: "GET /admin/login/?next=/admin/auth/group/1/change/ HTTP/1.1" 200 4120
+2026-07-12 20:27:05,130 [INFO] django.server: "POST /admin/login/?next=/admin/auth/group/1/change/ HTTP/1.1" 302 0
+2026-07-12 20:27:05,188 [INFO] django.server: "GET /admin/auth/group/1/change/ HTTP/1.1" 200 20501
+2026-07-12 20:27:05,239 [WARNING] silk.model_factory: Response to request with pk 0e072f08-028e-475d-8f5e-1cba4d84b053 has content type text/javascript but was unable to parse it
+2026-07-12 20:27:05,249 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2026-07-12 20:27:56,796 [INFO] django.server: "GET /user/login/ HTTP/1.1" 200 2060
+2026-07-12 20:28:00,174 [INFO] django.server: "POST /user/login/ HTTP/1.1" 302 0
+2026-07-12 20:28:00,216 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 3702
+2026-07-12 20:28:02,382 [WARNING] django.server: "GET /shop/avg-price/ HTTP/1.1" 403 292
+2026-07-12 20:34:54,542 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-07-12 20:34:55,737 [WARNING] django.server: "GET / HTTP/1.1" 404 2755
+2026-07-12 20:35:00,743 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 3702
+2026-07-12 20:35:04,344 [INFO] django.server: "GET /shop/avg-price/ HTTP/1.1" 200 839
+2026-07-12 20:35:06,468 [INFO] django.server: "GET /user/logout/ HTTP/1.1" 302 0
+2026-07-12 20:35:06,502 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 3628
+2026-07-12 20:35:07,702 [INFO] django.server: "GET /user/login/ HTTP/1.1" 200 1989
+2026-07-12 20:35:11,022 [INFO] django.server: "POST /user/login/ HTTP/1.1" 302 0
+2026-07-12 20:35:11,082 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 3702
+2026-07-12 20:35:12,699 [WARNING] django.server: "GET /shop/avg-price/ HTTP/1.1" 403 292
