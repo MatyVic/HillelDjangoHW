@@ -142,3 +142,70 @@
 2026-07-12 20:35:11,022 [INFO] django.server: "POST /user/login/ HTTP/1.1" 302 0
 2026-07-12 20:35:11,082 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 3702
 2026-07-12 20:35:12,699 [WARNING] django.server: "GET /shop/avg-price/ HTTP/1.1" 403 292
+2026-07-13 22:55:22,021 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-07-13 22:55:50,136 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-07-13 22:55:53,282 [WARNING] django.server: "GET / HTTP/1.1" 404 2755
+2026-07-13 22:56:04,926 [WARNING] django.server: "GET / HTTP/1.1" 404 2755
+2026-07-13 22:56:09,042 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 2220
+2026-07-13 23:01:51,728 [INFO] django.utils.autoreload: /app/bookstoreHW/settings.py changed, reloading.
+2026-07-13 23:01:52,385 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-07-13 23:02:53,281 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-07-13 23:03:08,406 [WARNING] django.server: "GET / HTTP/1.1" 404 2755
+2026-07-13 23:03:13,505 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 3628
+2026-07-13 23:04:34,428 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-07-13 23:13:59,232 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-07-13 23:18:16,750 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-07-13 23:21:06,906 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-07-14 06:49:25,601 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-07-14 06:49:29,136 [WARNING] django.server: "GET / HTTP/1.1" 404 2755
+2026-07-14 06:49:29,486 [WARNING] django.server: "GET /favicon.ico HTTP/1.1" 404 2806
+2026-07-14 06:56:18,486 [INFO] django.utils.autoreload: /app/bookstoreHW/settings.py changed, reloading.
+2026-07-14 06:56:19,166 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-07-14 07:00:37,915 [INFO] django.utils.autoreload: /app/bookstoreHW/settings.py changed, reloading.
+-07-14 09:56:22,070 [WARNING] django.server: "GET / HTTP/1.1" 404 2755
+2026-07-14 09:56:28,806 [INFO] django.server: "GET /silk/ HTTP/1.1" 200 20273
+2026-07-14 09:56:29,115 [INFO] django.server: "GET /static/silk/lib/jquery-ui-1.13.2.min.css HTTP/1.1" 200 36662
+2026-07-14 09:56:29,117 [INFO] django.server: "GET /static/silk/css/components/numeric.css HTTP/1.1" 200 142
+2026-07-14 09:56:29,119 [INFO] django.server: "GET /static/silk/lib/jquery.datetimepicker.css HTTP/1.1" 200 17870
+2026-07-14 09:56:29,120 [INFO] django.server: "GET /static/silk/css/pages/root_base.css HTTP/1.1" 200 3749
+2026-07-14 09:56:29,121 [INFO] django.server: "GET /static/silk/css/pages/summary.css HTTP/1.1" 200 596
+2026-07-14 09:56:29,123 [INFO] django.server: "GET /static/silk/lib/jquery-3.6.0.min.js HTTP/1.1" 200 89501
+2026-07-14 09:56:29,127 [INFO] django.server: "GET /static/silk/lib/jquery-ui-1.13.2.min.js HTTP/1.1" 200 255085
+2026-07-14 09:56:29,128 [INFO] django.server: "GET /static/silk/js/pages/base.js HTTP/1.1" 200 265
+2026-07-14 09:56:29,130 [INFO] django.server: "GET /static/silk/lib/jquery.datetimepicker.js HTTP/1.1" 200 78385
+2026-07-14 09:56:29,131 [INFO] django.server: "GET /static/silk/js/components/filters.js HTTP/1.1" 200 1309
+2026-07-14 09:56:29,133 [INFO] django.server: "GET /static/silk/js/pages/root_base.js HTTP/1.1" 200 439
+2026-07-14 09:56:29,134 [INFO] django.server: "GET /static/silk/js/pages/summary.js HTTP/1.1" 200 174
+2026-07-14 09:56:29,135 [INFO] django.server: "GET /static/silk/js/components/cell.js HTTP/1.1" 304 0
+2026-07-14 09:56:29,137 [INFO] django.server: "GET /static/silk/css/components/fonts.css HTTP/1.1" 200 1622
+2026-07-14 09:56:29,151 [INFO] django.server: "GET /static/silk/css/components/colors.css HTTP/1.1" 200 205
+2026-07-14 09:56:29,153 [INFO] django.server: "GET /static/silk/css/components/row.css HTTP/1.1" 200 1135
+2026-07-14 09:56:29,161 [INFO] django.server: "GET /static/silk/css/pages/base.css HTTP/1.1" 200 1693
+2026-07-14 09:56:29,163 [INFO] django.server: "GET /static/silk/css/components/cell.css HTTP/1.1" 200 557
+2026-07-14 09:56:29,165 [INFO] django.server: "GET /static/silk/filter2.png HTTP/1.1" 200 3006
+2026-07-14 09:56:29,184 [INFO] django.server: "GET /static/silk/fonts/fira/FiraSans-Light.woff HTTP/1.1" 200 95406
+2026-07-14 09:56:29,184 [INFO] django.server: "GET /static/silk/fonts/fira/FiraSans-Medium.woff HTTP/1.1" 200 89883
+2026-07-14 09:56:32,050 [INFO] django.server: "GET /silk/cleardb/ HTTP/1.1" 200 3981
+2026-07-14 09:56:32,079 [INFO] django.server: "GET /static/silk/css/pages/clear_db.css HTTP/1.1" 200 569
+2026-07-14 09:56:32,079 [INFO] django.server: "GET /static/silk/js/pages/clear_db.js HTTP/1.1" 200 174
+2026-07-14 09:56:34,339 [INFO] django.server: "POST /silk/cleardb/ HTTP/1.1" 200 4057
+2026-07-14 09:56:37,645 [INFO] django.server: "GET /silk/profiling/ HTTP/1.1" 200 11446
+2026-07-14 09:56:37,674 [INFO] django.server: "GET /static/silk/css/pages/profiling.css HTTP/1.1" 200 157
+2026-07-14 09:56:37,674 [INFO] django.server: "GET /static/silk/js/pages/profiling.js HTTP/1.1" 200 79
+2026-07-14 09:56:37,742 [INFO] django.server: "GET /static/silk/filter.png HTTP/1.1" 200 3540
+2026-07-14 09:56:37,751 [INFO] django.server: "GET /static/silk/fonts/fira/FiraSans-LightItalic.woff HTTP/1.1" 200 98125
+2026-07-14 09:56:37,752 [INFO] django.server: "GET /static/silk/fonts/fantasque/FantasqueSansMono-RegItalic.woff HTTP/1.1" 200 56336
+2026-07-14 09:56:38,069 [INFO] django.server: "GET /silk/requests/ HTTP/1.1" 200 12823
+2026-07-14 09:56:38,093 [INFO] django.server: "GET /static/silk/css/pages/requests.css HTTP/1.1" 200 271
+2026-07-14 09:56:38,150 [INFO] django.server: "GET /static/silk/js/pages/requests.js HTTP/1.1" 200 79
+2026-07-14 09:56:38,564 [INFO] django.server: "GET /silk/ HTTP/1.1" 200 6775
+2026-07-14 07:00:38,780 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-07-14 07:01:58,615 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-07-14 07:02:36,650 [WARNING] django.server: "GET / HTTP/1.1" 404 2755
+2026-07-14 07:02:41,469 [INFO] django.server: "GET /shop HTTP/1.1" 301 0
+2026-07-14 07:02:41,540 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 3628
+2026-07-14 07:02:41,574 [INFO] django.server: "GET /static/css/style.css HTTP/1.1" 200 153
+2026-07-14 07:02:48,065 [INFO] django.server: "GET /user/login/ HTTP/1.1" 200 1989
+2026-07-14 07:02:52,452 [INFO] django.server: "POST /user/login/ HTTP/1.1" 302 0
+2026-07-14 07:02:52,514 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 3699
+2026-07-14 07:03:32,745 [INFO] django.utils.autoreload: Watching for file changes with StatReloader

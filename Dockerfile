@@ -3,9 +3,7 @@ FROM python:3.12-slim
 
 # 2. Налаштування змінних оточення для Python
 ENV PYTHONDONTWRITEBYTECODE=1 \
-    PYTHONUNBUFFERED=1 \
-    DB_HOST=docker_postgres \
-    DB_PORT=5432
+    PYTHONUNBUFFERED=1
 
 
 # 3. Встановлення робочої директорії всередині контейнера
@@ -21,10 +19,5 @@ RUN pip install --no-cache-dir --upgrade pip \
 # 6. Копіювання решти коду проєкту в контейнер
 COPY . .
 
-# 7. Команда для запуску вашого скрипту або сервера
-
-# Порт, який слухає застосунок (наприклад, Flask/FastAPI)
+# Порт, який слухає застосунок
 EXPOSE 8000
-
-# Команда запуску
-CMD ["sh", "run_app.sh"]
