@@ -422,3 +422,59 @@
 2026-08-03 11:16:33,607 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
 2026-08-03 11:16:34,136 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
 2026-08-03 11:17:08,255 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 12:09:58,864 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 12:10:00,507 [WARNING] django.server: "GET / HTTP/1.1" 404 2755
+2026-08-03 12:10:06,954 [WARNING] django.server: "GET /cart HTTP/1.1" 404 2785
+2026-08-03 12:10:14,535 [WARNING] django.server: "GET /order HTTP/1.1" 404 2788
+2026-08-03 12:10:19,541 [WARNING] django.server: "GET /order/ HTTP/1.1" 404 3432
+2026-08-03 12:10:24,923 [INFO] django.server: "GET /order/cart HTTP/1.1" 301 0
+2026-08-03 12:10:25,045 [ERROR] django.server: "GET /order/cart/ HTTP/1.1" 500 86041
+2026-08-03 12:10:38,015 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 5315
+2026-08-03 12:12:55,838 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 12:12:57,758 [WARNING] django.server: "GET / HTTP/1.1" 404 2755
+2026-08-03 12:13:05,627 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 5779
+2026-08-03 12:13:08,960 [INFO] django.server: "POST /order/cart/?next=/shop/ HTTP/1.1" 302 0
+2026-08-03 12:13:09,065 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 5779
+2026-08-03 12:13:10,972 [INFO] django.server: "POST /order/cart/?next=/shop/ HTTP/1.1" 302 0
+2026-08-03 12:13:11,076 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 5779
+2026-08-03 12:14:49,992 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 12:14:50,517 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 12:18:13,152 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 12:18:14,702 [WARNING] django.server: "GET / HTTP/1.1" 404 2755
+2026-08-03 12:18:21,492 [WARNING] django.server: "GET /book/ HTTP/1.1" 404 2788
+2026-08-03 12:18:25,556 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 5881
+2026-08-03 12:18:27,677 [ERROR] django.server: "GET /order/cart/ HTTP/1.1" 500 86090
+2026-08-03 12:19:55,011 [INFO] django.utils.autoreload: H:\DjangoHW\order\cart.py changed, reloading.
+2026-08-03 12:19:55,539 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 12:21:16,781 [INFO] django.utils.autoreload: H:\DjangoHW\bookstoreHW\settings.py changed, reloading.
+2026-08-03 12:21:17,355 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 12:21:24,219 [INFO] django.utils.autoreload: H:\DjangoHW\bookstoreHW\settings.py changed, reloading.
+2026-08-03 12:21:24,734 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 12:21:34,761 [INFO] django.utils.autoreload: H:\DjangoHW\bookstoreHW\settings.py changed, reloading.
+2026-08-03 12:21:35,280 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 12:22:08,226 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 12:22:10,242 [WARNING] django.server: "GET / HTTP/1.1" 404 2755
+2026-08-03 12:22:13,758 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 5886
+2026-08-03 12:22:16,200 [ERROR] django.server: "GET /order/cart/ HTTP/1.1" 500 86176
+2026-08-03 12:22:40,321 [ERROR] django.server: "GET /order/cart/ HTTP/1.1" 500 86176
+2026-08-03 12:23:39,567 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 12:23:40,079 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 12:23:43,864 [ERROR] django.server: "GET /order/cart/ HTTP/1.1" 500 86194
+2026-08-03 12:23:45,966 [ERROR] django.server: "GET /order/cart/ HTTP/1.1" 500 86194
+2026-08-03 12:23:46,584 [ERROR] django.server: "GET /order/cart/ HTTP/1.1" 500 86194
+2026-08-03 12:23:46,960 [ERROR] django.server: "GET /order/cart/ HTTP/1.1" 500 86194
+2026-08-03 12:23:47,347 [ERROR] django.server: "GET /order/cart/ HTTP/1.1" 500 86194
+2026-08-03 12:23:47,598 [ERROR] django.server: "GET /order/cart/ HTTP/1.1" 500 86194
+2026-08-03 12:23:47,935 [ERROR] django.server: "GET /order/cart/ HTTP/1.1" 500 86194
+2026-08-03 12:24:01,415 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 12:24:03,103 [WARNING] django.server: "GET / HTTP/1.1" 404 2755
+2026-08-03 12:24:06,270 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 5886
+2026-08-03 12:24:08,015 [ERROR] django.server: "GET /order/cart/ HTTP/1.1" 500 86194
+2026-08-03 12:25:48,159 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 12:25:49,850 [WARNING] django.server: "GET / HTTP/1.1" 404 2755
+2026-08-03 12:25:57,662 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6422
+2026-08-03 12:25:59,598 [INFO] django.server: "POST /order/cart/?next=/shop/ HTTP/1.1" 302 0
+2026-08-03 12:25:59,701 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6419
+2026-08-03 12:26:02,230 [INFO] django.server: "POST /order/cart/?next=/shop/ HTTP/1.1" 302 0
+2026-08-03 12:26:02,342 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6422
+2026-08-03 12:26:03,417 [ERROR] django.server: "GET /order/cart/ HTTP/1.1" 500 86178

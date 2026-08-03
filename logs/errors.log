@@ -94,3 +94,237 @@ Traceback (most recent call last):
     return redirect(request.args.get("next"))
                     ^^^^^^^^^^^^
 AttributeError: 'WSGIRequest' object has no attribute 'args'
+2026-08-03 12:10:24,985 [ERROR] django.request: Internal Server Error: /order/cart/
+Traceback (most recent call last):
+  File "H:\DjangoHW\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "H:\DjangoHW\venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "H:\DjangoHW\venv\Lib\site-packages\django\views\generic\base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 74, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\django\views\generic\base.py", line 145, in dispatch
+    return handler(request, *args, **kwargs)
+  File "H:\DjangoHW\order\views.py", line 42, in get
+    book.amount = cart_data[book.book_id]
+                            ^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'book_id'
+2026-08-03 12:18:27,659 [ERROR] django.request: Internal Server Error: /order/cart/
+Traceback (most recent call last):
+  File "H:\DjangoHW\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "H:\DjangoHW\venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "H:\DjangoHW\venv\Lib\site-packages\django\views\generic\base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 74, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\django\views\generic\base.py", line 145, in dispatch
+    return handler(request, *args, **kwargs)
+  File "H:\DjangoHW\order\views.py", line 42, in get
+    book.amount = cart_data[book.book_id]
+                            ^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'book_id'
+2026-08-03 12:22:16,140 [ERROR] django.request: Internal Server Error: /order/cart/
+Traceback (most recent call last):
+  File "H:\DjangoHW\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "H:\DjangoHW\venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "H:\DjangoHW\venv\Lib\site-packages\django\views\generic\base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 74, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\django\views\generic\base.py", line 145, in dispatch
+    return handler(request, *args, **kwargs)
+  File "H:\DjangoHW\order\views.py", line 42, in get
+    book.amount = cart_data[book.book_id]
+                            ^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'book_id'
+2026-08-03 12:22:40,257 [ERROR] django.request: Internal Server Error: /order/cart/
+Traceback (most recent call last):
+  File "H:\DjangoHW\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "H:\DjangoHW\venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "H:\DjangoHW\venv\Lib\site-packages\django\views\generic\base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 74, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\django\views\generic\base.py", line 145, in dispatch
+    return handler(request, *args, **kwargs)
+  File "H:\DjangoHW\order\views.py", line 42, in get
+    book.amount = cart_data[book.book_id]
+                            ^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'book_id'
+2026-08-03 12:23:43,757 [ERROR] django.request: Internal Server Error: /order/cart/
+Traceback (most recent call last):
+  File "H:\DjangoHW\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "H:\DjangoHW\venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "H:\DjangoHW\venv\Lib\site-packages\django\views\generic\base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 74, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\django\views\generic\base.py", line 145, in dispatch
+    return handler(request, *args, **kwargs)
+  File "H:\DjangoHW\order\views.py", line 42, in get
+    book.amount = cart_data[str(book.book_id)]
+                                ^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'book_id'
+2026-08-03 12:23:45,859 [ERROR] django.request: Internal Server Error: /order/cart/
+Traceback (most recent call last):
+  File "H:\DjangoHW\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "H:\DjangoHW\venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "H:\DjangoHW\venv\Lib\site-packages\django\views\generic\base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 74, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\django\views\generic\base.py", line 145, in dispatch
+    return handler(request, *args, **kwargs)
+  File "H:\DjangoHW\order\views.py", line 42, in get
+    book.amount = cart_data[str(book.book_id)]
+                                ^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'book_id'
+2026-08-03 12:23:46,565 [ERROR] django.request: Internal Server Error: /order/cart/
+Traceback (most recent call last):
+  File "H:\DjangoHW\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "H:\DjangoHW\venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "H:\DjangoHW\venv\Lib\site-packages\django\views\generic\base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 74, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\django\views\generic\base.py", line 145, in dispatch
+    return handler(request, *args, **kwargs)
+  File "H:\DjangoHW\order\views.py", line 42, in get
+    book.amount = cart_data[str(book.book_id)]
+                                ^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'book_id'
+2026-08-03 12:23:46,942 [ERROR] django.request: Internal Server Error: /order/cart/
+Traceback (most recent call last):
+  File "H:\DjangoHW\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "H:\DjangoHW\venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "H:\DjangoHW\venv\Lib\site-packages\django\views\generic\base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 74, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\django\views\generic\base.py", line 145, in dispatch
+    return handler(request, *args, **kwargs)
+  File "H:\DjangoHW\order\views.py", line 42, in get
+    book.amount = cart_data[str(book.book_id)]
+                                ^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'book_id'
+2026-08-03 12:23:47,282 [ERROR] django.request: Internal Server Error: /order/cart/
+Traceback (most recent call last):
+  File "H:\DjangoHW\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "H:\DjangoHW\venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "H:\DjangoHW\venv\Lib\site-packages\django\views\generic\base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 74, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\django\views\generic\base.py", line 145, in dispatch
+    return handler(request, *args, **kwargs)
+  File "H:\DjangoHW\order\views.py", line 42, in get
+    book.amount = cart_data[str(book.book_id)]
+                                ^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'book_id'
+2026-08-03 12:23:47,578 [ERROR] django.request: Internal Server Error: /order/cart/
+Traceback (most recent call last):
+  File "H:\DjangoHW\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "H:\DjangoHW\venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "H:\DjangoHW\venv\Lib\site-packages\django\views\generic\base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 74, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\django\views\generic\base.py", line 145, in dispatch
+    return handler(request, *args, **kwargs)
+  File "H:\DjangoHW\order\views.py", line 42, in get
+    book.amount = cart_data[str(book.book_id)]
+                                ^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'book_id'
+2026-08-03 12:23:47,914 [ERROR] django.request: Internal Server Error: /order/cart/
+Traceback (most recent call last):
+  File "H:\DjangoHW\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "H:\DjangoHW\venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "H:\DjangoHW\venv\Lib\site-packages\django\views\generic\base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 74, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\django\views\generic\base.py", line 145, in dispatch
+    return handler(request, *args, **kwargs)
+  File "H:\DjangoHW\order\views.py", line 42, in get
+    book.amount = cart_data[str(book.book_id)]
+                                ^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'book_id'
+2026-08-03 12:24:07,906 [ERROR] django.request: Internal Server Error: /order/cart/
+Traceback (most recent call last):
+  File "H:\DjangoHW\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "H:\DjangoHW\venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "H:\DjangoHW\venv\Lib\site-packages\django\views\generic\base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 74, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\django\views\generic\base.py", line 145, in dispatch
+    return handler(request, *args, **kwargs)
+  File "H:\DjangoHW\order\views.py", line 42, in get
+    book.amount = cart_data[str(book.book_id)]
+                                ^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'book_id'
+2026-08-03 12:26:03,308 [ERROR] django.request: Internal Server Error: /order/cart/
+Traceback (most recent call last):
+  File "H:\DjangoHW\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "H:\DjangoHW\venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "H:\DjangoHW\venv\Lib\site-packages\django\views\generic\base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 74, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\django\views\generic\base.py", line 145, in dispatch
+    return handler(request, *args, **kwargs)
+  File "H:\DjangoHW\order\views.py", line 42, in get
+    book.amount = cart_data[str(book.book_id)]
+                                ^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'book_id'
