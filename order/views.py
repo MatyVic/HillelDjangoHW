@@ -11,7 +11,7 @@ from django.shortcuts import render, redirect
 from django.views import View
 
 
-from order.cart import Cart
+from order.cart import Cart, OrderEmailService
 from order.form import NewOrderForm
 from order.models import Order, OrderDetail, PaymentStatus, OrderStatus
 from shop.models import Book
@@ -139,7 +139,9 @@ def success_handler(request):
             current_order = Order.objects.get(stripe_session_id=session_id)
             current_order.payment_status = PaymentStatus.COMPLETED.value
             current_order.save()
+            OrderEmailService(current_order, current_order.owner).send_confirmation_msg()
             return HttpResponse("Payment success")
+
         except Order.DoesNotExist:
             return HttpResponse("Order not found")
     else:

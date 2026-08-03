@@ -889,3 +889,24 @@
 2026-08-03 16:59:16,224 [INFO] stripe: message='Stripe API response' path=https://api.stripe.com/v1/checkout/sessions response_code=200
 2026-08-03 16:59:16,251 [INFO] django.server: "GET /order/stripe/7/ HTTP/1.1" 302 0
 2026-08-03 17:00:01,633 [INFO] django.server: "GET /order/success/?checkout_session=cs_test_a12qnTVSdcZdiZDsR7kck0S9xlafqFxwn1z41KC3I5P5pGn5VaEMWFLamD HTTP/1.1" 200 15
+2026-08-03 17:15:43,164 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 17:15:45,943 [WARNING] django.server: "GET / HTTP/1.1" 404 2755
+2026-08-03 17:15:53,473 [ERROR] django.server: "GET /shop/ HTTP/1.1" 500 150499
+2026-08-03 17:16:49,512 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 17:16:50,526 [WARNING] django.server: "GET / HTTP/1.1" 404 2755
+2026-08-03 17:16:53,999 [ERROR] django.server: "GET /shop/ HTTP/1.1" 500 150499
+2026-08-03 17:19:28,014 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 17:19:28,525 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 17:19:35,019 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6418
+2026-08-03 17:19:37,727 [INFO] django.server: "POST /order/cart/?next=/shop/ HTTP/1.1" 302 0
+2026-08-03 17:19:37,830 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6421
+2026-08-03 17:19:39,062 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 3458
+2026-08-03 17:19:40,847 [INFO] django.server: "GET /order/checkout/ HTTP/1.1" 200 2979
+2026-08-03 17:19:42,030 [INFO] django.server: "POST /order/checkout/ HTTP/1.1" 302 0
+2026-08-03 17:19:42,149 [INFO] stripe: message='Request to Stripe api' method=post url=https://api.stripe.com/v1/checkout/sessions
+2026-08-03 17:19:42,905 [INFO] stripe: message='Stripe API response' path=https://api.stripe.com/v1/checkout/sessions response_code=200
+2026-08-03 17:19:42,932 [INFO] django.server: "GET /order/stripe/8/ HTTP/1.1" 302 0
+2026-08-03 17:20:14,898 [ERROR] django.server: "GET /order/success/?checkout_session=cs_test_a1dukmC1XObiibBxyt4d5H6OeqZtprxRjMdn4PDrDX34i2Y2VoVHTtNhIb HTTP/1.1" 500 83486
+2026-08-03 17:21:20,644 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 17:21:21,200 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 17:21:59,078 [INFO] django.server: "GET /order/success/?checkout_session=cs_test_a1dukmC1XObiibBxyt4d5H6OeqZtprxRjMdn4PDrDX34i2Y2VoVHTtNhIb HTTP/1.1" 200 15
