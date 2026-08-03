@@ -1,13 +1,17 @@
-from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+import os
+
+import stripe
+stripe.api_key = os.environ["STRIPE_SECRET_KEY"]
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.forms import IntegerField, Form
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, redirect
 from django.views import View
-from pip._internal import req
+
 
 from order.cart import Cart
 from order.form import NewOrderForm
-from order.models import Order, OrderDetail
+from order.models import Order, OrderDetail, PaymentStatus
 from shop.models import Book
 from user_management.models import DeliveryData
 
@@ -83,4 +87,48 @@ class OrderChekoutView(LoginRequiredMixin, View):
         new_order.save(commit=True)
 
         request.session.pop("cart")
-        return render(request, "orderchekout.html", {"new_order": new_order})
+        #return render(request, "orderchekout.html", {"new_order": new_order})
+        return redirect('order:stripe_hand')
+
+
+def create_checkout_session(request):
+    try:
+        # Create a new checkout session object
+        session = stripe.checkout.Session.create(
+            payment_method_types=['card'],
+            line_items=[
+                {
+                    'price_data': {
+                        'currency': 'usd',
+                        'product_data': {
+                            'name': 'Premium Subscription T-Shirt',
+                        },
+                        'unit_amount': 2000,  # Amount in cents ($20.00)
+                    },
+                    'quantity': 1,
+                },
+            ],
+            mode='payment',  # Use 'subscription' for recurring payments
+            success_url='http://localhost:8000/?chekout_session={CHECKOUT_SESSION_ID}',
+            cancel_url='http://localhost:8000/?error=epayment_error',
+        )
+
+        # This URL redirects the user to the Stripe-hosted payment form
+        user = request.user
+        currect_order = Order.objects.get(user=user, payment_status = 'pending')
+        currect_order.stripe_session_id = session.id
+        currect_order.save()
+        return redirect(session.url)
+    except Exception as e:
+        return HttpResponse(str(e))
+
+
+def success_handler(request):
+    session_id = request.Get.get('chekout_session')
+    if session_id:
+        currect_order = Order.objects.get(stripe_session_id=session_id)
+        currect_order.payment_status = PaymentStatus.COMPLETED
+        currect_order.save()
+        return HttpResponse("Payment success")
+    else:
+        return HttpResponse("Payment failed")

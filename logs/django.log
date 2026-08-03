@@ -580,3 +580,136 @@
 2026-08-03 12:48:11,574 [INFO] django.server: "POST /order/cart/?next=/order/cart/ HTTP/1.1" 302 0
 2026-08-03 12:48:11,660 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 2714
 2026-08-03 12:48:14,138 [WARNING] django.server: "GET /order/cart/%7Burl%20'order:order_chekout'%20%%7D HTTP/1.1" 404 3574
+2026-08-03 14:04:01,964 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:06:08,043 [INFO] django.utils.autoreload: H:\DjangoHW\bookstoreHW\settings.py changed, reloading.
+2026-08-03 14:06:08,543 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:06:10,424 [WARNING] django.server: "GET / HTTP/1.1" 404 2755
+2026-08-03 14:06:18,775 [WARNING] django.server: "GET /order/ HTTP/1.1" 404 3698
+2026-08-03 14:06:27,659 [INFO] stripe: message='Request to Stripe api' method=post url=https://api.stripe.com/v1/checkout/sessions
+2026-08-03 14:06:28,248 [INFO] stripe: message='Stripe API response' path=https://api.stripe.com/v1/checkout/sessions response_code=400
+2026-08-03 14:06:28,248 [INFO] stripe: error_code=url_invalid error_message='Not a valid URL' error_param=success_url error_type=invalid_request_error message='Stripe v1 API error received'
+2026-08-03 14:06:28,260 [INFO] django.server: "GET /order/stripe/ HTTP/1.1" 200 43
+2026-08-03 14:08:17,010 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 14:08:17,515 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:08:22,167 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 14:08:22,679 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:08:33,628 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 14:08:34,136 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:08:36,713 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 14:08:37,254 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:08:39,794 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 14:08:40,321 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:08:43,961 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 14:08:44,478 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:08:47,079 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 14:08:47,600 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:08:51,476 [INFO] stripe: message='Request to Stripe api' method=post url=https://api.stripe.com/v1/checkout/sessions
+2026-08-03 14:08:52,611 [INFO] stripe: message='Stripe API response' path=https://api.stripe.com/v1/checkout/sessions response_code=200
+2026-08-03 14:08:52,747 [ERROR] django.server: "GET /order/stripe/ HTTP/1.1" 500 73167
+2026-08-03 14:09:52,272 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 14:09:52,818 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:09:58,955 [INFO] stripe: message='Request to Stripe api' method=post url=https://api.stripe.com/v1/checkout/sessions
+2026-08-03 14:09:59,703 [INFO] stripe: message='Stripe API response' path=https://api.stripe.com/v1/checkout/sessions response_code=200
+2026-08-03 14:09:59,722 [INFO] django.server: "GET /order/stripe/ HTTP/1.1" 302 0
+2026-08-03 14:15:05,587 [INFO] django.server: code 400, message Bad request version ('K\xe7')
+2026-08-03 14:15:05,588 [ERROR] django.server: You're accessing the development server over HTTPS, but it only supports HTTP.
+2026-08-03 14:19:08,121 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 14:19:08,646 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:19:10,693 [WARNING] django.server: "GET / HTTP/1.1" 404 2755
+2026-08-03 14:19:19,298 [INFO] stripe: message='Request to Stripe api' method=post url=https://api.stripe.com/v1/checkout/sessions
+2026-08-03 14:19:20,096 [INFO] stripe: message='Stripe API response' path=https://api.stripe.com/v1/checkout/sessions response_code=200
+2026-08-03 14:19:20,109 [INFO] django.server: "GET /order/stripe/ HTTP/1.1" 302 0
+2026-08-03 14:20:29,006 [WARNING] django.server: "GET /?chekout_session=cs_test_a1WIwqoTq8elfJZMWprYRhFFufY797cvPhufIUeN9i4UvXuaS99HXss4US HTTP/1.1" 404 2838
+2026-08-03 14:20:29,163 [WARNING] django.server: "GET /favicon.ico HTTP/1.1" 404 2806
+2026-08-03 14:21:36,321 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 14:21:36,835 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:21:44,637 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 14:21:45,163 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:21:51,896 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 14:21:52,424 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:22:21,067 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 14:22:21,607 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:22:34,188 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 14:22:34,696 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:23:32,615 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 14:23:33,130 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:23:40,896 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 14:23:41,424 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:23:49,221 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 14:23:49,751 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:23:53,383 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 14:23:53,876 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:24:16,271 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 14:24:16,773 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:24:22,105 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 14:24:22,596 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:24:26,910 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 14:24:27,405 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:24:48,746 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 14:24:49,258 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:24:59,753 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 14:25:00,283 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:25:04,921 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 14:25:05,407 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:25:11,094 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 14:25:11,645 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:25:21,515 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 14:25:22,012 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:25:35,010 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 14:25:35,503 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:25:42,243 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 14:25:42,749 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:25:52,596 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 14:25:53,096 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:26:16,557 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 14:26:17,051 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:26:32,717 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 14:26:33,209 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:26:41,630 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 14:26:42,156 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:26:43,358 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 14:26:43,872 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:26:50,612 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 14:26:51,131 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:26:52,669 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 14:26:53,176 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:27:00,961 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 14:27:01,479 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:27:06,132 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 14:27:06,658 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:27:09,935 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 14:27:10,429 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:27:19,253 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 14:27:19,763 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:27:26,499 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 14:27:27,018 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:27:56,112 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 14:27:56,590 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:28:51,308 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 14:28:51,804 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:28:59,585 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 14:29:00,093 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:29:09,930 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 14:29:10,485 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:29:20,370 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 14:29:20,870 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:29:38,619 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 14:29:39,119 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:30:06,735 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 14:30:07,236 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:30:44,215 [INFO] django.utils.autoreload: H:\DjangoHW\order\urls.py changed, reloading.
+2026-08-03 14:30:44,720 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:30:57,710 [INFO] django.utils.autoreload: H:\DjangoHW\order\urls.py changed, reloading.
+2026-08-03 14:30:58,213 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:31:04,940 [INFO] django.utils.autoreload: H:\DjangoHW\order\urls.py changed, reloading.
+2026-08-03 14:31:05,450 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:31:22,617 [INFO] django.utils.autoreload: H:\DjangoHW\order\urls.py changed, reloading.
+2026-08-03 14:31:23,111 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:31:35,808 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 14:31:36,306 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:31:57,305 [INFO] django.utils.autoreload: H:\DjangoHW\order\urls.py changed, reloading.
+2026-08-03 14:31:57,821 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:33:06,137 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 14:33:06,653 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 14:33:30,059 [INFO] django.utils.autoreload: H:\DjangoHW\order\urls.py changed, reloading.
+2026-08-03 14:33:30,574 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
