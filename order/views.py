@@ -62,7 +62,7 @@ class OrderChekoutView(LoginRequiredMixin, View):
     def post(self, request):
         cart_data = request.session.get("cart", {})
         new_order = Order()
-        new_order.user = request.user
+        new_order.owner = request.user
         new_order.save(commit=False)
         books_to_order = Book.objects.filter(pk__in=list(cart_data.keys())).all()
         for book in books_to_order:
@@ -75,5 +75,5 @@ class OrderChekoutView(LoginRequiredMixin, View):
 
         new_order.save(commit=True)
 
-        request.sesssion.pop("cart")
+        request.session.pop("cart")
         return render(request, "orderchekout.html", {"new_order": new_order})
