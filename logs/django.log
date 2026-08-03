@@ -713,3 +713,179 @@
 2026-08-03 14:33:06,653 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
 2026-08-03 14:33:30,059 [INFO] django.utils.autoreload: H:\DjangoHW\order\urls.py changed, reloading.
 2026-08-03 14:33:30,574 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 16:18:54,900 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 16:18:56,352 [WARNING] django.server: "GET / HTTP/1.1" 404 2755
+2026-08-03 16:19:01,985 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6418
+2026-08-03 16:19:04,217 [INFO] django.server: "POST /order/cart/?next=/shop/ HTTP/1.1" 302 0
+2026-08-03 16:19:04,345 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6421
+2026-08-03 16:19:07,108 [INFO] django.server: "POST /order/cart/?next=/shop/ HTTP/1.1" 302 0
+2026-08-03 16:19:07,233 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6421
+2026-08-03 16:19:08,576 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 4287
+2026-08-03 16:19:10,122 [WARNING] django.server: "GET /order/cart/%7Burl%20'order:order_chekout'%20%%7D HTTP/1.1" 404 4110
+2026-08-03 16:19:24,682 [ERROR] django.server: "GET /order/stripe/ HTTP/1.1" 500 68693
+2026-08-03 16:21:14,148 [INFO] django.utils.autoreload: H:\DjangoHW\order\urls.py changed, reloading.
+2026-08-03 16:21:14,664 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 16:21:18,255 [INFO] django.utils.autoreload: H:\DjangoHW\order\urls.py changed, reloading.
+2026-08-03 16:21:18,759 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 16:21:21,100 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 4287
+2026-08-03 16:21:22,497 [WARNING] django.server: "GET /order/cart/%7Burl%20'order:order_chekout'%20%%7D HTTP/1.1" 404 4131
+2026-08-03 16:21:27,955 [WARNING] django.server: "GET /order/cart/stripe HTTP/1.1" 404 4022
+2026-08-03 16:22:47,402 [WARNING] django.server: "GET /order/cart/%7Burl%20'order:order_chekout'%20%%7D HTTP/1.1" 404 4131
+2026-08-03 16:22:56,247 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 16:22:59,600 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 4285
+2026-08-03 16:23:00,858 [WARNING] django.server: "GET /order/cart/%7Burl%20'order:stripe_hand'%20%%7D HTTP/1.1" 404 4125
+2026-08-03 16:24:30,734 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 16:24:33,139 [WARNING] django.server: "GET / HTTP/1.1" 404 2755
+2026-08-03 16:24:39,574 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6421
+2026-08-03 16:24:41,404 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 4294
+2026-08-03 16:24:42,730 [WARNING] django.server: "GET /order/cart/%7Burl%20'order:stripe_hand'%20order.id%20%%7D HTTP/1.1" 404 4154
+2026-08-03 16:24:55,782 [WARNING] django.server: "GET /order/cart/stripe/ HTTP/1.1" 404 4025
+2026-08-03 16:25:03,173 [WARNING] django.server: "GET /order/cart/stripe/1/ HTTP/1.1" 404 4031
+2026-08-03 16:37:18,171 [WARNING] django.server: "GET / HTTP/1.1" 404 2755
+2026-08-03 16:37:22,654 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6421
+2026-08-03 16:37:24,663 [INFO] django.server: "POST /order/cart/?next=/shop/ HTTP/1.1" 302 0
+2026-08-03 16:37:24,779 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6421
+2026-08-03 16:37:25,847 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 4287
+2026-08-03 16:37:39,662 [ERROR] django.server: "GET /order/new_order/ HTTP/1.1" 500 101984
+2026-08-03 16:40:06,501 [WARNING] django.server: "GET /order/cart/%7Burl%20'order:order_chekout'%20%%7D HTTP/1.1" 404 4131
+2026-08-03 16:40:19,001 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 16:40:21,752 [WARNING] django.server: "GET / HTTP/1.1" 404 2755
+2026-08-03 16:40:31,454 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6421
+2026-08-03 16:40:34,044 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 4287
+2026-08-03 16:40:34,362 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 4287
+2026-08-03 16:40:35,313 [WARNING] django.server: "GET /order/cart/%7Burl%20'order:order_chekout'%20%%7D HTTP/1.1" 404 4131
+2026-08-03 16:41:05,800 [INFO] django.utils.autoreload: H:\DjangoHW\order\urls.py changed, reloading.
+2026-08-03 16:41:06,312 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 16:41:08,548 [WARNING] django.server: "GET /order/cart/%7Burl%20'order:order_chekout'%20%%7D HTTP/1.1" 404 4132
+2026-08-03 16:41:49,765 [INFO] django.utils.autoreload: H:\DjangoHW\order\urls.py changed, reloading.
+2026-08-03 16:41:50,263 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 16:41:53,491 [WARNING] django.server: "GET /order/cart/%7Burl%20'order:order_chekout'%20%%7D HTTP/1.1" 404 4136
+2026-08-03 16:41:58,447 [WARNING] django.server: "GET /order/cart/%7Burl%20'order:order_chekout'%20%%7D HTTP/1.1" 404 4136
+2026-08-03 16:42:11,055 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 16:42:12,515 [WARNING] django.server: "GET / HTTP/1.1" 404 2755
+2026-08-03 16:42:38,857 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6421
+2026-08-03 16:42:40,504 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 4289
+2026-08-03 16:42:45,125 [INFO] django.server: "POST /order/cart/?next=/order/cart/ HTTP/1.1" 302 0
+2026-08-03 16:42:45,253 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 4289
+2026-08-03 16:42:46,881 [WARNING] django.server: "GET /order/cart/%7Burl%20'order:order_checkout'%20%%7D HTTP/1.1" 404 4139
+2026-08-03 16:44:13,130 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 16:44:14,874 [WARNING] django.server: "GET / HTTP/1.1" 404 2755
+2026-08-03 16:44:20,936 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6421
+2026-08-03 16:44:22,527 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 4273
+2026-08-03 16:44:23,888 [ERROR] django.server: "GET /order/checkout/ HTTP/1.1" 500 217567
+2026-08-03 16:44:44,598 [INFO] django.server: "GET /order/checkout/ HTTP/1.1" 200 3007
+2026-08-03 16:45:14,892 [WARNING] django.server: "GET / HTTP/1.1" 404 2755
+2026-08-03 16:45:18,556 [INFO] django.server: "GET /admin/ HTTP/1.1" 200 11749
+2026-08-03 16:45:18,739 [INFO] django.server: "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+2026-08-03 16:45:18,741 [INFO] django.server: "GET /static/admin/css/responsive.css HTTP/1.1" 200 16273
+2026-08-03 16:45:18,745 [INFO] django.server: "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 3538
+2026-08-03 16:45:18,752 [INFO] django.server: "GET /static/admin/css/base.css HTTP/1.1" 200 23100
+2026-08-03 16:45:18,894 [INFO] django.server: "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+2026-08-03 16:45:18,900 [INFO] django.server: "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+2026-08-03 16:45:18,901 [INFO] django.server: "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+2026-08-03 16:45:18,902 [INFO] django.server: "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 593
+2026-08-03 16:45:18,902 [INFO] django.server: "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 978
+2026-08-03 16:45:24,169 [INFO] django.server: "GET /admin/user_management/deliverydata/ HTTP/1.1" 200 12132
+2026-08-03 16:45:24,226 [INFO] django.server: "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+2026-08-03 16:45:24,227 [INFO] django.server: "GET /static/admin/css/changelists.css HTTP/1.1" 200 7498
+2026-08-03 16:45:24,227 [INFO] django.server: "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9777
+2026-08-03 16:45:24,227 [INFO] django.server: "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+2026-08-03 16:45:24,229 [INFO] django.server: "GET /static/admin/js/actions.js HTTP/1.1" 200 8077
+2026-08-03 16:45:24,230 [INFO] django.server: "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+2026-08-03 16:45:24,231 [INFO] django.server: "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+2026-08-03 16:45:24,231 [INFO] django.server: "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+2026-08-03 16:45:24,232 [INFO] django.server: "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+2026-08-03 16:45:24,233 [INFO] django.server: "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+2026-08-03 16:45:24,248 [WARNING] silk.model_factory: Response to request with pk 6a491e67-bb40-4837-8a51-26314d6e97c0 has content type text/javascript but was unable to parse it
+2026-08-03 16:45:24,309 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2026-08-03 16:45:24,327 [INFO] django.server: "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 593
+2026-08-03 16:45:25,796 [INFO] django.server: "GET /admin/user_management/deliverydata/add/ HTTP/1.1" 200 15732
+2026-08-03 16:45:25,861 [INFO] django.server: "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+2026-08-03 16:45:25,861 [INFO] django.server: "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+2026-08-03 16:45:25,861 [INFO] django.server: "GET /static/admin/css/forms.css HTTP/1.1" 200 8831
+2026-08-03 16:45:25,883 [WARNING] silk.model_factory: Response to request with pk 7d51dca2-11b1-4e69-8257-f2c3e9ae1ed3 has content type text/javascript but was unable to parse it
+2026-08-03 16:45:25,920 [INFO] django.server: "GET /static/admin/css/widgets.css HTTP/1.1" 200 11811
+2026-08-03 16:45:25,944 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2026-08-03 16:45:33,832 [INFO] django.server: "POST /admin/user_management/deliverydata/add/ HTTP/1.1" 302 0
+2026-08-03 16:45:33,988 [INFO] django.server: "GET /admin/user_management/deliverydata/ HTTP/1.1" 200 13690
+2026-08-03 16:45:34,103 [WARNING] silk.model_factory: Response to request with pk a40d97b7-27f8-40f3-aedb-bce6a5a142ff has content type text/javascript but was unable to parse it
+2026-08-03 16:45:34,163 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+2026-08-03 16:45:34,181 [INFO] django.server: "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 558
+2026-08-03 16:45:36,963 [INFO] django.server: "GET /order/checkout/ HTTP/1.1" 200 3063
+2026-08-03 16:45:39,191 [ERROR] django.server: "POST /order/checkout/ HTTP/1.1" 500 169459
+2026-08-03 16:47:26,408 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 16:47:26,947 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 16:47:32,634 [WARNING] django.server: "GET / HTTP/1.1" 404 2755
+2026-08-03 16:47:41,590 [INFO] django.server: "POST /order/checkout/ HTTP/1.1" 302 0
+2026-08-03 16:47:41,710 [INFO] stripe: message='Request to Stripe api' method=post url=https://api.stripe.com/v1/checkout/sessions
+2026-08-03 16:47:42,637 [INFO] stripe: message='Stripe API response' path=https://api.stripe.com/v1/checkout/sessions response_code=200
+2026-08-03 16:47:42,659 [INFO] django.server: "GET /order/stripe/2/ HTTP/1.1" 200 124
+2026-08-03 16:47:49,694 [INFO] django.server: "GET /order/checkout/ HTTP/1.1" 200 2893
+2026-08-03 16:47:54,281 [INFO] django.server: "POST /order/checkout/ HTTP/1.1" 302 0
+2026-08-03 16:47:54,303 [INFO] stripe: message='Request to Stripe api' method=post url=https://api.stripe.com/v1/checkout/sessions
+2026-08-03 16:47:54,546 [INFO] stripe: message='Stripe API response' path=https://api.stripe.com/v1/checkout/sessions response_code=400
+2026-08-03 16:47:54,546 [INFO] stripe: error_code=None error_message='The `line_items` parameter is required in payment mode.' error_param=None error_type=invalid_request_error message='Stripe v1 API error received'
+2026-08-03 16:47:54,566 [INFO] django.server: "GET /order/stripe/3/ HTTP/1.1" 200 83
+2026-08-03 16:49:09,163 [INFO] django.server: "POST /order/cart/?next=/order/cart/ HTTP/1.1" 302 0
+2026-08-03 16:49:09,250 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 2700
+2026-08-03 16:49:32,438 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6418
+2026-08-03 16:49:32,721 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6418
+2026-08-03 16:49:37,678 [INFO] django.server: "POST /order/cart/?next=/shop/ HTTP/1.1" 302 0
+2026-08-03 16:49:37,785 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6421
+2026-08-03 16:49:39,589 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 3458
+2026-08-03 16:49:41,217 [INFO] django.server: "GET /order/checkout/ HTTP/1.1" 200 2979
+2026-08-03 16:49:43,539 [INFO] django.server: "POST /order/checkout/ HTTP/1.1" 302 0
+2026-08-03 16:49:43,582 [INFO] stripe: message='Request to Stripe api' method=post url=https://api.stripe.com/v1/checkout/sessions
+2026-08-03 16:49:44,370 [INFO] stripe: message='Stripe API response' path=https://api.stripe.com/v1/checkout/sessions response_code=200
+2026-08-03 16:49:44,388 [INFO] django.server: "GET /order/stripe/4/ HTTP/1.1" 200 124
+2026-08-03 16:51:24,261 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 16:51:25,762 [WARNING] django.server: "GET / HTTP/1.1" 404 2755
+2026-08-03 16:51:33,204 [INFO] stripe: message='Request to Stripe api' method=post url=https://api.stripe.com/v1/checkout/sessions
+2026-08-03 16:51:34,041 [INFO] stripe: message='Stripe API response' path=https://api.stripe.com/v1/checkout/sessions response_code=200
+2026-08-03 16:51:34,072 [INFO] django.server: "GET /order/stripe/4/ HTTP/1.1" 302 0
+2026-08-03 16:52:30,201 [WARNING] django.server: "GET /order/sucess/?chekout_session=cs_test_a1jbnydk3GS24mOxnd1RgN410b3oxskZCmUhKrE2LeKnOVZx6IpmmdLpsO HTTP/1.1" 404 4098
+2026-08-03 16:53:25,879 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 16:53:26,404 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 16:53:34,167 [WARNING] django.server: "GET /order/sucess/?chekout_session=cs_test_a1jbnydk3GS24mOxnd1RgN410b3oxskZCmUhKrE2LeKnOVZx6IpmmdLpsO HTTP/1.1" 404 4098
+2026-08-03 16:53:47,369 [ERROR] django.server: "GET /order/success/?chekout_session=cs_test_a1jbnydk3GS24mOxnd1RgN410b3oxskZCmUhKrE2LeKnOVZx6IpmmdLpsO HTTP/1.1" 500 73690
+2026-08-03 16:54:21,698 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 16:54:22,230 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 16:54:41,204 [INFO] django.server: "GET /order/success/?chekout_session=cs_test_a1jbnydk3GS24mOxnd1RgN410b3oxskZCmUhKrE2LeKnOVZx6IpmmdLpsO HTTP/1.1" 200 14
+2026-08-03 16:54:56,317 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6418
+2026-08-03 16:55:00,711 [INFO] django.server: "POST /order/cart/?next=/shop/ HTTP/1.1" 302 0
+2026-08-03 16:55:00,828 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6421
+2026-08-03 16:55:01,851 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 3458
+2026-08-03 16:55:03,930 [INFO] django.server: "GET /order/checkout/ HTTP/1.1" 200 2979
+2026-08-03 16:55:04,823 [INFO] django.server: "POST /order/checkout/ HTTP/1.1" 302 0
+2026-08-03 16:55:04,945 [INFO] stripe: message='Request to Stripe api' method=post url=https://api.stripe.com/v1/checkout/sessions
+2026-08-03 16:55:05,745 [INFO] stripe: message='Stripe API response' path=https://api.stripe.com/v1/checkout/sessions response_code=200
+2026-08-03 16:55:05,772 [INFO] django.server: "GET /order/stripe/5/ HTTP/1.1" 302 0
+2026-08-03 16:55:34,302 [INFO] django.server: "GET /order/success/?chekout_session=cs_test_a1t7AmGFsK44p6DAbxHg4onfSskG6EX3g1REyhbCgu6RSS3H7Rp02SKBfd HTTP/1.1" 200 14
+2026-08-03 16:56:57,086 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 16:56:57,642 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 16:57:27,992 [INFO] django.utils.autoreload: H:\DjangoHW\order\urls.py changed, reloading.
+2026-08-03 16:57:28,524 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 16:57:41,835 [WARNING] django.server: "GET / HTTP/1.1" 404 2755
+2026-08-03 16:57:48,198 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6418
+2026-08-03 16:57:51,220 [INFO] django.server: "POST /order/cart/?next=/shop/ HTTP/1.1" 302 0
+2026-08-03 16:57:51,329 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6421
+2026-08-03 16:57:52,220 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 3458
+2026-08-03 16:57:53,514 [INFO] django.server: "GET /order/checkout/ HTTP/1.1" 200 2979
+2026-08-03 16:58:02,233 [INFO] django.server: "POST /order/checkout/ HTTP/1.1" 302 0
+2026-08-03 16:58:02,320 [INFO] stripe: message='Request to Stripe api' method=post url=https://api.stripe.com/v1/checkout/sessions
+2026-08-03 16:58:03,205 [INFO] stripe: message='Stripe API response' path=https://api.stripe.com/v1/checkout/sessions response_code=200
+2026-08-03 16:58:03,232 [INFO] django.server: "GET /order/stripe/6/ HTTP/1.1" 302 0
+2026-08-03 16:58:36,800 [INFO] django.server: "GET /order/success/?chekout_session=cs_test_a1UBz0r337ADpdfeyg79EG0lNkf0ZiwPxDz12G4Ferapjt315i5L8v47d9 HTTP/1.1" 200 14
+2026-08-03 16:58:57,755 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 16:58:58,283 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 16:59:01,163 [WARNING] django.server: "GET / HTTP/1.1" 404 2755
+2026-08-03 16:59:06,986 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6418
+2026-08-03 16:59:09,688 [INFO] django.server: "POST /order/cart/?next=/shop/ HTTP/1.1" 302 0
+2026-08-03 16:59:09,797 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6421
+2026-08-03 16:59:10,996 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 3458
+2026-08-03 16:59:13,986 [INFO] django.server: "GET /order/checkout/ HTTP/1.1" 200 2979
+2026-08-03 16:59:15,276 [INFO] django.server: "POST /order/checkout/ HTTP/1.1" 302 0
+2026-08-03 16:59:15,387 [INFO] stripe: message='Request to Stripe api' method=post url=https://api.stripe.com/v1/checkout/sessions
+2026-08-03 16:59:16,224 [INFO] stripe: message='Stripe API response' path=https://api.stripe.com/v1/checkout/sessions response_code=200
+2026-08-03 16:59:16,251 [INFO] django.server: "GET /order/stripe/7/ HTTP/1.1" 302 0
+2026-08-03 17:00:01,633 [INFO] django.server: "GET /order/success/?checkout_session=cs_test_a12qnTVSdcZdiZDsR7kck0S9xlafqFxwn1z41KC3I5P5pGn5VaEMWFLamD HTTP/1.1" 200 15

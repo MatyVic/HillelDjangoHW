@@ -91,6 +91,7 @@ class OrderChekoutView(LoginRequiredMixin, View):
                 new_order_detail.order = new_order
                 new_order_detail.book = book
                 new_order_detail.amount = cart_data[str(book.id)]
+                new_order_detail.price = book.price
                 new_order_detail.save()
             new_order.save(update_fields=["total_price"])
 
@@ -120,7 +121,7 @@ def create_checkout_session(request, order_id):
             payment_method_types=['card'],
             line_items=line_items,
             mode='payment',
-            success_url='http://localhost:8000/order/sucess/?chekout_session={CHECKOUT_SESSION_ID}',
+            success_url='http://localhost:8000/order/success/?checkout_session={CHECKOUT_SESSION_ID}',
             cancel_url='http://localhost:8000/order/error/?error=epayment_error',
         )
 
@@ -131,12 +132,15 @@ def create_checkout_session(request, order_id):
         return HttpResponse(str(e))
 
 
-def sucess_handler(request):
-    session_id = request.Get.get('chekout_session')
+def success_handler(request):
+    session_id = request.GET.get('checkout_session')  # правильна назва
     if session_id:
-        currect_order = Order.objects.get(stripe_session_id=session_id)
-        currect_order.payment_status = PaymentStatus.COMPLETED.value
-        currect_order.save()
-        return HttpResponse("Payment success")
+        try:
+            current_order = Order.objects.get(stripe_session_id=session_id)
+            current_order.payment_status = PaymentStatus.COMPLETED.value
+            current_order.save()
+            return HttpResponse("Payment success")
+        except Order.DoesNotExist:
+            return HttpResponse("Order not found")
     else:
         return HttpResponse("Payment failed")

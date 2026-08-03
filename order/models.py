@@ -39,3 +39,4 @@ class Order(models.Model):
     order_status = models.CharField(max_length=20)
     payment_status = models.CharField(max_length=20)
     ttn = models.CharField(max_length=50)
+    stripe_session_id = models.CharField(max_length=255, blank=True, null=True)

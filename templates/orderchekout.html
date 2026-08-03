@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Оформлення замовлення</h2>
+
+<form method="post">
+    {% csrf_token %}
+
+    <!-- Вибір адреси доставки -->
+    <label for="delivery_address">Адреса доставки:</label>
+    <select name="delivery_address" id="delivery_address" required>
+        {% for address in delivery_adreses %}
+            <option value="{{ address.id }}">{{ address.city }}, {{ address.street }} {{ address.house }}</option>
+        {% endfor %}
+    </select>
+
+    <!-- Список книг у кошику -->
+    <h3>Ваше замовлення:</h3>
+    <ul>
+        {% for book in cart_books %}
+            <li>
+                {{ book.title }} — {{ book.price }} грн
+            </li>
+        {% endfor %}
+    </ul>
+
+    <button type="submit">Підтвердити замовлення</button>
+</form>
+{% endblock %}
