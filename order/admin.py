@@ -1,9 +1,16 @@
 from django.contrib import admin
+from django.contrib.admin import TabularInline
 
 from order.models import Order, OrderDetail
 
+
+class OrderDetailAdmin(TabularInline):
+    model = OrderDetail
+    extra = 0
+
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
+    inlines = [OrderDetailAdmin]
     list_display = ('owner', 'created_at', 'delivery_address',
                     'order_status', 'payment_status', 'ttn', 'total_price')
     list_filter = ('owner', 'created_at', 'delivery_address', 'order_status', 'payment_status')
@@ -20,18 +27,5 @@ class OrderAdmin(admin.ModelAdmin):
                      'total_price',)}),
     )
 
-@admin.register(OrderDetail)
-class OrderDetailAdmin(admin.ModelAdmin):
-    list_display = ('order', 'book', 'price', 'amount')
-    list_filter = ('order', 'book')
-    search_fields = ('order', 'book')
 
-    fieldsets = (
-        (None, {"fields":
-                    ('order',
-                     'book',
-                     'price',
-                     'amount',
-                     )}),
-    )
 

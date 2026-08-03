@@ -36,7 +36,14 @@
             {% endfor %}
 
             | Price: {{ book.price }}
-        </li>
+
+            <form method="post" action ="{% url 'add_to_cart' %}?next={{ request.path }}">
+            {% csrf_token %}
+            <input type = "hidden" name="book_id" value="{{ object.id }}">
+            <input type = "number" name="quantity" value = "1">
+            <button type="submit">Add to cart</button>
+            </form>
+            </li>
     {% empty %}
         <li class="list-group-item">Немає книг</li>
     {% endfor %}
