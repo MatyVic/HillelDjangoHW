@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Book list{% endblock %}
+{% block content %}
+
+<ul class="list-group">
+    {% for book in сart_data %}
+        <li class="list-group-item">
+            <a href="{% url 'shop:book' book_id=book.id %}">{{ book.title }}</a>
+            —
+            <!-- Authors -->
+            {% for author in book.author.all %}
+                {{ author }}{% if not forloop.last %}, {% endif %}
+            {% empty %}
+                No authors
+            {% endfor %}
+
+            <!-- Categories -->
+            | Categories:
+            {% for category in book.category.all %}
+                {{ category }}{% if not forloop.last %}, {% endif %}
+            {% empty %}
+                No categories
+            {% endfor %}
+
+            | Price: {{ book.price }}
+            | Quantity: {{book.quantity}}
+
+            </li>
+    {% empty %}
+        <li class="list-group-item">Немає книг</li>
+    {% endfor %}
+</ul>
+
+
+{% endblock %}

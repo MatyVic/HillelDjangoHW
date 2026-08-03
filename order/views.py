@@ -35,7 +35,7 @@ class CartView(LoginRequiredMixin, View):
     def get(self, request):
         cart_data = request.session.get("cart", {})
         for book in cart_data:
-            book.quantity = cart_data[book.book_id]
+            book.amount = cart_data[book.book_id]
         return render(request, "cart.html", {"cart_data": cart_data})
 
     def post(self, request):
@@ -43,5 +43,5 @@ class CartView(LoginRequiredMixin, View):
         cart_data = request.session.get("cart")
         if cart_data is None:
             request.session["cart"] = {}
-        request.session["cart"].update({form_data["book_id"]: int(form_data["quantity"])})
+        request.session["cart"].update({form_data["book_id"]: int(form_data["amount"])})
         return redirect(request.args.get("next"))
