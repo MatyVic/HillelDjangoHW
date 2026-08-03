@@ -6,7 +6,10 @@ from django.views import View
 from pip._internal import req
 
 from order.form import NewOrderForm
+from order.models import Order, OrderDetail
 from shop.models import Book
+from user_management.models import DeliveryData
+
 
 class AddBookForm(Form):
     book_id = IntegerField()
@@ -44,4 +47,33 @@ class CartView(LoginRequiredMixin, View):
         if cart_data is None:
             request.session["cart"] = {}
         request.session["cart"].update({form_data["book_id"]: int(form_data["amount"])})
-        return redirect(request.args.get("next"))
+        return redirect(request.GET.get("next"))
+
+
+class OrderChekoutView(LoginRequiredMixin, View):
+
+    def get(self, request):
+        cart_data = request.session.get("cart", {})
+        books_to_order = Book.objects.filter(pk__in=list(cart_data.keys())).all()
+        delivery_adreses = DeliveryData.objects.filter(owner=request.user)
+
+        return render(request, "orderchekout.html", {'delivery_adreses': delivery_adreses, 'cart_books': books_to_order})
+
+    def post(self, request):
+        cart_data = request.session.get("cart", {})
+        new_order = Order()
+        new_order.user = request.user
+        new_order.save(commit=False)
+        books_to_order = Book.objects.filter(pk__in=list(cart_data.keys())).all()
+        for book in books_to_order:
+            new_order.total_price += book.price * cart_data[str(book.id)]
+            new_order_detail = OrderDetail()
+            new_order_detail.order = new_order
+            new_order_detail.book = book
+            new_order_detail.amount = cart_data[str(book.id)]
+            new_order_detail.save()
+
+        new_order.save(commit=True)
+
+        request.sesssion.pop("cart")
+        return render(request, "orderchekout.html", {"new_order": new_order})

@@ -28,7 +28,7 @@
     <p><strong>Published:</strong> {{ object.published_year }}</p>
     <p><strong>Price:</strong> {{ object.price }}</p>
     <p><strong>Rating:</strong> {{ object.calculated_rating }}</p>
-    <form method="post" action ="{% url 'add_to_cart' %}?next={{ request.path }}">
+    <form method="post" action ="{% url 'order:cart' %}?next={{ request.path }}">
         {% csrf_token %}
         <input type = "hidden" name="book_id" value="{{ object.id }}">
         <input type = "number" name="amount" value = "1">

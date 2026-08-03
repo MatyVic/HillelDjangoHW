@@ -37,7 +37,7 @@
 
             | Price: {{ book.price }}
 
-            <form method="post" action ="{% url 'add_to_cart' %}?next={{ request.path }}">
+            <form method="post" action ="{% url 'order:cart' %}?next={{ request.path }}">
             {% csrf_token %}
             <input type = "hidden" name="book_id" value="{{ object.id }}">
             <input type = "number" name="amount" value = "1">
