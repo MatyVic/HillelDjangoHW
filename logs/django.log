@@ -478,3 +478,105 @@
 2026-08-03 12:26:02,230 [INFO] django.server: "POST /order/cart/?next=/shop/ HTTP/1.1" 302 0
 2026-08-03 12:26:02,342 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6422
 2026-08-03 12:26:03,417 [ERROR] django.server: "GET /order/cart/ HTTP/1.1" 500 86178
+2026-08-03 12:30:01,803 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 12:30:03,085 [WARNING] django.server: "GET / HTTP/1.1" 404 2755
+2026-08-03 12:30:10,135 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6421
+2026-08-03 12:30:13,186 [INFO] django.server: "POST /order/cart/?next=/shop/ HTTP/1.1" 302 0
+2026-08-03 12:30:13,315 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6421
+2026-08-03 12:30:15,446 [INFO] django.server: "POST /order/cart/?next=/shop/ HTTP/1.1" 302 0
+2026-08-03 12:30:15,566 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6418
+2026-08-03 12:30:18,969 [INFO] django.server: "POST /order/cart/?next=/shop/ HTTP/1.1" 302 0
+2026-08-03 12:30:19,082 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6421
+2026-08-03 12:30:21,974 [INFO] django.server: "POST /order/cart/?next=/shop/ HTTP/1.1" 302 0
+2026-08-03 12:30:22,078 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6421
+2026-08-03 12:30:24,065 [INFO] django.server: "POST /order/cart/?next=/shop/ HTTP/1.1" 302 0
+2026-08-03 12:30:24,195 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6421
+2026-08-03 12:30:25,577 [INFO] django.server: "POST /order/cart/?next=/shop/ HTTP/1.1" 302 0
+2026-08-03 12:30:25,694 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6418
+2026-08-03 12:30:34,470 [INFO] django.server: "POST /order/cart/?next=/shop/ HTTP/1.1" 302 0
+2026-08-03 12:30:34,590 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6421
+2026-08-03 12:30:34,914 [INFO] django.server: "POST /order/cart/?next=/shop/ HTTP/1.1" 302 0
+2026-08-03 12:30:35,042 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6421
+2026-08-03 12:30:35,349 [INFO] django.server: "POST /order/cart/?next=/shop/ HTTP/1.1" 302 0
+2026-08-03 12:30:35,466 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6421
+2026-08-03 12:30:36,042 [INFO] django.server: "POST /order/cart/?next=/shop/ HTTP/1.1" 302 0
+2026-08-03 12:30:36,165 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6421
+2026-08-03 12:30:38,129 [ERROR] django.server: "GET /order/cart/ HTTP/1.1" 500 86232
+2026-08-03 12:32:47,962 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 12:32:48,483 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 12:32:50,174 [WARNING] django.server: "GET / HTTP/1.1" 404 2755
+2026-08-03 12:32:54,600 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6421
+2026-08-03 12:32:56,184 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 2364
+2026-08-03 12:33:00,166 [WARNING] django.server: "GET /order/cart/%7Burl%20'order:order_chekout'%20%%7D HTTP/1.1" 404 3574
+2026-08-03 12:33:57,278 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 3791
+2026-08-03 12:34:21,749 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 3795
+2026-08-03 12:35:10,318 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 5583
+2026-08-03 12:35:30,393 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 5591
+2026-08-03 12:35:49,881 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 5591
+2026-08-03 12:36:56,406 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 5583
+2026-08-03 12:37:00,132 [INFO] django.server: "POST /order/cart/?next=/order/cart/ HTTP/1.1" 302 0
+2026-08-03 12:37:00,238 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 4754
+2026-08-03 12:39:09,177 [INFO] django.utils.autoreload: H:\DjangoHW\order\cart.py changed, reloading.
+2026-08-03 12:39:09,720 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 12:39:39,760 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 12:39:40,141 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 4754
+2026-08-03 12:39:44,000 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6421
+2026-08-03 12:39:49,494 [INFO] django.server: "POST /order/cart/?next=/shop/ HTTP/1.1" 302 0
+2026-08-03 12:39:49,606 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6421
+2026-08-03 12:39:50,976 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 4754
+2026-08-03 12:39:55,449 [INFO] django.server: "POST /order/cart/?next=/order/cart/ HTTP/1.1" 302 0
+2026-08-03 12:39:55,570 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 3934
+2026-08-03 12:40:02,745 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 3934
+2026-08-03 12:40:12,043 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 12:40:13,579 [WARNING] django.server: "GET / HTTP/1.1" 404 2755
+2026-08-03 12:40:19,860 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6421
+2026-08-03 12:40:23,358 [INFO] django.server: "POST /order/cart/?next=/shop/ HTTP/1.1" 302 0
+2026-08-03 12:40:23,505 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6421
+2026-08-03 12:40:24,752 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 3934
+2026-08-03 12:40:28,185 [INFO] django.server: "POST /order/cart/?next=/order/cart/ HTTP/1.1" 302 0
+2026-08-03 12:40:28,308 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 3113
+2026-08-03 12:41:01,208 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-03 12:41:01,725 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 12:41:07,376 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6421
+2026-08-03 12:41:12,983 [INFO] django.server: "POST /order/cart/?next=/shop/ HTTP/1.1" 302 0
+2026-08-03 12:41:13,092 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6421
+2026-08-03 12:41:14,726 [INFO] django.server: "POST /order/cart/?next=/shop/ HTTP/1.1" 302 0
+2026-08-03 12:41:14,839 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6421
+2026-08-03 12:41:16,114 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 4754
+2026-08-03 12:41:18,498 [INFO] django.server: "POST /order/cart/?next=/order/cart/ HTTP/1.1" 302 0
+2026-08-03 12:41:18,604 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 4754
+2026-08-03 12:41:21,066 [INFO] django.server: "POST /order/cart/?next=/order/cart/ HTTP/1.1" 302 0
+2026-08-03 12:41:21,151 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 4754
+2026-08-03 12:42:07,964 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 4863
+2026-08-03 12:42:08,961 [INFO] django.server: "POST /order/cart/?next=/order/cart/ HTTP/1.1" 302 0
+2026-08-03 12:42:09,047 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 2757
+2026-08-03 12:43:05,616 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 2788
+2026-08-03 12:43:09,658 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6418
+2026-08-03 12:43:11,538 [INFO] django.server: "POST /order/cart/?next=/shop/ HTTP/1.1" 302 0
+2026-08-03 12:43:11,646 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6421
+2026-08-03 12:43:12,211 [INFO] django.server: "POST /order/cart/?next=/shop/ HTTP/1.1" 302 0
+2026-08-03 12:43:12,333 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6421
+2026-08-03 12:43:12,778 [INFO] django.server: "POST /order/cart/?next=/shop/ HTTP/1.1" 302 0
+2026-08-03 12:43:12,902 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6421
+2026-08-03 12:43:13,421 [INFO] django.server: "POST /order/cart/?next=/shop/ HTTP/1.1" 302 0
+2026-08-03 12:43:13,545 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6421
+2026-08-03 12:43:14,457 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 5626
+2026-08-03 12:46:26,852 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 5605
+2026-08-03 12:46:33,422 [INFO] django.server: "POST /order/cart/?next=/order/cart/ HTTP/1.1" 302 0
+2026-08-03 12:46:33,510 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 2767
+2026-08-03 12:46:35,409 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 2767
+2026-08-03 12:46:38,135 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6418
+2026-08-03 12:46:40,954 [INFO] django.server: "POST /order/cart/?next=/shop/ HTTP/1.1" 302 0
+2026-08-03 12:46:41,081 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6421
+2026-08-03 12:46:41,457 [INFO] django.server: "POST /order/cart/?next=/shop/ HTTP/1.1" 302 0
+2026-08-03 12:46:41,571 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6421
+2026-08-03 12:46:42,376 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 4155
+2026-08-03 12:46:44,156 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 4155
+2026-08-03 12:46:46,003 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 4155
+2026-08-03 12:46:59,901 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 4176
+2026-08-03 12:47:00,923 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 4176
+2026-08-03 12:47:02,032 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 4176
+2026-08-03 12:48:09,094 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 4292
+2026-08-03 12:48:11,574 [INFO] django.server: "POST /order/cart/?next=/order/cart/ HTTP/1.1" 302 0
+2026-08-03 12:48:11,660 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 2714
+2026-08-03 12:48:14,138 [WARNING] django.server: "GET /order/cart/%7Burl%20'order:order_chekout'%20%%7D HTTP/1.1" 404 3574

@@ -37,17 +37,18 @@ class NewOrderView(LoginRequiredMixin, View):
 class CartView(LoginRequiredMixin, View):
 
     def get(self, request):
-        cart_data = Cart(request).cart_data
-        for book in cart_data:
-            book.amount = cart_data[str(book.book_id)]
-        return render(request, "cart.html", {"cart_data": cart_data})
+        cart = Cart(request)
+        books = Book.objects.filter(pk__in=cart.cart_data.keys())
+        for book in books:
+            book.amount = cart.cart_data[str(book.id)]
+        return render(request, "cart.html", {"cart_data": books})
 
     def post(self, request):
         form_data = request.POST
         cart = Cart(request)
 
         if "remove" in form_data:
-            cart.remove_book(form_data["book_id"])
+            cart.remove_book(form_data["book_id"], form_data.get("quantity"))
         elif "clear" in form_data:
             cart.clear_cart()
         else:

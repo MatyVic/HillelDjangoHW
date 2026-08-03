@@ -328,3 +328,21 @@ Traceback (most recent call last):
     book.amount = cart_data[str(book.book_id)]
                                 ^^^^^^^^^^^^
 AttributeError: 'str' object has no attribute 'book_id'
+2026-08-03 12:30:38,066 [ERROR] django.request: Internal Server Error: /order/cart/
+Traceback (most recent call last):
+  File "H:\DjangoHW\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "H:\DjangoHW\venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "H:\DjangoHW\venv\Lib\site-packages\django\views\generic\base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 74, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\django\views\generic\base.py", line 145, in dispatch
+    return handler(request, *args, **kwargs)
+  File "H:\DjangoHW\order\views.py", line 42, in get
+    book.amount = cart_data[str(book.book_id)]
+                                ^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'book_id'

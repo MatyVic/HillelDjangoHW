@@ -3,7 +3,7 @@
 {% block content %}
 
 <ul class="list-group">
-    {% for book in сart_data %}
+    {% for book in cart_data %}
         <li class="list-group-item">
             <a href="{% url 'shop:book' book_id=book.id %}">{{ book.title }}</a>
             —
@@ -23,7 +23,15 @@
             {% endfor %}
 
             | Price: {{ book.price }}
-            | Quantity: {{book.quantity}}
+            | Quantity: {{book.amount}}
+
+             <form method="post" action="{% url 'order:cart' %}?next={{ request.path }}">
+                {% csrf_token %}
+                <input type="hidden" name="book_id" value="{{ book.id }}">
+                <input type="number" name="quantity" value="{{ book.amount }}" min="1">
+                <button type="submit" name="remove" value="1">Remove</button>
+            </form>
+
 
             </li>
     {% empty %}
@@ -31,5 +39,11 @@
     {% endfor %}
 </ul>
 
-<a href = "{url 'order:order_chekout' %}"> Chekout </a>
+<a href="{url 'order:order_chekout' %}"> Chekout </a>
+<form method="post" action="{% url 'order:cart' %}?next={{ request.path }}" class="d-inline">
+    {% csrf_token %}
+    <input type="hidden" name="clear" value="1">
+    <button type="submit" class="nav-link btn btn-link">Очистити кошик</button>
+</form>
+
 {% endblock %}
