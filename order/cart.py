@@ -6,13 +6,14 @@ class Cart:
         self.request = request
         self.cart_data = request.session.get("cart", {})
 
-    def add(self):
-        pass
+    def add_book(self, book_id, amount):
+        self.request.session["cart"].update({book_id: int(amount)})
 
 
-    def remove(self):
-        pass
+    def remove_book(self, book_id):
+        self.request.session["cart"].pop(book_id)
+        self.request.session.modified = True
 
 
-    def clear(self):
+    def clear_cart(self):
         pass

@@ -5,6 +5,7 @@ from django.shortcuts import render, redirect
 from django.views import View
 from pip._internal import req
 
+from order.cart import Cart
 from order.form import NewOrderForm
 from order.models import Order, OrderDetail
 from shop.models import Book
@@ -43,10 +44,7 @@ class CartView(LoginRequiredMixin, View):
 
     def post(self, request):
         form_data = request.POST
-        cart_data = request.session.get("cart")
-        if cart_data is None:
-            request.session["cart"] = {}
-        request.session["cart"].update({form_data["book_id"]: int(form_data["amount"])})
+        Cart(request).add_book(form_data["book_id"], form_data["quantity"])
         return redirect(request.GET.get("next"))
 
 
