@@ -1,6 +1,6 @@
 from django.urls import path
 
-from order.views import NewOrderView, CartView, OrderChekoutView, create_checkout_session, success_handler
+from order.views import NewOrderView, CartView, OrderChekoutView, create_checkout_session, sucess_handler
 
 app_name = "order"
 
@@ -9,5 +9,5 @@ urlpatterns = [
     path("cart/", CartView.as_view(), name="cart"),
     path("cart/", OrderChekoutView.as_view(), name="order_chekout"),
     path("stripe/", create_checkout_session, name="stripe_hand"),
-    path("success/", success_handler, name="stripe_success"),
+    path("success/", sucess_handler, name="stripe_success"),
 ]

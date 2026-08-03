@@ -109,8 +109,8 @@ def create_checkout_session(request):
                 },
             ],
             mode='payment',  # Use 'subscription' for recurring payments
-            success_url='http://localhost:8000/?chekout_session={CHECKOUT_SESSION_ID}',
-            cancel_url='http://localhost:8000/?error=epayment_error',
+            success_url='http://localhost:8000/order/sucess/?chekout_session={CHECKOUT_SESSION_ID}',
+            cancel_url='http://localhost:8000/order/error/?error=epayment_error',
         )
 
         # This URL redirects the user to the Stripe-hosted payment form
@@ -123,7 +123,7 @@ def create_checkout_session(request):
         return HttpResponse(str(e))
 
 
-def success_handler(request):
+def sucess_handler(request):
     session_id = request.Get.get('chekout_session')
     if session_id:
         currect_order = Order.objects.get(stripe_session_id=session_id)
