@@ -1,0 +1,268 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-12 01:46+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != "
+"11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
+"100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
+"(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+
+#: .\order\models.py:9 .\shop\models.py:53 .\user_management\models.py:14
+msgid "Book"
+msgstr "Книга"
+
+#: .\order\models.py:10 .\shop\models.py:48 .\templates\books.html:39
+msgid "Price"
+msgstr "Ціна"
+
+#: .\order\models.py:11 .\shop\models.py:47
+msgid "Amount"
+msgstr "Кількість"
+
+#: .\order\models.py:12 .\templates\base.html:20
+msgid "Order"
+msgstr "Замовлення"
+
+#: .\order\models.py:35 .\user_management\models.py:11
+#: .\user_management\models.py:15
+msgid "Owner"
+msgstr "Користувач"
+
+#: .\order\models.py:36
+msgid "Created at"
+msgstr "Створено"
+
+#: .\order\models.py:37
+msgid "Delivery Address"
+msgstr "Адреса доставки"
+
+#: .\order\models.py:38
+msgid "Total Price"
+msgstr "Загальна ціна"
+
+#: .\order\models.py:39
+msgid "Order Status"
+msgstr "Статус замовлення"
+
+#: .\order\models.py:40
+msgid "Payment Status"
+msgstr "Статус оплати"
+
+#: .\order\models.py:41
+msgid "TTN"
+msgstr "ТТН"
+
+#: .\order\models.py:42
+msgid "Stripe Session ID"
+msgstr "ID Страйп сесії"
+
+#: .\shop\models.py:8
+msgid "Category name"
+msgstr "Назва категорії"
+
+#: .\shop\models.py:9 .\shop\models.py:24 .\shop\models.py:34
+msgid "bio"
+msgstr "Опис"
+
+#: .\shop\models.py:20
+msgid "First name"
+msgstr "Ім'я"
+
+#: .\shop\models.py:21
+msgid "Last name"
+msgstr "Прізвище"
+
+#: .\shop\models.py:22 .\shop\models.py:32
+msgid "Country"
+msgstr "Країна"
+
+#: .\shop\models.py:23
+msgid "Birth date"
+msgstr "Дата народження"
+
+#: .\shop\models.py:31
+msgid "Publisher name"
+msgstr "Видавець"
+
+#: .\shop\models.py:33
+msgid "Website"
+msgstr "Сайте"
+
+#: .\shop\models.py:41
+msgid "Title"
+msgstr "Назва книги"
+
+#: .\shop\models.py:42
+msgid "Author"
+msgstr "Автор"
+
+#: .\shop\models.py:43
+msgid "Category"
+msgstr "Категорія"
+
+#: .\shop\models.py:44
+msgid "Publisher"
+msgstr "Видавництво"
+
+#: .\shop\models.py:45
+msgid "Published year"
+msgstr "Дата публікації"
+
+#: .\shop\models.py:46
+msgid "Added at"
+msgstr "Додано"
+
+#: .\shop\models.py:49
+msgid "Available"
+msgstr "Доступно"
+
+#: .\shop\models.py:50
+msgid "Calculated rating"
+msgstr "Розрахований рейтинг"
+
+#: .\shop\models.py:54
+msgid "User"
+msgstr "Користувач"
+
+#: .\shop\models.py:55
+msgid "Rating"
+msgstr "Рейтинг"
+
+#: .\shop\models.py:56
+msgid "Feedback"
+msgstr "Коментар"
+
+#: .\templates\base.html:7
+msgid "Book Store"
+msgstr "Книжковий магазин"
+
+#: .\templates\base.html:14
+#, fuzzy
+#| msgid "Book"
+msgid "Bookstore"
+msgstr "Книжковий магазин"
+
+#: .\templates\base.html:17
+msgid "All books"
+msgstr "Усі книги"
+
+#: .\templates\base.html:18
+msgid "Cheap books"
+msgstr "Дешеві книги"
+
+#: .\templates\base.html:19
+msgid "Average price by category"
+msgstr "Середня ціна по категорії"
+
+#: .\templates\base.html:24
+#, python-format
+msgid "Hi, %(username)s"
+msgstr "Привіт! %(username)"
+
+#: .\templates\base.html:27
+msgid "Cart"
+msgstr "Кошик"
+
+#: .\templates\base.html:34
+msgid "Clear cart"
+msgstr "Очистити Кошик"
+
+#: .\templates\base.html:39
+msgid "Logout"
+msgstr "Логаут"
+
+#: .\templates\base.html:42
+msgid "Register"
+msgstr "Реєстрація"
+
+#: .\templates\base.html:43
+msgid "Login"
+msgstr "Логін"
+
+#: .\templates\books.html:3 .\templates\books.html:5
+#, fuzzy
+#| msgid "Book"
+msgid "Book list"
+msgstr "Книжковий магазин"
+
+#: .\templates\books.html:11
+msgid "Search by book or author"
+msgstr "Шукати книгу або автора"
+
+#: .\templates\books.html:14
+msgid "Filter"
+msgstr "Фільтр"
+
+#: .\templates\books.html:28
+#, fuzzy
+#| msgid "Author"
+msgid "No authors"
+msgstr "Автор"
+
+#: .\templates\books.html:32
+#, fuzzy
+#| msgid "Category"
+msgid "Categories"
+msgstr "Категорія"
+
+#: .\templates\books.html:36
+msgid "No categories"
+msgstr "Не вказані категорії"
+
+#: .\templates\books.html:45
+msgid "Add to cart"
+msgstr "Додати до кошика"
+
+#: .\templates\books.html:46
+msgid "Remove"
+msgstr "Прибрати з кошика"
+
+#: .\templates\books.html:51
+msgid "No books found"
+msgstr "Немає книг за запитом"
+
+#: .\templates\books.html:59
+msgid "Back"
+msgstr "Назад"
+
+#: .\templates\books.html:63
+msgid "Next"
+msgstr "Вперед"
+
+#: .\user_management\models.py:7
+msgid "Post Service"
+msgstr "Служба доставки"
+
+#: .\user_management\models.py:8
+msgid "Post Service Branch"
+msgstr "Відділення"
+
+#: .\user_management\models.py:9
+msgid "City"
+msgstr "Місто"
+
+#: .\user_management\models.py:10
+msgid "Street"
+msgstr "Вулиця"
+
+#: .\user_management\models.py:18
+msgid "Birth Date"
+msgstr "Дата народження"
+
+#: .\user_management\models.py:19
+msgid "Phone Number"
+msgstr "Номер телефону"

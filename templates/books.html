@@ -1,16 +1,17 @@
 {% extends "base.html" %}
-{% block title %}Book list{% endblock %}
+{% load i18n %}
+{% block title %}{% trans "Book list" %}{% endblock %}
 {% block content %}
-<h2>Список книг</h2>
+<h2>{% trans "Book list" %}</h2>
 
 <!-- Форма фільтрації -->
 <form method="get" class="mb-3">
     <div class="row">
         <div class="col-md-4">
-            <input type="text" name="q" class="form-control" placeholder="Пошук книги чи автора" value="{{ request.GET.q }}">
+            <input type="text" name="q" class="form-control" placeholder="{% trans 'Search by book or author' %}" value="{{ request.GET.q }}">
         </div>
         <div class="col-md-2">
-            <button type="submit" class="btn btn-primary">Фільтрувати</button>
+            <button type="submit" class="btn btn-primary">{% trans "Filter" %}</button>
         </div>
     </div>
 </form>
@@ -24,30 +25,30 @@
             {% for author in book.author.all %}
                 {{ author }}{% if not forloop.last %}, {% endif %}
             {% empty %}
-                No authors
+                {% trans "No authors" %}
             {% endfor %}
 
             <!-- Categories -->
-            | Categories:
+            | {% trans "Categories" %}:
             {% for category in book.category.all %}
                 {{ category }}{% if not forloop.last %}, {% endif %}
             {% empty %}
-                No categories
+                {% trans "No categories" %}
             {% endfor %}
 
-            | Price: {{ book.price }}
+            | {% trans "Price" %}: {{ book.price }}
 
             <form method="post" action="{% url 'order:cart' %}?next={{ request.path }}">
                 {% csrf_token %}
                 <input type="hidden" name="book_id" value="{{ book.id }}">
                 <input type="number" name="quantity" value="1" min="1">
-                <button type="submit" name="add" value="1">Add to cart</button>
-                <button type="submit" name="remove" value="1">Remove</button>
+                <button type="submit" name="add" value="1">{% trans "Add to cart" %}</button>
+                <button type="submit" name="remove" value="1">{% trans "Remove" %}</button>
             </form>
 
         </li>
     {% empty %}
-        <li class="list-group-item">Немає книг</li>
+        <li class="list-group-item">{% trans "No books found" %}</li>
     {% endfor %}
 </ul>
 
@@ -55,11 +56,11 @@
 <nav>
     <ul class="pagination mt-3">
         {% if page_obj.has_previous %}
-            <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Назад</a></li>
+            <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">{% trans "Back" %}</a></li>
         {% endif %}
         <li class="page-item active"><span class="page-link">{{ page_obj.number }}</span></li>
         {% if page_obj.has_next %}
-            <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Вперед</a></li>
+            <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">{% trans "Next" %}</a></li>
         {% endif %}
     </ul>
 </nav>

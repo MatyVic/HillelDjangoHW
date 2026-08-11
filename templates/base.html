@@ -1,39 +1,46 @@
 {% load static %}
+{% load i18n %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ LANGUAGE_CODE }}">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}Book Store{% endblock %}</title>
+    <title>{% block title %}{% trans "Book Store" %}{% endblock %}</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'shop:all_books' %}">Bookstore</a>
+            <a class="navbar-brand" href="{% url 'shop:all_books' %}">{% trans "Bookstore" %}</a>
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav me-auto">
-                    <li class="nav-item"><a class="nav-link" href="{% url 'shop:all_books' %}">Усі книги</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'shop:cheap_books' %}">Дешеві книги</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'shop:avg_price' %}">Середня ціна по категоріям</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'order:new_order' %}">Замовлення</a></li>
-
+                    <li class="nav-item"><a class="nav-link" href="{% url 'shop:all_books' %}">{% trans "All books" %}</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'shop:cheap_books' %}">{% trans "Cheap books" %}</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'shop:avg_price' %}">{% trans "Average price by category" %}</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'order:new_order' %}">{% trans "Order" %}</a></li>
                 </ul>
                 <ul class="navbar-nav ms-auto">
                     {% if user.is_authenticated %}
-                    <h5 class="text-white"> Hi, {{ user.username }}</h5>
-                    <li class="nav-item"> <a class="nav-link" href="{% url 'order:cart' %}">Кошик {% if cart_items_count %}({{ cart_items_count }}){% endif %} </a></li>
+                    <h5 class="text-white">{% blocktrans with username=user.username %}Hi, {{ username }}{% endblocktrans %}</h5>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'order:cart' %}">
+                            {% trans "Cart" %} {% if cart_items_count %}({{ cart_items_count }}){% endif %}
+                        </a>
+                    </li>
                     <li class="nav-item">
                         <form method="post" action="{% url 'order:cart' %}?next={{ request.path }}" class="d-inline">
                             {% csrf_token %}
                             <input type="hidden" name="clear" value="1">
-                            <button type="submit" class="nav-link btn btn-link">Очистити кошик</button>
+                            <button type="submit" class="nav-link btn btn-link">{% trans "Clear cart" %}</button>
                         </form>
                     </li>
-                    <li class="nav-item"> {% csrf_token %} <a class="nav-link" href="{% url 'user:logout' %}">Логаут</a></li>
+                    <li class="nav-item">
+                        {% csrf_token %}
+                        <a class="nav-link" href="{% url 'user:logout' %}">{% trans "Logout" %}</a>
+                    </li>
                     {% else %}
-                    <li class="nav-item"><a class="nav-link" href="{% url 'user:user_register' %}">Реэстрація</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'user:user_login' %}">Логін</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'user:user_register' %}">{% trans "Register" %}</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'user:user_login' %}">{% trans "Login" %}</a></li>
                     {% endif %}
                 </ul>
             </div>

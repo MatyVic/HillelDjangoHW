@@ -1,38 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ object.title }}</title>
-</head>
-<body>
-    <h1>{{ object.title }}</h1>
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{{ object.title }}{% endblock %}
+{% block content %}
+<h1>{{ object.title }}</h1>
 
-    <p>
-        <strong>Authors:</strong>
-        {% for author in object.author.all %}
-            {{ author }}{% if not forloop.last %}, {% endif %}
-        {% empty %}
-            No authors
-        {% endfor %}
-    </p>
+<p>
+    <strong>{% trans "Authors" %}:</strong>
+    {% for author in object.author.all %}
+        {{ author }}{% if not forloop.last %}, {% endif %}
+    {% empty %}
+        {% trans "No authors" %}
+    {% endfor %}
+</p>
 
-    <p>
-        <strong>Categories:</strong>
-        {% for category in object.category.all %}
-            {{ category }}{% if not forloop.last %}, {% endif %}
-        {% empty %}
-            No categories
-        {% endfor %}
-    </p>
+<p>
+    <strong>{% trans "Categories" %}:</strong>
+    {% for category in object.category.all %}
+        {{ category }}{% if not forloop.last %}, {% endif %}
+    {% empty %}
+        {% trans "No categories" %}
+    {% endfor %}
+</p>
 
-    <p><strong>Published:</strong> {{ object.published_year }}</p>
-    <p><strong>Price:</strong> {{ object.price }}</p>
-    <p><strong>Rating:</strong> {{ object.calculated_rating }}</p>
-    <form method="post" action ="{% url 'order:cart' %}?next={{ request.path }}">
-        {% csrf_token %}
-        <input type = "hidden" name="book_id" value="{{ object.id }}">
-        <input type = "number" name="amount" value = "1">
-        <button type="submit">Add to cart</button>
-    </form>
-</body>
-</html>
+<p><strong>{% trans "Published" %}:</strong> {{ object.published_year }}</p>
+<p><strong>{% trans "Price" %}:</strong> {{ object.price }}</p>
+<p><strong>{% trans "Rating" %}:</strong> {{ object.calculated_rating }}</p>
+
+<form method="post" action="{% url 'order:cart' %}?next={{ request.path }}">
+    {% csrf_token %}
+    <input type="hidden" name="book_id" value="{{ object.id }}">
+    <input type="number" name="amount" value="1">
+    <button type="submit">{% trans "Add to cart" %}</button>
+</form>
+{% endblock %}

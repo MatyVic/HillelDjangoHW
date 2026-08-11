@@ -910,3 +910,94 @@
 2026-08-03 17:21:20,644 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
 2026-08-03 17:21:21,200 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
 2026-08-03 17:21:59,078 [INFO] django.server: "GET /order/success/?checkout_session=cs_test_a1dukmC1XObiibBxyt4d5H6OeqZtprxRjMdn4PDrDX34i2Y2VoVHTtNhIb HTTP/1.1" 200 15
+2026-08-03 19:49:28,066 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 19:51:45,458 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-03 19:51:48,015 [WARNING] django.server: "GET / HTTP/1.1" 404 2755
+2026-08-03 19:51:53,234 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6418
+2026-08-03 19:52:09,964 [INFO] django.server: "POST /order/cart/?next=/shop/ HTTP/1.1" 302 0
+2026-08-03 19:52:10,080 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6418
+2026-08-03 19:52:11,524 [INFO] django.server: "POST /order/cart/?next=/shop/ HTTP/1.1" 302 0
+2026-08-03 19:52:11,639 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6418
+2026-08-03 19:52:14,554 [INFO] django.server: "POST /order/cart/?next=/shop/ HTTP/1.1" 302 0
+2026-08-03 19:52:14,673 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6418
+2026-08-12 00:17:26,389 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-12 00:17:28,432 [WARNING] django.server: "GET / HTTP/1.1" 404 2755
+2026-08-12 00:17:28,616 [WARNING] django.server: "GET /favicon.ico HTTP/1.1" 404 2806
+2026-08-12 00:17:32,998 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6418
+2026-08-12 00:17:33,098 [INFO] django.server: "GET /static/css/style.css HTTP/1.1" 200 153
+2026-08-12 00:17:35,620 [INFO] django.server: "GET /shop/book/1 HTTP/1.1" 200 837
+2026-08-12 00:17:42,065 [INFO] django.server: "GET /shop/cheap-books/ HTTP/1.1" 200 6399
+2026-08-12 00:17:43,687 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6418
+2026-08-12 00:17:44,308 [INFO] django.server: "GET /shop/avg-price/ HTTP/1.1" 200 839
+2026-08-12 00:17:48,052 [ERROR] django.server: "GET /order/new_order/ HTTP/1.1" 500 102495
+2026-08-12 00:33:09,523 [INFO] django.utils.autoreload: H:\DjangoHW\bookstoreHW\settings.py changed, reloading.
+2026-08-12 00:33:10,059 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-12 00:33:25,190 [INFO] django.utils.autoreload: H:\DjangoHW\bookstoreHW\settings.py changed, reloading.
+2026-08-12 00:33:25,752 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-12 00:35:15,136 [INFO] django.utils.autoreload: H:\DjangoHW\bookstoreHW\settings.py changed, reloading.
+2026-08-12 00:35:15,712 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-12 00:35:49,722 [INFO] django.utils.autoreload: H:\DjangoHW\bookstoreHW\settings.py changed, reloading.
+2026-08-12 00:35:50,263 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-12 00:51:54,270 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-12 00:51:56,481 [WARNING] django.server: "GET / HTTP/1.1" 404 2755
+2026-08-12 00:52:03,621 [INFO] django.server: "GET /admin/ HTTP/1.1" 200 12674
+2026-08-12 00:52:03,803 [INFO] django.server: "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+2026-08-12 00:52:03,804 [INFO] django.server: "GET /static/admin/css/responsive.css HTTP/1.1" 200 16273
+2026-08-12 00:52:03,812 [INFO] django.server: "GET /static/admin/css/base.css HTTP/1.1" 200 23100
+2026-08-12 00:52:03,813 [INFO] django.server: "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 3538
+2026-08-12 00:52:03,931 [INFO] django.server: "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+2026-08-12 00:52:03,962 [INFO] django.server: "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+2026-08-12 00:52:03,963 [INFO] django.server: "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+2026-08-12 00:52:03,965 [INFO] django.server: "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 593
+2026-08-12 00:52:03,965 [INFO] django.server: "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 978
+2026-08-12 00:52:10,793 [INFO] django.server: "GET /admin/shop/author/ HTTP/1.1" 200 18419
+2026-08-12 00:52:10,823 [INFO] django.server: "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+2026-08-12 00:52:10,823 [INFO] django.server: "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9777
+2026-08-12 00:52:10,823 [INFO] django.server: "GET /static/admin/css/changelists.css HTTP/1.1" 200 7498
+2026-08-12 00:52:10,825 [INFO] django.server: "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+2026-08-12 00:52:10,826 [INFO] django.server: "GET /static/admin/js/actions.js HTTP/1.1" 200 8077
+2026-08-12 00:52:10,827 [INFO] django.server: "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+2026-08-12 00:52:10,827 [INFO] django.server: "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+2026-08-12 00:52:10,829 [INFO] django.server: "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+2026-08-12 00:52:10,829 [INFO] django.server: "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+2026-08-12 00:52:10,830 [INFO] django.server: "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+2026-08-12 00:52:10,846 [WARNING] silk.model_factory: Response to request with pk bb25bc96-6224-49c6-89b3-5f10c3f51c5b has content type text/javascript but was unable to parse it
+2026-08-12 00:52:10,906 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 10649
+2026-08-12 00:52:10,907 [INFO] django.server: "GET /static/admin/img/search.svg HTTP/1.1" 200 607
+2026-08-12 00:52:10,941 [INFO] django.server: "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 593
+2026-08-12 00:52:10,941 [INFO] django.server: "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 928
+2026-08-12 00:52:17,445 [INFO] django.server: "GET /admin/shop/book/ HTTP/1.1" 200 22534
+2026-08-12 00:52:17,497 [WARNING] silk.model_factory: Response to request with pk 67354bca-4c7c-4884-ada5-9d7e886c4b4a has content type text/javascript but was unable to parse it
+2026-08-12 00:52:17,556 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 10649
+2026-08-12 00:52:27,318 [INFO] django.server: "GET /admin/shop/category/ HTTP/1.1" 200 15542
+2026-08-12 00:52:27,396 [WARNING] silk.model_factory: Response to request with pk 743f1e3f-4372-4059-8d4e-329e9e9bbfff has content type text/javascript but was unable to parse it
+2026-08-12 00:52:27,455 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 10649
+2026-08-12 00:52:29,496 [INFO] django.server: "GET /admin/shop/publisher/ HTTP/1.1" 200 17493
+2026-08-12 00:52:29,552 [WARNING] silk.model_factory: Response to request with pk 7561544a-fb05-4fdc-8b9e-c8c69a70f70a has content type text/javascript but was unable to parse it
+2026-08-12 00:52:29,612 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 10649
+2026-08-12 00:52:30,749 [INFO] django.server: "GET /admin/shop/rating/ HTTP/1.1" 200 17087
+2026-08-12 00:52:30,813 [WARNING] silk.model_factory: Response to request with pk 59f56703-bdc9-4c54-8265-82974638c039 has content type text/javascript but was unable to parse it
+2026-08-12 00:52:30,877 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 10649
+2026-08-12 00:52:33,072 [INFO] django.server: "GET /admin/user_management/deliverydata/ HTTP/1.1" 200 14074
+2026-08-12 00:52:33,126 [WARNING] silk.model_factory: Response to request with pk 763e6e54-a393-4d34-8641-9bfeb6e0e06a has content type text/javascript but was unable to parse it
+2026-08-12 00:52:33,187 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 10649
+2026-08-12 00:52:34,367 [INFO] django.server: "GET /admin/user_management/lastvieweddata/ HTTP/1.1" 200 12716
+2026-08-12 00:52:34,420 [WARNING] silk.model_factory: Response to request with pk 5c747605-e3f7-4f86-b211-fc3741d05a89 has content type text/javascript but was unable to parse it
+2026-08-12 00:52:34,480 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 10649
+2026-08-12 00:52:35,412 [INFO] django.server: "GET /admin/user_management/deliverydata/ HTTP/1.1" 200 14074
+2026-08-12 00:52:36,041 [INFO] django.server: "GET /admin/shop/rating/ HTTP/1.1" 200 17087
+2026-08-12 00:52:40,760 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6418
+2026-08-12 00:52:58,183 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6418
+2026-08-12 00:52:59,957 [INFO] django.server: "GET /shop/avg-price/ HTTP/1.1" 200 839
+2026-08-12 01:40:14,645 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6509
+2026-08-12 01:42:45,727 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-12 01:42:47,196 [WARNING] django.server: "GET / HTTP/1.1" 404 2755
+2026-08-12 01:42:53,961 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6580
+2026-08-12 01:48:31,502 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-12 01:48:33,185 [WARNING] django.server: "GET / HTTP/1.1" 404 2755
+2026-08-12 01:48:38,394 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6754
+2026-08-12 01:48:47,910 [INFO] django.server: "GET /shop/?page=2 HTTP/1.1" 200 6781
+2026-08-12 01:48:48,903 [INFO] django.server: "GET /shop/?page=1 HTTP/1.1" 200 6754
+2026-08-12 01:49:18,069 [INFO] django.server: "GET /shop/book/1 HTTP/1.1" 200 837
+2026-08-12 01:50:16,579 [INFO] django.server: "GET /shop/book/1 HTTP/1.1" 200 3011
+2026-08-12 01:50:18,848 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6754

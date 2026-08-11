@@ -3,13 +3,13 @@ from enum import Enum
 from django.conf import settings
 from django.utils import timezone
 from django.db import models
-
+from django.utils.translation import gettext_lazy as _
 
 class OrderDetail(models.Model):
-    book = models.ForeignKey('shop.Book', on_delete=models.CASCADE)
-    price = models.DecimalField(max_digits=10, decimal_places=2)
-    amount = models.IntegerField()
-    order = models.ForeignKey('Order', on_delete=models.CASCADE)
+    book = models.ForeignKey('shop.Book', on_delete=models.CASCADE, verbose_name=_("Book"))
+    price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name=_("Price"))
+    amount = models.IntegerField(verbose_name=_("Amount"))
+    order = models.ForeignKey('Order', on_delete=models.CASCADE, verbose_name=_("Order"))
 
 
 class PaymentStatus(Enum):
@@ -32,11 +32,11 @@ class PaymentMethod(Enum):
 
 
 class Order(models.Model):
-    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    created_at = models.DateTimeField(default=timezone.now)
-    delivery_address = models.ForeignKey('user_management.DeliveryData', on_delete=models.CASCADE)
-    total_price = models.DecimalField(max_digits=10, decimal_places=2)
-    order_status = models.CharField(max_length=20)
-    payment_status = models.CharField(max_length=20)
-    ttn = models.CharField(max_length=50)
-    stripe_session_id = models.CharField(max_length=255, blank=True, null=True)
+    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, verbose_name=_("Owner"))
+    created_at = models.DateTimeField(default=timezone.now, verbose_name=_("Created at"))
+    delivery_address = models.ForeignKey('user_management.DeliveryData', on_delete=models.CASCADE, verbose_name=_("Delivery Address"))
+    total_price = models.DecimalField(max_digits=10, decimal_places=2,verbose_name=_("Total Price"))
+    order_status = models.CharField(max_length=20, verbose_name=_("Order Status"))
+    payment_status = models.CharField(max_length=20, verbose_name=_("Payment Status"))
+    ttn = models.CharField(max_length=50, verbose_name=_("TTN"))
+    stripe_session_id = models.CharField(max_length=255, blank=True, null=True, verbose_name=_("Stripe Session ID"))
