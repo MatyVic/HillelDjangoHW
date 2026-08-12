@@ -1049,3 +1049,19 @@
 2026-08-12 13:01:15,221 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 4098
 2026-08-12 13:01:16,850 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 7927
 2026-08-12 13:01:17,810 [INFO] django.server: "GET /shop/book/1 HTTP/1.1" 200 4190
+2026-08-12 13:50:49,739 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-12 13:50:52,090 [WARNING] django.server: "GET / HTTP/1.1" 404 2903
+2026-08-12 13:50:56,243 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 7927
+2026-08-12 13:50:58,066 [INFO] django.server: "POST /order/cart/?next=/shop/ HTTP/1.1" 302 0
+2026-08-12 13:50:58,174 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 7930
+2026-08-12 13:50:59,086 [INFO] django.server: "POST /order/cart/?next=/shop/ HTTP/1.1" 302 0
+2026-08-12 13:50:59,206 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 7930
+2026-08-12 13:51:00,526 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 5720
+2026-08-12 13:51:02,110 [INFO] django.server: "GET /order/checkout/ HTTP/1.1" 200 4419
+2026-08-12 13:51:05,522 [INFO] django.server: "POST /order/checkout/ HTTP/1.1" 302 0
+2026-08-12 13:51:05,634 [INFO] stripe: message='Request to Stripe api' method=post url=https://api.stripe.com/v1/checkout/sessions
+2026-08-12 13:51:06,503 [INFO] stripe: message='Stripe API response' path=https://api.stripe.com/v1/checkout/sessions response_code=200
+2026-08-12 13:51:06,527 [INFO] django.server: "GET /order/stripe/9/ HTTP/1.1" 302 0
+2026-08-12 13:52:02,658 [INFO] django.server: "GET /order/success/?checkout_session=cs_test_b1tV6zF2fQDZSy18aPNHfjhsQ5rn60UjWZDuyT1YiSwOHJOYmVf5Fl5Q4a HTTP/1.1" 200 15
+2026-08-12 13:52:02,833 [WARNING] django.server: "GET /favicon.ico HTTP/1.1" 404 2954
+2026-08-12 13:53:10,392 [WARNING] django.server: "GET / HTTP/1.1" 404 2903

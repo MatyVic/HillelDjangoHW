@@ -4,7 +4,7 @@ from order.models import OrderStatus, PaymentStatus, Order, OrderDetail
 from shop.models import Book
 
 
-def create_new_order(self, user, cart_data, delivery_address_id):
+def create_new_order(user, cart_data, delivery_address_id):
     with transaction.atomic():
         new_order = Order()
         new_order.owner = user
