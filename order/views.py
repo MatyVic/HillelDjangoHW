@@ -43,14 +43,14 @@ class NewOrderView(LoginRequiredMixin, View):
 
 class CartView(LoginRequiredMixin, View):
 
-    def get(self, request):
+    async def get(self, request):
         cart = Cart(request)
-        books = Book.objects.filter(pk__in=cart.cart_data.keys())
+        books = [book async for book in  Book.objects.filter(pk__in=cart.cart_data.keys())]
         for book in books:
             book.amount = cart.cart_data[str(book.id)]
-        return render(request, "cart.html", {"cart_data": books})
+        return await sync_to_async(render)(request, "cart.html", {"cart_data": books})
 
-    def post(self, request):
+    async def post(self, request):
         form_data = request.POST
         cart = Cart(request)
 
@@ -61,7 +61,7 @@ class CartView(LoginRequiredMixin, View):
         else:
             cart.add_book(form_data["book_id"], form_data["quantity"])
 
-        return redirect(request.GET.get("next"))
+        return await sync_to_async(redirect)(request.GET.get("next"))
 
 
 class OrderChekoutView(LoginRequiredMixin, View):

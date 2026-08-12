@@ -1029,3 +1029,23 @@
 2026-08-12 10:44:59,509 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 7592
 2026-08-12 10:45:01,422 [INFO] django.server: "POST /i18n/setlang/ HTTP/1.1" 302 0
 2026-08-12 10:45:01,552 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 7927
+2026-08-12 12:59:27,754 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-12 13:00:27,403 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-12 13:00:27,946 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-12 13:00:43,115 [INFO] django.utils.autoreload: H:\DjangoHW\order\views.py changed, reloading.
+2026-08-12 13:00:43,671 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-12 13:01:02,887 [WARNING] django.server: "GET / HTTP/1.1" 404 2903
+2026-08-12 13:01:07,132 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 7927
+2026-08-12 13:01:08,631 [INFO] django.server: "POST /order/cart/?next=/shop/ HTTP/1.1" 302 0
+2026-08-12 13:01:08,738 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 7930
+2026-08-12 13:01:09,339 [INFO] django.server: "POST /order/cart/?next=/shop/ HTTP/1.1" 302 0
+2026-08-12 13:01:09,459 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 7930
+2026-08-12 13:01:10,298 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 5720
+2026-08-12 13:01:11,862 [INFO] django.server: "POST /order/cart/?next=/order/cart/ HTTP/1.1" 302 0
+2026-08-12 13:01:11,985 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 4867
+2026-08-12 13:01:12,984 [INFO] django.server: "POST /order/cart/?next=/order/cart/ HTTP/1.1" 302 0
+2026-08-12 13:01:13,092 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 4098
+2026-08-12 13:01:15,131 [INFO] django.server: "POST /order/cart/?next=/order/cart/ HTTP/1.1" 302 0
+2026-08-12 13:01:15,221 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 4098
+2026-08-12 13:01:16,850 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 7927
+2026-08-12 13:01:17,810 [INFO] django.server: "GET /shop/book/1 HTTP/1.1" 200 4190

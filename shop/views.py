@@ -1,9 +1,11 @@
+from asgiref.sync import sync_to_async
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.exceptions import PermissionDenied
 from django.shortcuts import render
 from django.db.models import Q, Avg, Count
 from django.urls import reverse, reverse_lazy
 from django.contrib.auth import get_user_model
+from django.views import View
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.decorators import permission_required
 
@@ -41,10 +43,11 @@ class AllCheapBooksView(ListView):
             qs = qs.filter(Q(title__icontains=query) | Q(author__last_name__icontains=query))
         return qs
 
-class SpecificBookView(DetailView):
-    model = Book
-    pk_url_kwarg = "book_id"
-    template_name = "book.html"
+class SpecificBookView(View):
+
+    async def get(self, request, book_id):
+        book = await Book.objects.select_related().aget(pk=book_id)
+        return await sync_to_async(render)(request, "book.html", {"object": book})
 
 class CreateFeedBackView(LoginRequiredMixin, CreateView):
     model = Rating
