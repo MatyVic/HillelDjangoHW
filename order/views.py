@@ -1,6 +1,7 @@
 import os
 
 import stripe
+from asgiref.sync import sync_to_async
 from django.db import transaction
 
 stripe.api_key = os.environ["STRIPE_SECRET_KEY"]
@@ -10,12 +11,12 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, redirect
 from django.views import View
 
-
 from order.cart import Cart, OrderEmailService
 from order.form import NewOrderForm
 from order.models import Order, OrderDetail, PaymentStatus, OrderStatus
 from shop.models import Book
 from user_management.models import DeliveryData
+
 
 
 class AddBookForm(Form):
@@ -65,24 +66,34 @@ class CartView(LoginRequiredMixin, View):
 
 class OrderChekoutView(LoginRequiredMixin, View):
 
-    def get(self, request):
+    async def get(self, request):
         cart_data = request.session.get("cart", {})
-        books_to_order = Book.objects.filter(pk__in=list(cart_data.keys())).all()
-        delivery_adreses = DeliveryData.objects.filter(owner=request.user)
+        books_to_order = [book async for book in Book.objects.filter(pk__in=list(cart_data.keys())).all()]
+        user = await request.auser()
+        delivery_adreses = [delivery_adress async for delivery_adress in
+                            DeliveryData.objects.filter(owner=user)]
+        return await sync_to_async(render)(request, "orderchekout.html",
+                                           {'delivery_adreses': delivery_adreses, 'cart_books': books_to_order})
 
-        return render(request, "orderchekout.html",
-                      {'delivery_adreses': delivery_adreses, 'cart_books': books_to_order})
-
-    def post(self, request):
+    async def post(self, request):
         cart_data = request.session.get("cart", {})
+        user = await request.auser()
+        delivery_address_id = request.POST.get("delivery_address")
+
+        new_order = await sync_to_async(self.create_new_order_sync)(user, cart_data, delivery_address_id)
+
+        request.session.pop("cart", None)
+        return await sync_to_async(redirect)('order:stripe_hand', order_id=new_order.id)
+
+    def create_new_order_sync(self, user, cart_data, delivery_address_id):
         with transaction.atomic():
             new_order = Order()
-            new_order.owner = request.user
+            new_order.owner = user
             new_order.order_status = OrderStatus.PROCESSING.value
             new_order.payment_status = PaymentStatus.PENDING.value
             new_order.ttn = ""
             new_order.total_price = 0
-            new_order.delivery_address_id = request.POST.get("delivery_address")
+            new_order.delivery_address_id = delivery_address_id
             new_order.save()
             books_to_order = Book.objects.filter(pk__in=list(cart_data.keys())).all()
             for book in books_to_order:
@@ -95,8 +106,7 @@ class OrderChekoutView(LoginRequiredMixin, View):
                 new_order_detail.save()
             new_order.save(update_fields=["total_price"])
 
-        request.session.pop("cart", None)
-        return redirect('order:stripe_hand', order_id=new_order.id)
+        return new_order
 
 
 def create_checkout_session(request, order_id):
