@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-12 10:44+0300\n"
+"POT-Creation-Date: 2026-08-12 11:07+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -91,7 +91,7 @@ msgstr "Прізвище"
 msgid "Country"
 msgstr "Країна"
 
-#: .\shop\models.py:23
+#: .\shop\models.py:23 .\user_management\forms.py:16
 msgid "Birth date"
 msgstr "Дата народження"
 
@@ -211,6 +211,7 @@ msgid "Register"
 msgstr "Реєстрація"
 
 #: .\templates\base.html:60 .\templates\login.html:3 .\templates\login.html:11
+#: .\user_management\forms.py:21
 msgid "Login"
 msgstr "Логін"
 
@@ -362,6 +363,22 @@ msgstr "Замовлення підтверджую"
 #| msgid "Feedback"
 msgid "User Feedback"
 msgstr "Коментар"
+
+#: .\user_management\forms.py:15
+#, fuzzy
+#| msgid "User"
+msgid "Username"
+msgstr "Користувач"
+
+#: .\user_management\forms.py:17
+#, fuzzy
+#| msgid "Phone Number"
+msgid "Phone number"
+msgstr "Номер телефону"
+
+#: .\user_management\forms.py:22
+msgid "Password"
+msgstr "Пароль"
 
 #: .\user_management\models.py:7
 msgid "Post Service"
