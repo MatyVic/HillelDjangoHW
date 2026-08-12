@@ -39,7 +39,7 @@ django
     {% endfor %}
 </ul>
 
-<a href="{% url 'order:order_checkout' %}">{% trans "Checkout" %}</a>
+<a href="{% url 'order:checkout' %}">{% trans "Checkout" %}</a>
 <form method="post" action="{% url 'order:cart' %}?next={{ request.path }}" class="d-inline">
     {% csrf_token %}
     <input type="hidden" name="clear" value="1">

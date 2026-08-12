@@ -40,3 +40,6 @@ class Order(models.Model):
     payment_status = models.CharField(max_length=20, verbose_name=_("Payment Status"))
     ttn = models.CharField(max_length=50, verbose_name=_("TTN"))
     stripe_session_id = models.CharField(max_length=255, blank=True, null=True, verbose_name=_("Stripe Session ID"))
+
+    def __str__(self):
+        return f"Order #{self.id} by {self.owner.email}"

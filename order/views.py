@@ -89,6 +89,7 @@ class OrderChekoutView(LoginRequiredMixin, View):
 
 
 
+
 def create_checkout_session(request, order_id):
     order = Order.objects.get(pk=order_id)
     order_details = OrderDetail.objects.select_related("book").filter(order=order)

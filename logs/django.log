@@ -1065,3 +1065,42 @@
 2026-08-12 13:52:02,658 [INFO] django.server: "GET /order/success/?checkout_session=cs_test_b1tV6zF2fQDZSy18aPNHfjhsQ5rn60UjWZDuyT1YiSwOHJOYmVf5Fl5Q4a HTTP/1.1" 200 15
 2026-08-12 13:52:02,833 [WARNING] django.server: "GET /favicon.ico HTTP/1.1" 404 2954
 2026-08-12 13:53:10,392 [WARNING] django.server: "GET / HTTP/1.1" 404 2903
+2026-08-12 15:56:03,487 [WARNING] silk.profiling.profiler: Cannot execute silk_profile as silk is not installed correctly.
+2026-08-12 15:56:18,891 [WARNING] silk.profiling.profiler: Cannot execute silk_profile as silk is not installed correctly.
+2026-08-12 15:58:15,217 [WARNING] silk.profiling.profiler: Cannot execute silk_profile as silk is not installed correctly.
+2026-08-12 15:58:25,584 [WARNING] silk.profiling.profiler: Cannot execute silk_profile as silk is not installed correctly.
+2026-08-12 15:58:58,783 [WARNING] silk.profiling.profiler: Cannot execute silk_profile as silk is not installed correctly.
+2026-08-12 15:59:13,799 [WARNING] silk.profiling.profiler: Cannot execute silk_profile as silk is not installed correctly.
+2026-08-12 15:59:44,872 [WARNING] silk.profiling.profiler: Cannot execute silk_profile as silk is not installed correctly.
+2026-08-12 15:59:58,755 [WARNING] silk.profiling.profiler: Cannot execute silk_profile as silk is not installed correctly.
+2026-08-12 16:05:41,529 [WARNING] silk.profiling.profiler: Cannot execute silk_profile as silk is not installed correctly.
+2026-08-12 16:05:48,405 [WARNING] silk.profiling.profiler: Cannot execute silk_profile as silk is not installed correctly.
+2026-08-12 16:05:57,546 [WARNING] silk.profiling.profiler: Cannot execute silk_profile as silk is not installed correctly.
+2026-08-12 16:06:17,539 [WARNING] silk.profiling.profiler: Cannot execute silk_profile as silk is not installed correctly.
+2026-08-12 16:07:58,534 [WARNING] silk.profiling.profiler: Cannot execute silk_profile as silk is not installed correctly.
+2026-08-12 16:09:08,853 [WARNING] silk.profiling.profiler: Cannot execute silk_profile as silk is not installed correctly.
+2026-08-12 16:09:27,044 [WARNING] silk.profiling.profiler: Cannot execute silk_profile as silk is not installed correctly.
+2026-08-12 16:09:34,394 [WARNING] silk.profiling.profiler: Cannot execute silk_profile as silk is not installed correctly.
+2026-08-12 16:09:42,648 [WARNING] silk.profiling.profiler: Cannot execute silk_profile as silk is not installed correctly.
+2026-08-12 16:10:10,848 [WARNING] silk.profiling.profiler: Cannot execute silk_profile as silk is not installed correctly.
+2026-08-12 16:10:23,360 [WARNING] silk.profiling.profiler: Cannot execute silk_profile as silk is not installed correctly.
+2026-08-12 16:10:29,196 [WARNING] silk.profiling.profiler: Cannot execute silk_profile as silk is not installed correctly.
+2026-08-12 16:10:40,368 [WARNING] silk.profiling.profiler: Cannot execute silk_profile as silk is not installed correctly.
+2026-08-12 16:10:46,148 [WARNING] silk.profiling.profiler: Cannot execute silk_profile as silk is not installed correctly.
+2026-08-12 16:10:53,788 [WARNING] silk.profiling.profiler: Cannot execute silk_profile as silk is not installed correctly.
+2026-08-12 16:11:01,214 [WARNING] silk.profiling.profiler: Cannot execute silk_profile as silk is not installed correctly.
+2026-08-12 16:11:16,377 [WARNING] silk.profiling.profiler: Cannot execute silk_profile as silk is not installed correctly.
+2026-08-12 16:12:09,506 [WARNING] silk.profiling.profiler: Cannot execute silk_profile as silk is not installed correctly.
+2026-08-12 16:12:45,595 [WARNING] silk.profiling.profiler: Cannot execute silk_profile as silk is not installed correctly.
+2026-08-12 16:12:51,457 [WARNING] silk.profiling.profiler: Cannot execute silk_profile as silk is not installed correctly.
+2026-08-12 16:13:01,260 [WARNING] silk.profiling.profiler: Cannot execute silk_profile as silk is not installed correctly.
+2026-08-12 16:13:05,427 [WARNING] silk.profiling.profiler: Cannot execute silk_profile as silk is not installed correctly.
+2026-08-12 16:13:11,395 [WARNING] silk.profiling.profiler: Cannot execute silk_profile as silk is not installed correctly.
+2026-08-12 16:24:06,651 [WARNING] silk.profiling.profiler: Cannot execute silk_profile as silk is not installed correctly.
+2026-08-12 16:24:38,466 [WARNING] silk.profiling.profiler: Cannot execute silk_profile as silk is not installed correctly.
+2026-08-12 16:25:49,742 [WARNING] silk.profiling.profiler: Cannot execute silk_profile as silk is not installed correctly.
+2026-08-12 16:26:16,330 [WARNING] silk.profiling.profiler: Cannot execute silk_profile as silk is not installed correctly.
+2026-08-12 16:26:29,829 [WARNING] silk.profiling.profiler: Cannot execute silk_profile as silk is not installed correctly.
+2026-08-12 16:27:05,115 [WARNING] silk.profiling.profiler: Cannot execute silk_profile as silk is not installed correctly.
+2026-08-12 16:27:12,778 [WARNING] silk.profiling.profiler: Cannot execute silk_profile as silk is not installed correctly.
+2026-08-12 16:30:31,016 [WARNING] silk.profiling.profiler: Cannot execute silk_profile as silk is not installed correctly.

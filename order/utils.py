@@ -26,3 +26,6 @@ def create_new_order(user, cart_data, delivery_address_id):
         new_order.save(update_fields=["total_price"])
 
     return new_order
+
+
+
