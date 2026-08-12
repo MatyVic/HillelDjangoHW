@@ -1,17 +1,44 @@
 from django.core.mail import EmailMultiAlternatives
-from django.conf import settings
+from shop.models import Book
 
-
+#AI reworked whole Cart class
 class Cart:
 
     def __init__(self, request):
         self.request = request
         self.cart_data = request.session.setdefault("cart", {})
 
+    @staticmethod
+    def _parse_amount(amount):
+        """Safely coerce user-supplied amount into a positive int, or None if invalid."""
+        try:
+            amount = int(amount)
+        except (TypeError, ValueError):
+            return None
+        return amount if amount > 0 else None
+
     def add_book(self, book_id, amount):
         book_id = str(book_id)
-        self.cart_data[book_id] = self.cart_data.get(book_id, 0) + int(amount)
+        amount = self._parse_amount(amount)
+        if amount is None:
+            return False  # invalid quantity, nothing added
+
+        try:
+            book = Book.objects.get(pk=book_id)
+        except Book.DoesNotExist:
+            return False
+
+        current = self.cart_data.get(book_id, 0)
+        new_amount = current + amount
+
+        # Don't let the cart exceed available stock
+        new_amount = min(new_amount, book.amount)
+        if new_amount <= 0:
+            return False
+
+        self.cart_data[book_id] = new_amount
         self.request.session.modified = True
+        return True
 
     def remove_book(self, book_id, amount=None):
         book_id = str(book_id)
@@ -21,7 +48,11 @@ class Cart:
         if amount is None:
             self.cart_data.pop(book_id, None)
         else:
-            remaining = self.cart_data[book_id] - int(amount)
+            amount = self._parse_amount(amount)
+            if amount is None:
+                return  # invalid quantity, ignore silently (or raise, see note below)
+
+            remaining = self.cart_data[book_id] - amount
             if remaining > 0:
                 self.cart_data[book_id] = remaining
             else:

@@ -1,7 +1,7 @@
 from asgiref.sync import sync_to_async
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.core.exceptions import PermissionDenied
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.db.models import Q, Avg, Count
 from django.urls import reverse, reverse_lazy
 from django.contrib.auth import get_user_model
@@ -51,17 +51,15 @@ class SpecificBookView(View):
 
 class CreateFeedBackView(LoginRequiredMixin, CreateView):
     model = Rating
-    template_name = "feedback.html"
-    fields = ['rating', 'feedback']
+    fields = ["rating", "feedback"]
 
     def form_valid(self, form):
-        form.instance.book = Book.objects.get(pk=self.kwargs["book_id"])
-        user = get_user_model()
-        form.instance.user = user.objects.get(pk=1)
+        form.instance.user = self.request.user
+        form.instance.book = get_object_or_404(Book, pk=self.kwargs["book_id"])
         return super().form_valid(form)
 
     def get_success_url(self):
-        return reverse_lazy("book", args=[self.object.book.id])
+        return reverse("shop:book", kwargs={"book_id": self.kwargs["book_id"]})
 
 class EditDeleteByOwnerMixin:
     def dispatch(self, request, *args, **kwargs):
@@ -70,27 +68,26 @@ class EditDeleteByOwnerMixin:
             return super().dispatch(request, *args, **kwargs)
         raise PermissionDenied
 
-class FeedBackUpdateView(EditDeleteByOwnerMixin ,UpdateView):
+class FeedBackUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Rating
-    template_name = "feedback_update.html"
-    fields = ['rating', 'feedback']
+    fields = ["rating", "feedback"]
 
-    def form_valid(self, form):
-        form.instance.book = Book.objects.get(pk=self.kwargs["book_id"])
-        user = get_user_model()
-        form.instance.user = user.objects.get(pk=1)
-        return super().form_valid(form)
+    def test_func(self):
+        obj = self.get_object()
+        return obj.user == self.request.user
 
     def get_success_url(self):
-        return reverse_lazy("book", args=[self.object.book.id])
+        return reverse("shop:book", kwargs={"book_id": self.kwargs["book_id"]})
 
-class DeleteFeedBackView(EditDeleteByOwnerMixin, DeleteView):
+class DeleteFeedBackView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Rating
-    template_name = "feedback_delete.html"
+
+    def test_func(self):
+        obj = self.get_object()
+        return obj.user == self.request.user
 
     def get_success_url(self):
-        return reverse_lazy("book", args=[self.object.book.id])
-
+        return reverse("shop:book", kwargs={"book_id": self.kwargs["book_id"]})
 
 
 # Function views

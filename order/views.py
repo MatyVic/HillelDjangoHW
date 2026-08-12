@@ -43,13 +43,17 @@ class NewOrderView(LoginRequiredMixin, View):
         else:
             return render(request, "new_order.html", {"order_form": order_form})
 
+
 class CartView(LoginRequiredMixin, View):
 
     async def get(self, request):
         cart = Cart(request)
-        books = [book async for book in  Book.objects.filter(pk__in=cart.cart_data.keys())]
+        # Асинхронний ORM-запит через async for
+        books = [book async for book in Book.objects.filter(pk__in=cart.cart_data.keys())]
+
         for book in books:
             book.amount = cart.cart_data[str(book.id)]
+
         return await sync_to_async(render)(request, "cart.html", {"cart_data": books})
 
     async def post(self, request):
@@ -57,13 +61,21 @@ class CartView(LoginRequiredMixin, View):
         cart = Cart(request)
 
         if "remove" in form_data:
-            cart.remove_book(form_data["book_id"], form_data.get("quantity"))
+            # Обгортаємо синхронний метод cart.remove_book
+            await sync_to_async(cart.remove_book)(
+                form_data["book_id"], form_data.get("quantity")
+            )
         elif "clear" in form_data:
-            cart.clear_cart()
+            # Якщо є метод clear_cart
+            await sync_to_async(cart.clear_cart)()
         else:
-            cart.add_book(form_data["book_id"], form_data["quantity"])
+            # Обгортаємо синхронний метод cart.add_book
+            await sync_to_async(cart.add_book)(
+                form_data["book_id"], form_data["quantity"]
+            )
 
-        return await sync_to_async(redirect)(request.GET.get("next"))
+        next_url = request.GET.get("next") or "order:cart"
+        return redirect(next_url)
 
 
 class OrderChekoutView(LoginRequiredMixin, View):

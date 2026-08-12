@@ -1,0 +1,15 @@
+[run]
+omit =
+    # Ігноруємо тести та фабрики
+    */tests.py
+    */tests/*
+    */factories.py
+
+    # Ігноруємо міграції
+    */migrations/*
+
+    # Ігноруємо системні та конфігураційні файли
+    manage.py
+    bookstoreHW/asgi.py
+    bookstoreHW/wsgi.py
+    test_db.py

@@ -1,3 +1,4 @@
+from django.core.validators import MinValueValidator, MaxValueValidator
 from django.urls import reverse
 from django.utils import timezone
 from django.conf import settings
@@ -36,7 +37,7 @@ class Publisher(models.Model):
     def __str__(self):
         return self.name
 
-
+#AI rewroked price field
 class Book(models.Model):
     title = models.CharField(max_length=100, verbose_name=_("Title"))
     author = models.ManyToManyField(Author, verbose_name=_("Author"))
@@ -45,15 +46,24 @@ class Book(models.Model):
     published_year = models.IntegerField(verbose_name=_("Published year"))
     added_at = models.DateTimeField(verbose_name=_("Added at"), default=timezone.now)
     amount = models.IntegerField(verbose_name=_("Amount"))
-    price = models.IntegerField(verbose_name=_("Price"))
+    price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name=_("Price"))
     available = models.BooleanField(default=True,verbose_name=_("Available"))
     calculated_rating = models.DecimalField(max_digits=5, decimal_places=2, null=True, verbose_name=_("Calculated rating"))
 
+#AI rewroked whole model
 class Rating(models.Model):
     book = models.ForeignKey(Book, on_delete=models.CASCADE, verbose_name=_("Book"))
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, verbose_name=_("User"))
-    rating = models.IntegerField(verbose_name=_("Rating"))
+    rating = models.IntegerField(
+        verbose_name=_("Rating"),
+        validators=[MinValueValidator(1), MaxValueValidator(5)],
+    )
     feedback = models.TextField(verbose_name=_("Feedback"))
+
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(fields=["book", "user"], name="unique_rating_per_user_per_book"),
+        ]
 
     def get_absolute_url(self):
         return reverse("book", args=[self.book.id])
