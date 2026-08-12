@@ -1,5 +1,7 @@
+django
 {% extends "base.html" %}
-{% block title %}Book list{% endblock %}
+{% load i18n %}
+{% block title %}{% trans "Cart" %}{% endblock %}
 {% block content %}
 
 <ul class="list-group">
@@ -11,39 +13,37 @@
             {% for author in book.author.all %}
                 {{ author }}{% if not forloop.last %}, {% endif %}
             {% empty %}
-                No authors
+                {% trans "No authors" %}
             {% endfor %}
 
             <!-- Categories -->
-            | Categories:
+            | {% trans "Categories" %}:
             {% for category in book.category.all %}
                 {{ category }}{% if not forloop.last %}, {% endif %}
             {% empty %}
-                No categories
+                {% trans "No categories" %}
             {% endfor %}
 
-            | Price: {{ book.price }}
-            | Quantity: {{book.amount}}
+            | {% trans "Price" %}: {{ book.price }}
+            | {% trans "Quantity" %}: {{ book.amount }}
 
-             <form method="post" action="{% url 'order:cart' %}?next={{ request.path }}">
+            <form method="post" action="{% url 'order:cart' %}?next={{ request.path }}">
                 {% csrf_token %}
                 <input type="hidden" name="book_id" value="{{ book.id }}">
                 <input type="number" name="quantity" value="{{ book.amount }}" min="1">
-                <button type="submit" name="remove" value="1">Remove</button>
+                <button type="submit" name="remove" value="1">{% trans "Remove" %}</button>
             </form>
-
-
-            </li>
+        </li>
     {% empty %}
-        <li class="list-group-item">Немає книг</li>
+        <li class="list-group-item">{% trans "No books found" %}</li>
     {% endfor %}
 </ul>
 
-<a href="{% url 'order:order_checkout' %}">Checkout</a>
+<a href="{% url 'order:order_checkout' %}">{% trans "Checkout" %}</a>
 <form method="post" action="{% url 'order:cart' %}?next={{ request.path }}" class="d-inline">
     {% csrf_token %}
     <input type="hidden" name="clear" value="1">
-    <button type="submit" class="nav-link btn btn-link">Очистити кошик</button>
+    <button type="submit" class="nav-link btn btn-link">{% trans "Clear cart" %}</button>
 </form>
 
 {% endblock %}

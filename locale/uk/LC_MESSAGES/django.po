@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-12 11:07+0300\n"
+"POT-Creation-Date: 2026-08-12 11:14+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,7 +26,8 @@ msgid "Book"
 msgstr "Книга"
 
 #: .\order\models.py:10 .\shop\models.py:48 .\templates\book.html:26
-#: .\templates\books.html:39 .\templates\my_template.html:16
+#: .\templates\books.html:39 .\templates\cart.html:27
+#: .\templates\my_template.html:16
 msgid "Price"
 msgstr "Ціна"
 
@@ -193,11 +194,11 @@ msgstr "Середня ціна по категорії"
 msgid "Hi, %(username)s"
 msgstr "Привіт! %(username)"
 
-#: .\templates\base.html:44
+#: .\templates\base.html:44 .\templates\cart.html:4
 msgid "Cart"
 msgstr "Кошик"
 
-#: .\templates\base.html:51
+#: .\templates\base.html:51 .\templates\cart.html:46
 msgid "Clear cart"
 msgstr "Очистити Кошик"
 
@@ -221,20 +222,20 @@ msgstr "Логін"
 msgid "Authors"
 msgstr "Автор"
 
-#: .\templates\book.html:12 .\templates\books.html:28
+#: .\templates\book.html:12 .\templates\books.html:28 .\templates\cart.html:16
 #, fuzzy
 #| msgid "Author"
 msgid "No authors"
 msgstr "Автор"
 
-#: .\templates\book.html:17 .\templates\books.html:32
+#: .\templates\book.html:17 .\templates\books.html:32 .\templates\cart.html:20
 #: .\templates\my_template.html:11
 #, fuzzy
 #| msgid "Category"
 msgid "Categories"
 msgstr "Категорія"
 
-#: .\templates\book.html:21 .\templates\books.html:36
+#: .\templates\book.html:21 .\templates\books.html:36 .\templates\cart.html:24
 msgid "No categories"
 msgstr "Не вказані категорії"
 
@@ -262,11 +263,12 @@ msgstr "Шукати книгу або автора"
 msgid "Filter"
 msgstr "Фільтр"
 
-#: .\templates\books.html:46
+#: .\templates\books.html:46 .\templates\cart.html:34
 msgid "Remove"
 msgstr "Прибрати з кошика"
 
-#: .\templates\books.html:51 .\templates\my_template.html:45
+#: .\templates\books.html:51 .\templates\cart.html:38
+#: .\templates\my_template.html:45
 msgid "No books found"
 msgstr "Немає книг за запитом"
 
@@ -287,6 +289,15 @@ msgstr "Книги по категоріям"
 #| msgid "No books found"
 msgid "Books Count"
 msgstr "Немає книг за запитом"
+
+#: .\templates\cart.html:28
+msgid "Quantity"
+msgstr "Кількість"
+
+#: .\templates\cart.html:42 .\templates\orderchekout.html:3
+#: .\templates\orderchekout.html:5
+msgid "Checkout"
+msgstr "Оформити замовлення"
 
 #: .\templates\feedback.html:3
 #, fuzzy
@@ -335,10 +346,6 @@ msgstr "Дата публікації"
 #| msgid "Added at"
 msgid "Added At"
 msgstr "Додано"
-
-#: .\templates\orderchekout.html:3 .\templates\orderchekout.html:5
-msgid "Checkout"
-msgstr "Оформити замовлення"
 
 #: .\templates\orderchekout.html:11
 #, fuzzy
