@@ -4,6 +4,8 @@ import stripe
 from asgiref.sync import sync_to_async
 from django.db import transaction
 
+from order.utils import create_new_order
+
 stripe.api_key = os.environ["STRIPE_SECRET_KEY"]
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.forms import IntegerField, Form
@@ -80,33 +82,11 @@ class OrderChekoutView(LoginRequiredMixin, View):
         user = await request.auser()
         delivery_address_id = request.POST.get("delivery_address")
 
-        new_order = await sync_to_async(self.create_new_order_sync)(user, cart_data, delivery_address_id)
+        new_order = await sync_to_async(create_new_order)(user, cart_data, delivery_address_id)
 
         request.session.pop("cart", None)
         return await sync_to_async(redirect)('order:stripe_hand', order_id=new_order.id)
 
-    def create_new_order_sync(self, user, cart_data, delivery_address_id):
-        with transaction.atomic():
-            new_order = Order()
-            new_order.owner = user
-            new_order.order_status = OrderStatus.PROCESSING.value
-            new_order.payment_status = PaymentStatus.PENDING.value
-            new_order.ttn = ""
-            new_order.total_price = 0
-            new_order.delivery_address_id = delivery_address_id
-            new_order.save()
-            books_to_order = Book.objects.filter(pk__in=list(cart_data.keys())).all()
-            for book in books_to_order:
-                new_order.total_price += book.price * cart_data[str(book.id)]
-                new_order_detail = OrderDetail()
-                new_order_detail.order = new_order
-                new_order_detail.book = book
-                new_order_detail.amount = cart_data[str(book.id)]
-                new_order_detail.price = book.price
-                new_order_detail.save()
-            new_order.save(update_fields=["total_price"])
-
-        return new_order
 
 
 def create_checkout_session(request, order_id):
