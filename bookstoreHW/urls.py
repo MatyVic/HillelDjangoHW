@@ -23,6 +23,7 @@ handler404 = 'bookstoreHW.views.error_404'
 handler403= 'bookstoreHW.views.error_403'
 
 urlpatterns = [
+    path('i18n/', include('django.conf.urls.i18n')),
     path('admin/', admin.site.urls),
     path("shop/", include("shop.urls")),
     path('order/', include("order.urls")),

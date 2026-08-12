@@ -1001,3 +1001,31 @@
 2026-08-12 01:49:18,069 [INFO] django.server: "GET /shop/book/1 HTTP/1.1" 200 837
 2026-08-12 01:50:16,579 [INFO] django.server: "GET /shop/book/1 HTTP/1.1" 200 3011
 2026-08-12 01:50:18,848 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6754
+2026-08-12 10:39:52,170 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-12 10:39:54,494 [WARNING] django.server: "GET / HTTP/1.1" 404 2755
+2026-08-12 10:40:01,958 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6754
+2026-08-12 10:40:05,198 [INFO] django.server: "GET /shop/avg-price/ HTTP/1.1" 200 2996
+2026-08-12 10:40:10,010 [ERROR] django.server: "GET /order/new_order/ HTTP/1.1" 500 98788
+2026-08-12 10:40:12,614 [INFO] django.server: "GET /shop/cheap-books/ HTTP/1.1" 200 6735
+2026-08-12 10:40:13,972 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6754
+2026-08-12 10:40:16,643 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 2862
+2026-08-12 10:40:24,454 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6754
+2026-08-12 10:40:25,575 [INFO] django.server: "GET /shop/avg-price/ HTTP/1.1" 200 2996
+2026-08-12 10:40:27,196 [INFO] django.server: "GET /shop/cheap-books/ HTTP/1.1" 200 6735
+2026-08-12 10:40:30,192 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6754
+2026-08-12 10:40:32,196 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6754
+2026-08-12 10:40:34,257 [INFO] django.server: "GET /shop/?q= HTTP/1.1" 200 6754
+2026-08-12 10:40:44,227 [INFO] django.server: "GET /shop/book/1 HTTP/1.1" 200 3011
+2026-08-12 10:40:46,825 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6754
+2026-08-12 10:40:54,277 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 6754
+2026-08-12 10:42:53,631 [INFO] django.utils.autoreload: H:\DjangoHW\bookstoreHW\urls.py changed, reloading.
+2026-08-12 10:42:54,166 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-12 10:43:57,486 [INFO] django.utils.autoreload: H:\DjangoHW\bookstoreHW\settings.py changed, reloading.
+2026-08-12 10:43:58,047 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-12 10:44:48,445 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-12 10:44:50,465 [WARNING] django.server: "GET / HTTP/1.1" 404 2903
+2026-08-12 10:44:57,204 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 7927
+2026-08-12 10:44:59,394 [INFO] django.server: "POST /i18n/setlang/ HTTP/1.1" 302 0
+2026-08-12 10:44:59,509 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 7592
+2026-08-12 10:45:01,422 [INFO] django.server: "POST /i18n/setlang/ HTTP/1.1" 302 0
+2026-08-12 10:45:01,552 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 7927

@@ -1,11 +1,13 @@
 {% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Login" %}{% endblock %}
 {% block content %}
 {% if error %}
-        <div class="alert alert-danger">{{error}}</div>
+    <div class="alert alert-danger">{{ error }}</div>
 {% endif %}
 <form method="post">
     {% csrf_token %}
     {{ login_form.as_p }}
-    <button type="submit">Увійти</button>
+    <button type="submit">{% trans "Login" %}</button>
 </form>
 {% endblock %}

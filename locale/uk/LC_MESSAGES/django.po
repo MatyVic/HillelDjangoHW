@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-12 01:46+0300\n"
+"POT-Creation-Date: 2026-08-12 10:44+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,11 +25,12 @@ msgstr ""
 msgid "Book"
 msgstr "Книга"
 
-#: .\order\models.py:10 .\shop\models.py:48 .\templates\books.html:39
+#: .\order\models.py:10 .\shop\models.py:48 .\templates\book.html:26
+#: .\templates\books.html:39 .\templates\my_template.html:16
 msgid "Price"
 msgstr "Ціна"
 
-#: .\order\models.py:11 .\shop\models.py:47
+#: .\order\models.py:11 .\shop\models.py:47 .\templates\my_template.html:15
 msgid "Amount"
 msgstr "Кількість"
 
@@ -102,7 +103,7 @@ msgstr "Видавець"
 msgid "Website"
 msgstr "Сайте"
 
-#: .\shop\models.py:41
+#: .\shop\models.py:41 .\templates\my_template.html:9
 msgid "Title"
 msgstr "Назва книги"
 
@@ -110,11 +111,12 @@ msgstr "Назва книги"
 msgid "Author"
 msgstr "Автор"
 
-#: .\shop\models.py:43
+#: .\shop\models.py:43 .\templates\avg_price.html:9
+#: .\templates\books_counter.html:9
 msgid "Category"
 msgstr "Категорія"
 
-#: .\shop\models.py:44
+#: .\shop\models.py:44 .\templates\my_template.html:12
 msgid "Publisher"
 msgstr "Видавництво"
 
@@ -126,7 +128,7 @@ msgstr "Дата публікації"
 msgid "Added at"
 msgstr "Додано"
 
-#: .\shop\models.py:49
+#: .\shop\models.py:49 .\templates\my_template.html:17
 msgid "Available"
 msgstr "Доступно"
 
@@ -138,13 +140,31 @@ msgstr "Розрахований рейтинг"
 msgid "User"
 msgstr "Користувач"
 
-#: .\shop\models.py:55
+#: .\shop\models.py:55 .\templates\book.html:27 .\templates\my_template.html:18
 msgid "Rating"
 msgstr "Рейтинг"
 
 #: .\shop\models.py:56
 msgid "Feedback"
 msgstr "Коментар"
+
+#: .\templates\avg_price.html:3 .\templates\avg_price.html:5
+#, fuzzy
+#| msgid "Average price by category"
+msgid "Average Price per Category"
+msgstr "Середня ціна по категорії"
+
+#: .\templates\avg_price.html:10
+#, fuzzy
+#| msgid "Average price by category"
+msgid "Average Price"
+msgstr "Середня ціна по категорії"
+
+#: .\templates\avg_price.html:21 .\templates\books_counter.html:21
+#, fuzzy
+#| msgid "No categories"
+msgid "No categories found"
+msgstr "Не вказані категорії"
 
 #: .\templates\base.html:7
 msgid "Book Store"
@@ -168,30 +188,64 @@ msgstr "Дешеві книги"
 msgid "Average price by category"
 msgstr "Середня ціна по категорії"
 
-#: .\templates\base.html:24
+#: .\templates\base.html:41
 #, python-format
 msgid "Hi, %(username)s"
 msgstr "Привіт! %(username)"
 
-#: .\templates\base.html:27
+#: .\templates\base.html:44
 msgid "Cart"
 msgstr "Кошик"
 
-#: .\templates\base.html:34
+#: .\templates\base.html:51
 msgid "Clear cart"
 msgstr "Очистити Кошик"
 
-#: .\templates\base.html:39
+#: .\templates\base.html:56
 msgid "Logout"
 msgstr "Логаут"
 
-#: .\templates\base.html:42
+#: .\templates\base.html:59 .\templates\register.html:3
+#: .\templates\register.html:20
 msgid "Register"
 msgstr "Реєстрація"
 
-#: .\templates\base.html:43
+#: .\templates\base.html:60 .\templates\login.html:3 .\templates\login.html:11
 msgid "Login"
 msgstr "Логін"
+
+#: .\templates\book.html:8 .\templates\my_template.html:10
+#, fuzzy
+#| msgid "Author"
+msgid "Authors"
+msgstr "Автор"
+
+#: .\templates\book.html:12 .\templates\books.html:28
+#, fuzzy
+#| msgid "Author"
+msgid "No authors"
+msgstr "Автор"
+
+#: .\templates\book.html:17 .\templates\books.html:32
+#: .\templates\my_template.html:11
+#, fuzzy
+#| msgid "Category"
+msgid "Categories"
+msgstr "Категорія"
+
+#: .\templates\book.html:21 .\templates\books.html:36
+msgid "No categories"
+msgstr "Не вказані категорії"
+
+#: .\templates\book.html:25
+#, fuzzy
+#| msgid "Publisher"
+msgid "Published"
+msgstr "Видавництво"
+
+#: .\templates\book.html:33 .\templates\books.html:45
+msgid "Add to cart"
+msgstr "Додати до кошика"
 
 #: .\templates\books.html:3 .\templates\books.html:5
 #, fuzzy
@@ -207,31 +261,11 @@ msgstr "Шукати книгу або автора"
 msgid "Filter"
 msgstr "Фільтр"
 
-#: .\templates\books.html:28
-#, fuzzy
-#| msgid "Author"
-msgid "No authors"
-msgstr "Автор"
-
-#: .\templates\books.html:32
-#, fuzzy
-#| msgid "Category"
-msgid "Categories"
-msgstr "Категорія"
-
-#: .\templates\books.html:36
-msgid "No categories"
-msgstr "Не вказані категорії"
-
-#: .\templates\books.html:45
-msgid "Add to cart"
-msgstr "Додати до кошика"
-
 #: .\templates\books.html:46
 msgid "Remove"
 msgstr "Прибрати з кошика"
 
-#: .\templates\books.html:51
+#: .\templates\books.html:51 .\templates\my_template.html:45
 msgid "No books found"
 msgstr "Немає книг за запитом"
 
@@ -242,6 +276,92 @@ msgstr "Назад"
 #: .\templates\books.html:63
 msgid "Next"
 msgstr "Вперед"
+
+#: .\templates\books_counter.html:3 .\templates\books_counter.html:5
+msgid "Books Count per Category"
+msgstr "Книги по категоріям"
+
+#: .\templates\books_counter.html:10
+#, fuzzy
+#| msgid "No books found"
+msgid "Books Count"
+msgstr "Немає книг за запитом"
+
+#: .\templates\feedback.html:3
+#, fuzzy
+#| msgid "Feedback"
+msgid "Add feedback"
+msgstr "Коментар"
+
+#: .\templates\feedback.html:8 .\templates\user_feedback.html:8
+msgid "Submit"
+msgstr "Прийняти"
+
+#: .\templates\feedback_delete.html:3
+#, fuzzy
+#| msgid "Feedback"
+msgid "Delete feedback"
+msgstr "Видалити коментар"
+
+#: .\templates\feedback_delete.html:8
+msgid "Delete"
+msgstr "Видалити"
+
+#: .\templates\feedback_update.html:3
+#, fuzzy
+#| msgid "Feedback"
+msgid "Update feedback"
+msgstr "Оновити Коментар"
+
+#: .\templates\feedback_update.html:8
+msgid "Update"
+msgstr "Оновити"
+
+#: .\templates\my_template.html:3 .\templates\my_template.html:5
+#, fuzzy
+#| msgid "Book"
+msgid "Books List"
+msgstr "Книжковий магазин"
+
+#: .\templates\my_template.html:13
+#, fuzzy
+#| msgid "Published year"
+msgid "Published Year"
+msgstr "Дата публікації"
+
+#: .\templates\my_template.html:14
+#, fuzzy
+#| msgid "Added at"
+msgid "Added At"
+msgstr "Додано"
+
+#: .\templates\orderchekout.html:3 .\templates\orderchekout.html:5
+msgid "Checkout"
+msgstr "Оформити замовлення"
+
+#: .\templates\orderchekout.html:11
+#, fuzzy
+#| msgid "Delivery Address"
+msgid "Delivery address"
+msgstr "Адреса доставки"
+
+#: .\templates\orderchekout.html:19
+msgid "Your order"
+msgstr "Ваше замовлення"
+
+#: .\templates\orderchekout.html:23
+msgid "UAH"
+msgstr "ГРН"
+
+#: .\templates\orderchekout.html:28
+msgid "Confirm order"
+msgstr "Замовлення підтверджую"
+
+#: .\templates\user_feedback.html:3
+#, fuzzy
+#| msgid "Feedback"
+msgid "User Feedback"
+msgstr "Коментар"
 
 #: .\user_management\models.py:7
 msgid "Post Service"
