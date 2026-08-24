@@ -1496,3 +1496,21 @@
 2026-08-24 17:31:53,638 [INFO] django.server: "GET /api/v1/orders/9/ HTTP/1.1" 200 1169
 2026-08-24 17:32:15,722 [INFO] django.server: "POST /api/v1/token/ HTTP/1.1" 200 489
 2026-08-24 17:32:26,124 [INFO] django.server: "GET /api/v1/orders/9/ HTTP/1.1" 200 1169
+2026-08-24 17:38:00,309 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-24 17:38:01,727 [WARNING] django.server: "GET / HTTP/1.1" 404 4112
+2026-08-24 17:38:10,593 [INFO] django.server: "GET /api/docs/ HTTP/1.1" 200 4646
+2026-08-24 17:38:11,234 [INFO] django.server: "GET /api/schema/ HTTP/1.1" 200 85283
+2026-08-24 17:38:34,646 [INFO] django.server: "GET /api/v1/publishers/ HTTP/1.1" 200 454
+2026-08-24 17:39:13,357 [WARNING] django.server: "GET / HTTP/1.1" 404 4112
+2026-08-24 17:39:35,734 [INFO] django.server: "GET /api/docs/ HTTP/1.1" 200 4646
+2026-08-24 17:39:35,938 [INFO] django.server: "GET /api/schema/ HTTP/1.1" 200 85283
+2026-08-24 17:39:55,692 [INFO] django.utils.autoreload: H:\DjangoHW\bookstoreHW\urls.py changed, reloading.
+2026-08-24 17:39:56,285 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-24 17:40:26,526 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-24 17:40:38,415 [INFO] django.server: "GET /api/v1/docs/ HTTP/1.1" 200 4649
+2026-08-24 17:40:38,672 [INFO] django.server: "GET /api/v1/schema/ HTTP/1.1" 200 85361
+2026-08-24 17:40:49,577 [WARNING] django.server: "GET /api/v1/orders/ HTTP/1.1" 401 96
+2026-08-24 17:40:51,930 [WARNING] django.server: "GET /api/v1/orders/ HTTP/1.1" 401 96
+2026-08-24 17:40:53,311 [WARNING] django.server: "GET /api/v1/orders/ HTTP/1.1" 401 96
+2026-08-24 17:41:38,532 [INFO] django.server: "POST /api/v1/token/ HTTP/1.1" 200 489
+2026-08-24 17:41:53,975 [INFO] django.server: "GET /api/v1/orders/ HTTP/1.1" 200 6403
