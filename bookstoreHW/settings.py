@@ -67,6 +67,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'bookstoreHW.middleware.RequestMiddleware',
+    'rest_framework'
     'silk.middleware.SilkyMiddleware',
 ]
 
