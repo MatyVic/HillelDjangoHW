@@ -62,6 +62,10 @@ class BooksLimitOffsetPagination(PageNumberPagination):
     page_size_query_param = 'page_size'
     max_page_size = 20
 
+#Custom Throttle
+class OrderCustomThrottle(LimitOffsetPagination):
+    scope = 'order_throttle'
+
 class BooksVeiewSet(viewsets.ModelViewSet):
     queryset = Book.objects.prefetch_related('author').prefetch_related('category').all()
     serializer_class = BookSerializer
@@ -95,3 +99,4 @@ class OrdersVeiewSet(viewsets.ModelViewSet):
     serializer_class = OrdersSerializer
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['owner', 'delivery_address', 'order_status', 'payment_status', 'ttn']
+    throttle_classes = [OrderCustomThrottle]

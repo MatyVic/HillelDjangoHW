@@ -259,6 +259,7 @@ REST_FRAMEWORK = {
     'DEFAULT_THROTTLE_RATES': {
         'anon': '60/min',
         'user': '120/min',
+        'order_throttle': '30/min',
     },
 }
 
