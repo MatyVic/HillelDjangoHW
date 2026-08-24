@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'shop.apps.ShopConfig',
     'order.apps.OrderConfig',
     'user_management.apps.UserManagementConfig',
+    'rest_framework',
     'silk',
 ]
 
@@ -67,7 +68,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'bookstoreHW.middleware.RequestMiddleware',
-    'rest_framework'
     'silk.middleware.SilkyMiddleware',
 ]
 
