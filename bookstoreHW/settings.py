@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'order.apps.OrderConfig',
     'user_management.apps.UserManagementConfig',
     'rest_framework',
+    "corsheaders",
     'django_filters',
     'silk',
 ]
@@ -63,6 +64,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -262,6 +264,13 @@ REST_FRAMEWORK = {
         'order_throttle': '30/min',
     },
 }
+
+CORS_ALLOWED_ORIGINS = [
+    "https://example.com",
+    "https://sub.example.com",
+    "http://localhost:8080",
+    "http://127.0.0.1:9000",
+]
 
 STATICFILES_DIRS = [
     BASE_DIR / "static",
