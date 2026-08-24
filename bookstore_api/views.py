@@ -67,12 +67,14 @@ class BooksVeiewSet(viewsets.ModelViewSet):
     serializer_class = BookSerializer
     filter_backends = [DjangoFilterBackend]
     pagination_class = BooksLimitOffsetPagination
+    filterset_fields = ['author', 'title', 'category', 'publisher', 'published_year', 'available']
 
 
 class AuthorsVeiewSet(viewsets.ModelViewSet):
     queryset = Author.objects.all()
     serializer_class = AuthorsSerializer
     filter_backends = [DjangoFilterBackend]
+    filterset_fields = [ 'first_name', 'last_name' , 'country', 'birth_date']
 
 
 class CategorysVeiewSet(viewsets.ModelViewSet):
@@ -85,6 +87,7 @@ class PublishersVeiewSet(viewsets.ModelViewSet):
     queryset = Publisher.objects.all()
     serializer_class = PublishersSerializer
     filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['name', 'country', 'website',]
 
 
 class OrdersVeiewSet(viewsets.ModelViewSet):
