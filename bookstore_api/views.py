@@ -1,3 +1,4 @@
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import viewsets, serializers
 from rest_framework.pagination import LimitOffsetPagination, PageNumberPagination
 
@@ -55,26 +56,30 @@ class BooksLimitOffsetPagination(PageNumberPagination):
 
 class BooksVeiewSet(viewsets.ModelViewSet):
     queryset = Book.objects.prefetch_related('author').prefetch_related('category').all()
-    pagination_class = BooksLimitOffsetPagination
     serializer_class = BookSerializer
+    filter_backends = [DjangoFilterBackend]
+    pagination_class = BooksLimitOffsetPagination
 
 
 class AuthorsVeiewSet(viewsets.ModelViewSet):
     queryset = Author.objects.all()
     serializer_class = AuthorsSerializer
+    filter_backends = [DjangoFilterBackend]
 
 
 class CategorysVeiewSet(viewsets.ModelViewSet):
-
     queryset = Category.objects.all()
     serializer_class = CategorysSerializer
+    filter_backends = [DjangoFilterBackend]
 
 
 class PublishersVeiewSet(viewsets.ModelViewSet):
     queryset = Publisher.objects.all()
     serializer_class = PublishersSerializer
+    filter_backends = [DjangoFilterBackend]
 
 
 class OrdersVeiewSet(viewsets.ModelViewSet):
     queryset = Order.objects.all()
     serializer_class = OrdersSerializer
+    filter_backends = [DjangoFilterBackend]

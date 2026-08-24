@@ -1249,3 +1249,27 @@
 2026-08-24 14:20:32,418 [INFO] django.server: "GET /api/v1/books/ HTTP/1.1" 200 23609
 2026-08-24 14:20:38,826 [INFO] django.server: "GET /api/v1/books/?page=2 HTTP/1.1" 200 21899
 2026-08-24 14:20:39,960 [INFO] django.server: "GET /api/v1/books/ HTTP/1.1" 200 23609
+2026-08-24 14:26:26,383 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-24 14:26:46,882 [INFO] django.utils.autoreload: H:\DjangoHW\bookstoreHW\settings.py changed, reloading.
+2026-08-24 14:26:47,297 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-24 14:27:28,711 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-24 14:27:31,293 [WARNING] django.server: "GET / HTTP/1.1" 404 3053
+2026-08-24 14:27:36,387 [WARNING] django.server: "GET /api/ HTTP/1.1" 404 3083
+2026-08-24 14:27:40,900 [INFO] django.server: "GET /api/v1/ HTTP/1.1" 200 10675
+2026-08-24 14:27:43,265 [INFO] django.server: "GET /api/v1/books/ HTTP/1.1" 200 23609
+2026-08-24 14:27:48,625 [INFO] django.server: "OPTIONS /api/v1/books/ HTTP/1.1" 200 25042
+2026-08-24 14:27:50,160 [INFO] django.server: "OPTIONS /api/v1/books/ HTTP/1.1" 200 25042
+2026-08-24 14:27:50,937 [INFO] django.server: "OPTIONS /api/v1/books/ HTTP/1.1" 200 25042
+2026-08-24 14:28:28,204 [INFO] django.utils.autoreload: H:\DjangoHW\bookstore_api\views.py changed, reloading.
+2026-08-24 14:28:28,746 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-24 14:28:33,325 [INFO] django.utils.autoreload: H:\DjangoHW\bookstore_api\views.py changed, reloading.
+2026-08-24 14:28:33,889 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-24 14:29:15,787 [INFO] django.utils.autoreload: H:\DjangoHW\bookstore_api\views.py changed, reloading.
+2026-08-24 14:29:16,294 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-24 14:29:20,746 [INFO] django.server: "GET /api/v1/books/ HTTP/1.1" 200 23609
+2026-08-24 14:29:22,674 [INFO] django.server: "GET /api/v1/ HTTP/1.1" 200 10675
+2026-08-24 14:29:24,007 [INFO] django.server: "GET /api/v1/books/ HTTP/1.1" 200 23609
+2026-08-24 14:29:29,723 [INFO] django.server: "GET /api/v1/books/?format=api HTTP/1.1" 200 23757
+2026-08-24 14:29:31,312 [INFO] django.server: "OPTIONS /api/v1/books/?format=api HTTP/1.1" 200 25119
+2026-08-24 14:29:32,092 [INFO] django.server: "OPTIONS /api/v1/books/?format=api HTTP/1.1" 200 25119
+2026-08-24 14:29:32,645 [INFO] django.server: "OPTIONS /api/v1/books/?format=api HTTP/1.1" 200 25119
