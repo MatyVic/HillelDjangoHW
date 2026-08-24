@@ -4,11 +4,11 @@ from rest_framework import routers
 from bookstore_api.views import BooksVeiewSet, AuthorsVeiewSet, CategorysVeiewSet, PublishersVeiewSet, OrdersVeiewSet
 
 router = routers.DefaultRouter()
-router.register('books', BooksVeiewSet)
-router.register('authors', AuthorsVeiewSet)
-router.register('categories', CategorysVeiewSet)
-router.register('publishers', PublishersVeiewSet)
-router.register('orders', OrdersVeiewSet)
+router.register('books', BooksVeiewSet , 'books')
+router.register('authors', AuthorsVeiewSet , 'authors')
+router.register('categories', CategorysVeiewSet, 'categories')
+router.register('publishers', PublishersVeiewSet, 'publishers')
+router.register('orders', OrdersVeiewSet, 'orders')
 app_name = "api"
 urlpatterns = [
         path('', include(router.urls)),

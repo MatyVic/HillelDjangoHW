@@ -1,8 +1,8 @@
 from rest_framework import viewsets, serializers
+from rest_framework.pagination import LimitOffsetPagination, PageNumberPagination
 
 from order.models import Order, OrderDetail
 from shop.models import Book, Author, Category, Publisher
-
 
 
 class PublishersSerializer(serializers.ModelSerializer):
@@ -23,7 +23,7 @@ class CategorysSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class BookSerializer(serializers.ModelSerializer):
-    autor = AuthorsSerializer(many=True, read_only=True)
+    author = AuthorsSerializer(many=True, read_only=True)
     category = CategorysSerializer(many=True, read_only=True)
     author_ids = serializers.PrimaryKeyRelatedField(
         queryset=Author.objects.all(), source="author", many=True, write_only=True
@@ -47,8 +47,15 @@ class OrdersSerializer(serializers.ModelSerializer):
         model = Order
         fields = '__all__'
 
+#Custom pagination
+class BooksLimitOffsetPagination(PageNumberPagination):
+    page_size = 5
+    page_size_query_param = 'page_size'
+    max_page_size = 20
+
 class BooksVeiewSet(viewsets.ModelViewSet):
-    queryset = Book.objects.all()
+    queryset = Book.objects.prefetch_related('author').prefetch_related('category').all()
+    pagination_class = BooksLimitOffsetPagination
     serializer_class = BookSerializer
 
 
