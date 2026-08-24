@@ -1479,3 +1479,20 @@
 2026-08-24 17:25:17,543 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
 2026-08-24 17:25:26,077 [INFO] django.server: "POST /api/v1/token/ HTTP/1.1" 200 489
 2026-08-24 17:25:44,076 [INFO] django.server: "GET /api/v1/orders/9/ HTTP/1.1" 200 1169
+2026-08-24 17:30:07,400 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-24 17:30:09,751 [WARNING] django.server: "GET / HTTP/1.1" 404 3605
+2026-08-24 17:30:21,596 [INFO] django.server: "GET /api/v1/orders/9/ HTTP/1.1" 200 1169
+2026-08-24 17:30:42,860 [WARNING] django.server: "GET /book/ HTTP/1.1" 404 3638
+2026-08-24 17:30:48,802 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 7927
+2026-08-24 17:30:50,986 [INFO] django.server: "GET /user/logout/ HTTP/1.1" 302 0
+2026-08-24 17:30:51,093 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 7050
+2026-08-24 17:30:52,480 [INFO] django.server: "GET /user/login/ HTTP/1.1" 200 3170
+2026-08-24 17:31:03,558 [INFO] django.server: "POST /api/v1/token/ HTTP/1.1" 200 489
+2026-08-24 17:31:17,564 [WARNING] django.server: "GET /api/v1/orders/9/ HTTP/1.1" 404 46
+2026-08-24 17:31:22,697 [WARNING] django.server: "GET /api/v1/orders/9/ HTTP/1.1" 404 46
+2026-08-24 17:31:26,877 [WARNING] django.server: "GET /api/v1/orders/9/ HTTP/1.1" 404 46
+2026-08-24 17:31:40,080 [INFO] django.server: "POST /api/v1/token/ HTTP/1.1" 200 489
+2026-08-24 17:31:43,702 [INFO] django.server: "POST /api/v1/token/ HTTP/1.1" 200 489
+2026-08-24 17:31:53,638 [INFO] django.server: "GET /api/v1/orders/9/ HTTP/1.1" 200 1169
+2026-08-24 17:32:15,722 [INFO] django.server: "POST /api/v1/token/ HTTP/1.1" 200 489
+2026-08-24 17:32:26,124 [INFO] django.server: "GET /api/v1/orders/9/ HTTP/1.1" 200 1169
