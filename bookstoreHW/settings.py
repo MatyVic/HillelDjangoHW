@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 import sys
+from datetime import timedelta
 from pathlib import Path
 import os
 
@@ -56,6 +57,7 @@ INSTALLED_APPS = [
     'user_management.apps.UserManagementConfig',
     'rest_framework',
     "corsheaders",
+    'rest_framework_simplejwt',
     'django_filters',
     'silk',
 ]
@@ -257,12 +259,25 @@ REST_FRAMEWORK = {
     'DEFAULT_THROTTLE_CLASSES': [
         'rest_framework.throttling.AnonRateThrottle',
         'rest_framework.throttling.UserRateThrottle',
+        'rest_framework.throttling.ScopedRateThrottle',
     ],
     'DEFAULT_THROTTLE_RATES': {
         'anon': '60/min',
         'user': '120/min',
         'order_throttle': '30/min',
     },
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+}
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
+    'ROTATE_REFRESH_TOKENS': True,
 }
 
 CORS_ALLOWED_ORIGINS = [

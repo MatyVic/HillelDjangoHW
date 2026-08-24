@@ -1,12 +1,12 @@
 from django_filters.rest_framework import DjangoFilterBackend
-from rest_framework import viewsets, serializers
+from rest_framework import viewsets, serializers, permissions
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.throttling import UserRateThrottle
 
 from order.models import Order, OrderDetail, OrderStatus, PaymentStatus
 from shop.models import Book, Author, Category, Publisher
 from user_management.models import DeliveryData
-
+from .permissions import IsOwnerOrReadOnly
 
 class PublishersSerializer(serializers.ModelSerializer):
     class Meta:
@@ -101,3 +101,10 @@ class OrdersVeiewSet(viewsets.ModelViewSet):
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['owner', 'delivery_address', 'order_status', 'payment_status', 'ttn']
     throttle_classes = [OrderCustomThrottle]
+    permission_classes = [IsOwnerOrReadOnly, permissions.IsAuthenticated]
+
+    def get_queryset(self):
+        user = self.request.user
+        if user.is_staff:
+            return Order.objects.all()
+        return Order.objects.filter(owner=user)

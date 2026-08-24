@@ -17,7 +17,7 @@ Including another URLconf
 from django.conf.urls import handler400
 from django.contrib import admin
 from django.urls import path, include
-
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView, TokenVerifyView
 
 handler404 = 'bookstoreHW.views.error_404'
 handler403= 'bookstoreHW.views.error_403'
@@ -29,6 +29,9 @@ urlpatterns = [
     path('order/', include("order.urls")),
     path('user/', include("user_management.urls")),
     path('api/v1/', include("bookstore_api.urls")),
+    path('api/v1/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/v1/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('api/v1/token/verify/', TokenVerifyView.as_view(), name='token_verify'),
 ]
 
 urlpatterns += [path('silk/', include('silk.urls', namespace='silk'))]

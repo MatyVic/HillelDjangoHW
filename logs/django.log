@@ -1316,3 +1316,166 @@
 2026-08-24 14:54:04,447 [WARNING] django.server: "GET / HTTP/1.1" 404 3053
 2026-08-24 14:54:16,364 [INFO] django.server: "GET /api/v1/ HTTP/1.1" 200 10675
 2026-08-24 14:54:17,991 [INFO] django.server: "GET /api/v1/orders/ HTTP/1.1" 200 40940
+2026-08-24 16:23:33,558 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-24 16:23:34,930 [WARNING] django.server: "GET / HTTP/1.1" 404 3053
+2026-08-24 16:27:49,654 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-24 16:27:51,052 [WARNING] django.server: "GET / HTTP/1.1" 404 3421
+2026-08-24 16:28:01,317 [WARNING] django.server: "GET /api/v1/token/ HTTP/1.1" 405 12514
+2026-08-24 16:28:10,363 [WARNING] django.server: "POST /api/v1/token/ HTTP/1.1" 401 12506
+2026-08-24 16:46:14,001 [WARNING] django.server: "GET / HTTP/1.1" 404 3421
+2026-08-24 16:46:24,169 [INFO] django.server: "GET /api/v1/ HTTP/1.1" 200 10675
+2026-08-24 16:46:49,306 [WARNING] django.server: "GET //api/v1/token/ HTTP/1.1" 405 12514
+2026-08-24 16:46:58,055 [WARNING] django.server: "GET /api/v1/token/ HTTP/1.1" 405 12514
+2026-08-24 16:47:48,203 [INFO] django.server: "POST /api/v1/token/ HTTP/1.1" 200 12946
+2026-08-24 16:49:58,556 [INFO] django.utils.autoreload: H:\DjangoHW\bookstoreHW\urls.py changed, reloading.
+2026-08-24 16:49:59,120 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-24 16:50:21,034 [INFO] django.server: "GET /api/v1/ HTTP/1.1" 200 10675
+2026-08-24 16:50:32,248 [WARNING] django.server: "GET /api/v1/verify_token HTTP/1.1" 404 12030
+2026-08-24 16:50:50,768 [INFO] django.server: "GET /api/v1/token/verify HTTP/1.1" 301 0
+2026-08-24 16:50:50,810 [WARNING] django.server: "GET /api/v1/token/verify/ HTTP/1.1" 405 12332
+2026-08-24 16:50:53,525 [INFO] django.server: "POST /api/v1/token/verify/ HTTP/1.1" 200 12224
+2026-08-24 16:52:15,769 [INFO] django.utils.autoreload: H:\DjangoHW\bookstoreHW\settings.py changed, reloading.
+2026-08-24 16:52:16,357 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-24 16:52:18,380 [WARNING] django.server: "GET / HTTP/1.1" 404 3605
+2026-08-24 16:52:27,741 [INFO] django.server: "GET /api/v1/ HTTP/1.1" 200 10641
+2026-08-24 16:52:29,959 [INFO] django.server: "GET /api/v1/authors/ HTTP/1.1" 200 17834
+2026-08-24 16:54:45,902 [INFO] django.utils.autoreload: H:\DjangoHW\bookstoreHW\settings.py changed, reloading.
+2026-08-24 16:54:46,476 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-24 16:55:11,896 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-24 16:55:13,902 [WARNING] django.server: "GET / HTTP/1.1" 404 3605
+2026-08-24 16:55:18,492 [WARNING] django.server: "GET /api/v1/authors/ HTTP/1.1" 401 10064
+2026-08-24 16:55:25,204 [WARNING] django.server: "GET /api/v1/ HTTP/1.1" 401 9834
+2026-08-24 16:55:31,356 [WARNING] django.server: "GET /api/v1/?format=json HTTP/1.1" 401 96
+2026-08-24 16:55:31,436 [WARNING] django.server: "GET /favicon.ico HTTP/1.1" 404 3656
+2026-08-24 16:55:38,059 [WARNING] django.server: "POST /api/v1/token/verify/ HTTP/1.1" 401 12277
+2026-08-24 16:55:44,524 [WARNING] django.server: "GET /api/v1/token/ HTTP/1.1" 405 12514
+2026-08-24 16:55:51,643 [INFO] django.server: "POST /api/v1/token/ HTTP/1.1" 200 12946
+2026-08-24 16:56:21,361 [WARNING] django.server: "GET /api/v1/ HTTP/1.1" 401 9834
+2026-08-24 17:00:28,624 [WARNING] django.server: "GET /api/v1/ HTTP/1.1" 401 9834
+2026-08-24 17:00:33,184 [WARNING] django.server: "GET /api/ HTTP/1.1" 404 3635
+2026-08-24 17:00:41,355 [WARNING] django.server: "GET /api/v1/token/ HTTP/1.1" 405 12514
+2026-08-24 17:01:01,625 [INFO] django.server: "POST /api/v1/token/ HTTP/1.1" 200 489
+2026-08-24 17:01:32,531 [WARNING] django.server: "GET /api/v1/ HTTP/1.1" 401 9834
+2026-08-24 17:02:07,141 [WARNING] django.server: "POST /api/v1/ HTTP/1.1" 405 41
+2026-08-24 17:02:16,142 [INFO] django.server: "GET /api/v1/ HTTP/1.1" 200 257
+2026-08-24 17:02:25,604 [INFO] django.server: "GET /api/v1/orders/ HTTP/1.1" 200 6387
+2026-08-24 17:02:48,129 [INFO] django.server: "GET /api/v1/orders/8 HTTP/1.1" 301 0
+2026-08-24 17:02:48,213 [INFO] django.server: "GET /api/v1/orders/8/ HTTP/1.1" 200 759
+2026-08-24 17:09:18,681 [INFO] django.utils.autoreload: H:\DjangoHW\bookstore_api\views.py changed, reloading.
+2026-08-24 17:09:19,262 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-24 17:09:44,658 [INFO] django.utils.autoreload: H:\DjangoHW\bookstore_api\views.py changed, reloading.
+2026-08-24 17:09:45,244 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-24 17:10:01,994 [INFO] django.utils.autoreload: H:\DjangoHW\bookstore_api\views.py changed, reloading.
+2026-08-24 17:10:02,566 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-24 17:11:11,294 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-24 17:11:14,944 [WARNING] django.server: "GET /api/v1/token/ HTTP/1.1" 405 40
+2026-08-24 17:11:36,614 [WARNING] django.server: "GET /api/v1/token/ HTTP/1.1" 405 40
+2026-08-24 17:11:51,832 [INFO] django.server: "GET /api/v1/orders/8 HTTP/1.1" 301 0
+2026-08-24 17:11:51,934 [INFO] django.server: "GET /api/v1/orders/8/ HTTP/1.1" 200 759
+2026-08-24 17:11:57,695 [INFO] django.server: "GET /api/v1/orders/ HTTP/1.1" 200 6387
+2026-08-24 17:12:15,197 [INFO] django.server: "GET /admin/ HTTP/1.1" 200 13033
+2026-08-24 17:12:15,362 [INFO] django.server: "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 3538
+2026-08-24 17:12:15,367 [INFO] django.server: "GET /static/admin/css/base.css HTTP/1.1" 200 23100
+2026-08-24 17:12:15,470 [INFO] django.server: "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+2026-08-24 17:12:15,501 [INFO] django.server: "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+2026-08-24 17:12:15,518 [INFO] django.server: "GET /static/admin/css/responsive.css HTTP/1.1" 200 16273
+2026-08-24 17:12:20,884 [INFO] django.server: "GET /admin/ HTTP/1.1" 200 13033
+2026-08-24 17:12:28,302 [WARNING] django.server: "GET /book/ HTTP/1.1" 404 3638
+2026-08-24 17:12:32,983 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 7927
+2026-08-24 17:12:33,011 [INFO] django.server: "GET /static/css/style.css HTTP/1.1" 200 153
+2026-08-24 17:12:35,704 [INFO] django.server: "GET /user/logout/ HTTP/1.1" 302 0
+2026-08-24 17:12:35,818 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 7050
+2026-08-24 17:12:37,261 [INFO] django.server: "GET /user/login/ HTTP/1.1" 200 3170
+2026-08-24 17:13:04,553 [WARNING] django.server: "GET /api/v1/token/ HTTP/1.1" 405 40
+2026-08-24 17:13:08,921 [INFO] django.server: "POST /api/v1/token/ HTTP/1.1" 200 489
+2026-08-24 17:13:26,127 [INFO] django.server: "GET /api/v1/orders/ HTTP/1.1" 200 6387
+2026-08-24 17:14:42,599 [WARNING] django.server: "GET /order/ HTTP/1.1" 404 4831
+2026-08-24 17:15:03,195 [INFO] django.server: "GET /admin/ HTTP/1.1" 302 0
+2026-08-24 17:15:03,229 [INFO] django.server: "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4308
+2026-08-24 17:15:03,303 [INFO] django.server: "GET /static/admin/css/login.css HTTP/1.1" 200 951
+2026-08-24 17:15:06,096 [INFO] django.server: "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+2026-08-24 17:15:06,253 [INFO] django.server: "GET /admin/ HTTP/1.1" 200 13033
+2026-08-24 17:15:08,288 [INFO] django.server: "GET /admin/order/order/ HTTP/1.1" 200 22637
+2026-08-24 17:15:08,356 [INFO] django.server: "GET /static/admin/css/changelists.css HTTP/1.1" 200 7498
+2026-08-24 17:15:08,377 [WARNING] silk.model_factory: Response to request with pk 1d2f8b6f-b47f-4c38-9de9-279c756d7daa has content type text/javascript but was unable to parse it
+2026-08-24 17:15:08,439 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 10649
+2026-08-24 17:15:13,244 [INFO] django.server: "GET /admin/order/order/9/change/ HTTP/1.1" 200 30667
+2026-08-24 17:15:13,367 [INFO] django.server: "GET /static/admin/css/forms.css HTTP/1.1" 200 8831
+2026-08-24 17:15:13,368 [INFO] django.server: "GET /static/admin/js/calendar.js HTTP/1.1" 200 9159
+2026-08-24 17:15:13,369 [INFO] django.server: "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19698
+2026-08-24 17:15:13,370 [INFO] django.server: "GET /static/admin/js/inlines.js HTTP/1.1" 200 15628
+2026-08-24 17:15:13,380 [INFO] django.server: "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+2026-08-24 17:15:13,380 [INFO] django.server: "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+2026-08-24 17:15:13,387 [WARNING] silk.model_factory: Response to request with pk 18456bbd-afd0-488d-b922-3606f67986a1 has content type text/javascript but was unable to parse it
+2026-08-24 17:15:13,405 [INFO] django.server: "GET /static/admin/css/widgets.css HTTP/1.1" 200 11811
+2026-08-24 17:15:13,447 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 10649
+2026-08-24 17:15:18,474 [INFO] django.server: "POST /admin/order/order/9/change/ HTTP/1.1" 200 31022
+2026-08-24 17:15:18,542 [WARNING] silk.model_factory: Response to request with pk d01460ed-9193-4fd4-b157-68bc9df9edcb has content type text/javascript but was unable to parse it
+2026-08-24 17:15:18,603 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 10649
+2026-08-24 17:15:23,956 [INFO] django.server: "POST /admin/order/order/9/change/ HTTP/1.1" 302 0
+2026-08-24 17:15:24,138 [INFO] django.server: "GET /admin/order/order/ HTTP/1.1" 200 22893
+2026-08-24 17:15:24,269 [WARNING] silk.model_factory: Response to request with pk 3134c331-5a35-40eb-b434-422afb68f6cd has content type text/javascript but was unable to parse it
+2026-08-24 17:15:24,329 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 10649
+2026-08-24 17:15:30,858 [INFO] django.server: "GET /admin/order/order/7/change/ HTTP/1.1" 200 27695
+2026-08-24 17:15:30,912 [WARNING] silk.model_factory: Response to request with pk 14ad3638-8f4b-4fda-8639-97bce840c166 has content type text/javascript but was unable to parse it
+2026-08-24 17:15:30,975 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 10649
+2026-08-24 17:15:36,429 [INFO] django.server: "POST /admin/order/order/7/change/ HTTP/1.1" 302 0
+2026-08-24 17:15:36,589 [INFO] django.server: "GET /admin/order/order/ HTTP/1.1" 200 22925
+2026-08-24 17:15:36,637 [WARNING] silk.model_factory: Response to request with pk 54060242-3e38-468d-9b80-79501ec4992f has content type text/javascript but was unable to parse it
+2026-08-24 17:15:36,701 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 10649
+2026-08-24 17:15:53,839 [INFO] django.server: "GET /api/v1/orders/ HTTP/1.1" 200 6390
+2026-08-24 17:17:14,183 [INFO] django.server: "GET /api/v1/orders/ HTTP/1.1" 200 6390
+2026-08-24 17:17:24,065 [WARNING] django.server: "GET /api/v1/orders/1/ HTTP/1.1" 404 46
+2026-08-24 17:17:28,906 [INFO] django.server: "GET /api/v1/orders/2/ HTTP/1.1" 200 1087
+2026-08-24 17:17:54,673 [INFO] django.server: "GET /admin/order/order/7/change/ HTTP/1.1" 200 27774
+2026-08-24 17:17:54,770 [WARNING] silk.model_factory: Response to request with pk 1ada9eeb-e4d0-49a7-9c2e-d7bc6c250a5c has content type text/javascript but was unable to parse it
+2026-08-24 17:17:54,831 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 10649
+2026-08-24 17:18:02,047 [INFO] django.server: "GET /admin/user_management/deliverydata/add/?_to_field=id&_popup=1 HTTP/1.1" 200 7557
+2026-08-24 17:18:02,110 [WARNING] silk.model_factory: Response to request with pk ef6fe3e4-7cf7-4e28-b4c5-b1971cd57b3e has content type text/javascript but was unable to parse it
+2026-08-24 17:18:02,175 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 10649
+2026-08-24 17:18:12,133 [INFO] django.server: "POST /admin/user_management/deliverydata/add/?_to_field=id&_popup=1 HTTP/1.1" 200 377
+2026-08-24 17:18:12,157 [INFO] django.server: "GET /static/admin/js/popup_response.js HTTP/1.1" 200 532
+2026-08-24 17:18:15,832 [INFO] django.server: "POST /admin/order/order/7/change/ HTTP/1.1" 302 0
+2026-08-24 17:18:16,017 [INFO] django.server: "GET /admin/order/order/ HTTP/1.1" 200 23325
+2026-08-24 17:18:16,154 [WARNING] silk.model_factory: Response to request with pk 635128f3-5647-4f6c-87e0-3c6c835b3ad7 has content type text/javascript but was unable to parse it
+2026-08-24 17:18:16,214 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 10649
+2026-08-24 17:18:22,475 [INFO] django.server: "GET /admin/order/order/9/change/ HTTP/1.1" 200 30796
+2026-08-24 17:18:22,544 [WARNING] silk.model_factory: Response to request with pk 02f62d80-489b-43bf-8b9b-10c328b45a52 has content type text/javascript but was unable to parse it
+2026-08-24 17:18:22,608 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 10649
+2026-08-24 17:18:34,072 [INFO] django.server: "GET /api/v1/orders/9/ HTTP/1.1" 200 1160
+2026-08-24 17:18:49,245 [INFO] django.server: "GET /admin/user_management/deliverydata/2/change/?_to_field=id HTTP/1.1" 200 16774
+2026-08-24 17:18:49,307 [WARNING] silk.model_factory: Response to request with pk 0be6c6e6-4748-4d82-b488-4870f65e6a43 has content type text/javascript but was unable to parse it
+2026-08-24 17:18:49,369 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 10649
+2026-08-24 17:18:54,752 [INFO] django.server: "POST /admin/user_management/deliverydata/2/change/?_to_field=id HTTP/1.1" 302 0
+2026-08-24 17:18:54,906 [INFO] django.server: "GET /admin/user_management/deliverydata/ HTTP/1.1" 200 14647
+2026-08-24 17:18:54,986 [WARNING] silk.model_factory: Response to request with pk 258fa3f9-c2a6-4da4-9e88-60cba268bab0 has content type text/javascript but was unable to parse it
+2026-08-24 17:18:55,048 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 10649
+2026-08-24 17:18:58,053 [INFO] django.server: "GET /admin/order/order/ HTTP/1.1" 200 23096
+2026-08-24 17:18:58,112 [WARNING] silk.model_factory: Response to request with pk c2482492-87ec-45d0-aeb3-37a71f92e148 has content type text/javascript but was unable to parse it
+2026-08-24 17:18:58,172 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 10649
+2026-08-24 17:18:59,428 [INFO] django.server: "GET /admin/order/order/9/change/ HTTP/1.1" 200 30796
+2026-08-24 17:18:59,493 [WARNING] silk.model_factory: Response to request with pk 73a0edf2-80c2-479a-9fb6-6282b96ae9c5 has content type text/javascript but was unable to parse it
+2026-08-24 17:18:59,556 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 10649
+2026-08-24 17:19:04,519 [INFO] django.server: "GET /admin/user_management/deliverydata/add/?_to_field=id&_popup=1 HTTP/1.1" 200 7557
+2026-08-24 17:19:04,586 [WARNING] silk.model_factory: Response to request with pk f02c565c-5ea1-492f-ae60-2becf8146e35 has content type text/javascript but was unable to parse it
+2026-08-24 17:19:04,648 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 10649
+2026-08-24 17:19:11,111 [INFO] django.server: "POST /admin/user_management/deliverydata/add/?_to_field=id&_popup=1 HTTP/1.1" 200 377
+2026-08-24 17:19:13,239 [INFO] django.server: "POST /admin/order/order/9/change/ HTTP/1.1" 302 0
+2026-08-24 17:19:13,422 [INFO] django.server: "GET /admin/order/order/ HTTP/1.1" 200 23414
+2026-08-24 17:19:13,493 [WARNING] silk.model_factory: Response to request with pk c9789352-cdbd-4b2f-af14-4980b426b071 has content type text/javascript but was unable to parse it
+2026-08-24 17:19:13,555 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 10649
+2026-08-24 17:19:16,201 [INFO] django.server: "GET /admin/order/order/9/change/ HTTP/1.1" 200 30850
+2026-08-24 17:19:16,259 [WARNING] silk.model_factory: Response to request with pk 3bad005f-af61-4597-8731-4627f2209bc7 has content type text/javascript but was unable to parse it
+2026-08-24 17:19:16,320 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 10649
+2026-08-24 17:19:20,512 [INFO] django.server: "GET /api/v1/orders/9/ HTTP/1.1" 200 1169
+2026-08-24 17:20:59,275 [INFO] django.utils.autoreload: H:\DjangoHW\bookstore_api\views.py changed, reloading.
+2026-08-24 17:20:59,860 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-24 17:21:06,093 [INFO] django.server: "GET /api/v1/orders/9/ HTTP/1.1" 200 1169
+2026-08-24 17:21:12,807 [INFO] django.server: "GET /api/v1/orders/9/ HTTP/1.1" 200 1169
+2026-08-24 17:22:20,543 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-24 17:22:26,486 [INFO] django.server: "GET /api/v1/orders/9/ HTTP/1.1" 200 1169
+2026-08-24 17:24:44,797 [INFO] django.server: "POST /api/v1/token/ HTTP/1.1" 200 489
+2026-08-24 17:24:57,541 [INFO] django.server: "GET /api/v1/orders/9/ HTTP/1.1" 200 1169
+2026-08-24 17:25:17,543 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-24 17:25:26,077 [INFO] django.server: "POST /api/v1/token/ HTTP/1.1" 200 489
+2026-08-24 17:25:44,076 [INFO] django.server: "GET /api/v1/orders/9/ HTTP/1.1" 200 1169
