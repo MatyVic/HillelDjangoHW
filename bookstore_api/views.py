@@ -2,8 +2,9 @@ from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import viewsets, serializers
 from rest_framework.pagination import LimitOffsetPagination, PageNumberPagination
 
-from order.models import Order, OrderDetail
+from order.models import Order, OrderDetail, OrderStatus, PaymentStatus
 from shop.models import Book, Author, Category, Publisher
+from user_management.models import DeliveryData
 
 
 class PublishersSerializer(serializers.ModelSerializer):
@@ -42,8 +43,15 @@ class OrderDetailSerializer(serializers.ModelSerializer):
         model = OrderDetail
         fields = ["id", "book", "price", "amount"]
 
+
+class DeliveryAddressSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = DeliveryData
+        fields = '__all__'
+
 class OrdersSerializer(serializers.ModelSerializer):
     items = OrderDetailSerializer(source="orderdetail_set", many=True, read_only=True)
+    delivery_address = DeliveryAddressSerializer(read_only=True)
     class Meta:
         model = Order
         fields = '__all__'
@@ -83,3 +91,4 @@ class OrdersVeiewSet(viewsets.ModelViewSet):
     queryset = Order.objects.all()
     serializer_class = OrdersSerializer
     filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['owner', 'delivery_address', 'order_status', 'payment_status', 'ttn']

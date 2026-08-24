@@ -3785,3 +3785,321 @@ Traceback (most recent call last):
   File "H:\DjangoHW\venv\Lib\site-packages\django\urls\resolvers.py", line 842, in _reverse_with_prefix
     raise NoReverseMatch(msg)
 django.urls.exceptions.NoReverseMatch: Reverse for 'login' not found. 'login' is not a valid view function or pattern name.
+2026-08-24 14:46:21,795 [ERROR] django.request: Internal Server Error: /api/v1/orders/
+Traceback (most recent call last):
+  File "H:\DjangoHW\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "H:\DjangoHW\venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "H:\DjangoHW\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\views.py", line 526, in dispatch
+    response = self.handle_exception(exc)
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\views.py", line 474, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\views.py", line 485, in raise_uncaught_exception
+    raise exc
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\views.py", line 523, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\mixins.py", line 43, in list
+    return self.get_paginated_response(serializer.data)
+                                       ^^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\serializers.py", line 806, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\serializers.py", line 725, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\serializers.py", line 550, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\serializers.py", line 535, in to_representation
+    for field in fields:
+                 ^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\serializers.py", line 396, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\serializers.py", line 384, in fields
+    for key, value in self.get_fields().items():
+                      ~~~~~~~~~~~~~~~^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\serializers.py", line 1097, in get_fields
+    info = model_meta.get_field_info(model)
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\utils\model_meta.py", line 35, in get_field_info
+    opts = model._meta.concrete_model._meta
+           ^^^^^^^^^^^
+AttributeError: type object 'OrderStatus' has no attribute '_meta'
+2026-08-24 14:47:00,210 [ERROR] django.request: Internal Server Error: /api/v1/orders/
+Traceback (most recent call last):
+  File "H:\DjangoHW\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "H:\DjangoHW\venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "H:\DjangoHW\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\views.py", line 526, in dispatch
+    response = self.handle_exception(exc)
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\views.py", line 474, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\views.py", line 485, in raise_uncaught_exception
+    raise exc
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\views.py", line 523, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\mixins.py", line 43, in list
+    return self.get_paginated_response(serializer.data)
+                                       ^^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\serializers.py", line 806, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\serializers.py", line 725, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\serializers.py", line 550, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\serializers.py", line 535, in to_representation
+    for field in fields:
+                 ^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\serializers.py", line 396, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\serializers.py", line 384, in fields
+    for key, value in self.get_fields().items():
+                      ~~~~~~~~~~~~~~~^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\serializers.py", line 1097, in get_fields
+    info = model_meta.get_field_info(model)
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\utils\model_meta.py", line 35, in get_field_info
+    opts = model._meta.concrete_model._meta
+           ^^^^^^^^^^^
+AttributeError: type object 'OrderStatus' has no attribute '_meta'
+2026-08-24 14:47:19,428 [ERROR] django.request: Internal Server Error: /api/v1/orders/
+Traceback (most recent call last):
+  File "H:\DjangoHW\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "H:\DjangoHW\venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "H:\DjangoHW\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\views.py", line 526, in dispatch
+    response = self.handle_exception(exc)
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\views.py", line 474, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\views.py", line 485, in raise_uncaught_exception
+    raise exc
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\views.py", line 523, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\mixins.py", line 43, in list
+    return self.get_paginated_response(serializer.data)
+                                       ^^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\serializers.py", line 806, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\serializers.py", line 725, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\serializers.py", line 550, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\serializers.py", line 535, in to_representation
+    for field in fields:
+                 ^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\serializers.py", line 396, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\serializers.py", line 384, in fields
+    for key, value in self.get_fields().items():
+                      ~~~~~~~~~~~~~~~^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\serializers.py", line 1097, in get_fields
+    info = model_meta.get_field_info(model)
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\utils\model_meta.py", line 35, in get_field_info
+    opts = model._meta.concrete_model._meta
+           ^^^^^^^^^^^
+AttributeError: type object 'OrderStatus' has no attribute '_meta'
+2026-08-24 14:47:24,956 [ERROR] django.request: Internal Server Error: /api/v1/orders/
+Traceback (most recent call last):
+  File "H:\DjangoHW\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "H:\DjangoHW\venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "H:\DjangoHW\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\views.py", line 526, in dispatch
+    response = self.handle_exception(exc)
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\views.py", line 474, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\views.py", line 485, in raise_uncaught_exception
+    raise exc
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\views.py", line 523, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\mixins.py", line 43, in list
+    return self.get_paginated_response(serializer.data)
+                                       ^^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\serializers.py", line 806, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\serializers.py", line 725, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\serializers.py", line 550, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\serializers.py", line 535, in to_representation
+    for field in fields:
+                 ^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\serializers.py", line 396, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\serializers.py", line 384, in fields
+    for key, value in self.get_fields().items():
+                      ~~~~~~~~~~~~~~~^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\serializers.py", line 1097, in get_fields
+    info = model_meta.get_field_info(model)
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\utils\model_meta.py", line 35, in get_field_info
+    opts = model._meta.concrete_model._meta
+           ^^^^^^^^^^^
+AttributeError: type object 'OrderStatus' has no attribute '_meta'
+2026-08-24 14:50:02,861 [ERROR] django.request: Internal Server Error: /api/v1/orders/
+Traceback (most recent call last):
+  File "H:\DjangoHW\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "H:\DjangoHW\venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "H:\DjangoHW\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\views.py", line 526, in dispatch
+    response = self.handle_exception(exc)
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\views.py", line 474, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\views.py", line 485, in raise_uncaught_exception
+    raise exc
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\views.py", line 523, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\mixins.py", line 43, in list
+    return self.get_paginated_response(serializer.data)
+                                       ^^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\serializers.py", line 806, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\serializers.py", line 725, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\serializers.py", line 550, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\serializers.py", line 535, in to_representation
+    for field in fields:
+                 ^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\serializers.py", line 396, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\serializers.py", line 384, in fields
+    for key, value in self.get_fields().items():
+                      ~~~~~~~~~~~~~~~^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\serializers.py", line 1097, in get_fields
+    info = model_meta.get_field_info(model)
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\utils\model_meta.py", line 35, in get_field_info
+    opts = model._meta.concrete_model._meta
+           ^^^^^^^^^^^
+AttributeError: type object 'OrderStatus' has no attribute '_meta'
+2026-08-24 14:53:28,249 [ERROR] django.request: Internal Server Error: /api/v1/orders/
+Traceback (most recent call last):
+  File "H:\DjangoHW\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "H:\DjangoHW\venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "H:\DjangoHW\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\views.py", line 526, in dispatch
+    response = self.handle_exception(exc)
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\views.py", line 474, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\views.py", line 485, in raise_uncaught_exception
+    raise exc
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\views.py", line 523, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\mixins.py", line 43, in list
+    return self.get_paginated_response(serializer.data)
+                                       ^^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\serializers.py", line 806, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\serializers.py", line 725, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\serializers.py", line 550, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\serializers.py", line 535, in to_representation
+    for field in fields:
+                 ^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\serializers.py", line 396, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\serializers.py", line 384, in fields
+    for key, value in self.get_fields().items():
+                      ~~~~~~~~~~~~~~~^^
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\serializers.py", line 1097, in get_fields
+    info = model_meta.get_field_info(model)
+  File "H:\DjangoHW\venv\Lib\site-packages\rest_framework\utils\model_meta.py", line 35, in get_field_info
+    opts = model._meta.concrete_model._meta
+           ^^^^^^^^^^^
+AttributeError: type object 'OrderStatus' has no attribute '_meta'

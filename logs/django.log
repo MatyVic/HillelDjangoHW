@@ -1273,3 +1273,46 @@
 2026-08-24 14:29:31,312 [INFO] django.server: "OPTIONS /api/v1/books/?format=api HTTP/1.1" 200 25119
 2026-08-24 14:29:32,092 [INFO] django.server: "OPTIONS /api/v1/books/?format=api HTTP/1.1" 200 25119
 2026-08-24 14:29:32,645 [INFO] django.server: "OPTIONS /api/v1/books/?format=api HTTP/1.1" 200 25119
+2026-08-24 14:35:21,519 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-24 14:35:23,441 [WARNING] django.server: "GET / HTTP/1.1" 404 3053
+2026-08-24 14:35:32,632 [INFO] django.server: "GET /api/v1/ HTTP/1.1" 200 10675
+2026-08-24 14:35:35,190 [INFO] django.server: "GET /api/v1/orders/ HTTP/1.1" 200 35628
+2026-08-24 14:35:48,968 [INFO] django.server: "OPTIONS /api/v1/orders/ HTTP/1.1" 200 31977
+2026-08-24 14:35:49,944 [INFO] django.server: "OPTIONS /api/v1/orders/ HTTP/1.1" 200 31977
+2026-08-24 14:36:37,968 [INFO] django.utils.autoreload: H:\DjangoHW\bookstore_api\views.py changed, reloading.
+2026-08-24 14:36:52,453 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-24 14:36:54,335 [WARNING] django.server: "GET / HTTP/1.1" 404 3053
+2026-08-24 14:36:57,409 [INFO] django.server: "GET /api/v1/orders/ HTTP/1.1" 200 37705
+2026-08-24 14:36:57,567 [INFO] django.server: "GET /static/rest_framework/fonts/glyphicons-halflings-regular.woff2 HTTP/1.1" 200 18028
+2026-08-24 14:37:04,887 [INFO] django.server: "GET /api/v1/orders/?owner=3&delivery_address=1&order_status=&payment_status=&ttn= HTTP/1.1" 200 18765
+2026-08-24 14:37:09,840 [INFO] django.server: "GET /api/v1/orders/?owner=3&delivery_address=&order_status=&payment_status=&ttn= HTTP/1.1" 200 18758
+2026-08-24 14:37:15,784 [INFO] django.server: "GET /api/v1/orders/?owner=&delivery_address=&order_status=&payment_status=&ttn= HTTP/1.1" 200 38245
+2026-08-24 14:37:30,888 [INFO] django.server: "GET /api/v1/orders/?owner=&delivery_address=&order_status=PROCESSING&payment_status=&ttn= HTTP/1.1" 200 38334
+2026-08-24 14:37:59,998 [INFO] django.server: "GET /api/v1/orders/?owner=&delivery_address=&order_status=&payment_status=COMPLETED&ttn= HTTP/1.1" 200 27243
+2026-08-24 14:45:30,041 [INFO] django.utils.autoreload: H:\DjangoHW\bookstore_api\views.py changed, reloading.
+2026-08-24 14:45:30,613 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-24 14:46:18,870 [INFO] django.utils.autoreload: H:\DjangoHW\bookstore_api\views.py changed, reloading.
+2026-08-24 14:46:19,391 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-24 14:46:21,911 [ERROR] django.server: "GET /api/v1/orders/?owner=&delivery_address=&order_status=&payment_status=COMPLETED&ttn= HTTP/1.1" 500 165868
+2026-08-24 14:46:58,321 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-24 14:47:00,372 [ERROR] django.server: "GET /api/v1/orders/?owner=&delivery_address=&order_status=&payment_status=COMPLETED&ttn= HTTP/1.1" 500 165868
+2026-08-24 14:47:19,583 [ERROR] django.server: "GET /api/v1/orders/?owner=&delivery_address=&order_status=PROCESSING&payment_status=&ttn= HTTP/1.1" 500 168482
+2026-08-24 14:47:23,390 [INFO] django.server: "GET /api/v1/ HTTP/1.1" 200 10675
+2026-08-24 14:47:25,103 [ERROR] django.server: "GET /api/v1/orders/ HTTP/1.1" 500 166093
+2026-08-24 14:48:56,420 [INFO] django.utils.autoreload: H:\DjangoHW\order\models.py changed, reloading.
+2026-08-24 14:48:56,983 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-24 14:49:20,048 [INFO] django.utils.autoreload: H:\DjangoHW\order\models.py changed, reloading.
+2026-08-24 14:49:20,593 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-24 14:49:57,558 [INFO] django.utils.autoreload: H:\DjangoHW\order\models.py changed, reloading.
+2026-08-24 14:49:58,111 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-24 14:49:59,510 [WARNING] django.server: "GET / HTTP/1.1" 404 3053
+2026-08-24 14:50:03,024 [ERROR] django.server: "GET /api/v1/orders/ HTTP/1.1" 500 166093
+2026-08-24 14:53:12,616 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-24 14:53:14,676 [WARNING] django.server: "GET / HTTP/1.1" 404 3053
+2026-08-24 14:53:28,398 [ERROR] django.server: "GET /api/v1/orders/ HTTP/1.1" 500 166093
+2026-08-24 14:53:50,085 [INFO] django.utils.autoreload: H:\DjangoHW\bookstore_api\views.py changed, reloading.
+2026-08-24 14:53:50,620 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-24 14:54:01,384 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-08-24 14:54:04,447 [WARNING] django.server: "GET / HTTP/1.1" 404 3053
+2026-08-24 14:54:16,364 [INFO] django.server: "GET /api/v1/ HTTP/1.1" 200 10675
+2026-08-24 14:54:17,991 [INFO] django.server: "GET /api/v1/orders/ HTTP/1.1" 200 40940

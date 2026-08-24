@@ -12,18 +12,17 @@ class OrderDetail(models.Model):
     order = models.ForeignKey('Order', on_delete=models.CASCADE, verbose_name=_("Order"))
 
 
-class PaymentStatus(Enum):
-    PENDING = 'PENDING'
-    PROCESSING = 'PROCESSING'
-    COMPLETED = 'COMPLETED'
-    FAILED = 'FAILED'
+class OrderStatus(models.TextChoices):
+    PROCESSING = 'PROCESSING', 'Processing'
+    SHIPPED = 'SHIPPED', 'Shipped'
+    DELIVERED = 'DELIVERED', 'Delivered'
+    CANCELED = 'CANCELED', 'Canceled'
 
-
-class OrderStatus(Enum):
-    PROCESSING = 'PROCESSING'
-    SHIPPED = 'SHIPPED'
-    DELIVERED = 'DELIVERED'
-    CANCELED = 'CANCELED'
+class PaymentStatus(models.TextChoices):
+    PENDING = 'PENDING', 'Pending'
+    PROCESSING = 'PROCESSING', 'Processing'
+    COMPLETED = 'COMPLETED', 'Completed'
+    FAILED = 'FAILED', 'Failed'
 
 
 class PaymentMethod(Enum):
@@ -36,8 +35,8 @@ class Order(models.Model):
     created_at = models.DateTimeField(default=timezone.now, verbose_name=_("Created at"))
     delivery_address = models.ForeignKey('user_management.DeliveryData', on_delete=models.CASCADE, verbose_name=_("Delivery Address"))
     total_price = models.DecimalField(max_digits=10, decimal_places=2,verbose_name=_("Total Price"))
-    order_status = models.CharField(max_length=20, verbose_name=_("Order Status"))
-    payment_status = models.CharField(max_length=20, verbose_name=_("Payment Status"))
+    order_status = models.CharField(max_length=20,choices=OrderStatus.choices,default=OrderStatus.PROCESSING,verbose_name=_("Order Status"),)
+    payment_status = models.CharField(max_length=20, choices=PaymentStatus.choices, default=PaymentStatus.PENDING, verbose_name=_("Payment Status"),)
     ttn = models.CharField(max_length=50, verbose_name=_("TTN"))
     stripe_session_id = models.CharField(max_length=255, blank=True, null=True, verbose_name=_("Stripe Session ID"))
 
