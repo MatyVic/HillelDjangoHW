@@ -1,6 +1,7 @@
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import viewsets, serializers
-from rest_framework.pagination import LimitOffsetPagination, PageNumberPagination
+from rest_framework.pagination import PageNumberPagination
+from rest_framework.throttling import UserRateThrottle
 
 from order.models import Order, OrderDetail, OrderStatus, PaymentStatus
 from shop.models import Book, Author, Category, Publisher
@@ -63,7 +64,7 @@ class BooksLimitOffsetPagination(PageNumberPagination):
     max_page_size = 20
 
 #Custom Throttle
-class OrderCustomThrottle(LimitOffsetPagination):
+class OrderCustomThrottle(UserRateThrottle):
     scope = 'order_throttle'
 
 class BooksVeiewSet(viewsets.ModelViewSet):
