@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 
 def error_404(request, exception):
@@ -6,3 +6,6 @@ def error_404(request, exception):
 
 def error_403(request, exception):
     return render(request, "error_403.html", status=403)
+
+def index(request):
+    return redirect("/shop/")

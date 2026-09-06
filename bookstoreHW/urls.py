@@ -20,12 +20,15 @@ from django.urls import path, include
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView, SpectacularRedocView
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView, TokenVerifyView
 
+from bookstoreHW.views import index
+
 handler404 = 'bookstoreHW.views.error_404'
 handler403= 'bookstoreHW.views.error_403'
 
 urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
     path('admin/', admin.site.urls),
+    path('',index),
     path("shop/", include("shop.urls")),
     path('order/', include("order.urls")),
     path('user/', include("user_management.urls")),
