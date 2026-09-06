@@ -28,3 +28,7 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
+
+  redis_cache:
+    image: redis:7.2-alpine
+    hostname: redis_cache
