@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     "corsheaders",
     'rest_framework_simplejwt',
     'django_filters',
+    'django_celery_beat',
     'drf_spectacular',
     'silk',
 ]
@@ -311,3 +312,4 @@ CACHES = {
 }
 
 CELERY_BROKER_URL = os.environ.get('CELERY_BROKER_URL', 'redis://localhost:6379')
+CELERY_BEAT_SCHEDULER = "django_celery_beat.schedulers:DatabaseScheduler"
