@@ -4817,3 +4817,68 @@ Traceback (most recent call last):
   File "H:\DjangoHW\venv\Lib\site-packages\django\utils\datastructures.py", line 88, in __getitem__
     raise MultiValueDictKeyError(key)
 django.utils.datastructures.MultiValueDictKeyError: 'quantity'
+2026-09-06 19:50:45,923 [ERROR] django.request: Internal Server Error: /
+Traceback (most recent call last):
+  File "H:\DjangoHW\venv\Lib\site-packages\redis\connection.py", line 1055, in connect_check_health
+    sock = self._connect()
+  File "H:\DjangoHW\venv\Lib\site-packages\redis\connection.py", line 1617, in _connect
+    raise err
+  File "H:\DjangoHW\venv\Lib\site-packages\redis\connection.py", line 1601, in _connect
+    sock.connect(socket_address)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "H:\DjangoHW\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "H:\DjangoHW\venv\Lib\site-packages\django\utils\deprecation.py", line 308, in __call__
+    response = self.process_request(request)
+  File "H:\DjangoHW\venv\Lib\site-packages\django\middleware\cache.py", line 183, in process_request
+    cache_key = get_cache_key(request, self.key_prefix, "GET", cache=self.cache)
+  File "H:\DjangoHW\venv\Lib\site-packages\django\utils\cache.py", line 393, in get_cache_key
+    headerlist = cache.get(cache_key)
+  File "H:\DjangoHW\venv\Lib\site-packages\django\core\cache\backends\redis.py", line 188, in get
+    return self._cache.get(key, default)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\django\core\cache\backends\redis.py", line 100, in get
+    value = client.get(key)
+  File "H:\DjangoHW\venv\Lib\site-packages\redis\commands\core.py", line 3200, in get
+    return self.execute_command("GET", name, keys=[name])
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\redis\client.py", line 867, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\redis\client.py", line 873, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "H:\DjangoHW\venv\Lib\site-packages\redis\utils.py", line 258, in wrapper
+    return func(*args, **kwargs)
+  File "H:\DjangoHW\venv\Lib\site-packages\redis\connection.py", line 3273, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "H:\DjangoHW\venv\Lib\site-packages\redis\connection.py", line 1028, in connect
+    self.retry.call_with_retry(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        lambda: self.connect_check_health(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        lambda error: self.disconnect(error),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "H:\DjangoHW\venv\Lib\site-packages\redis\retry.py", line 132, in call_with_retry
+    raise error
+  File "H:\DjangoHW\venv\Lib\site-packages\redis\retry.py", line 120, in call_with_retry
+    return do()
+  File "H:\DjangoHW\venv\Lib\site-packages\redis\connection.py", line 1029, in <lambda>
+    lambda: self.connect_check_health(
+            ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        check_health=True, retry_socket_connect=False
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ),
+    ^
+  File "H:\DjangoHW\venv\Lib\site-packages\redis\connection.py", line 1077, in connect_check_health
+    raise e
+redis.exceptions.ConnectionError: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.

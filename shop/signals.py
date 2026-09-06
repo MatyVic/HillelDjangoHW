@@ -11,8 +11,8 @@ def invalidate_book_detail_cache(sender, instance, **kwargs):
 
 
 @receiver(post_save, sender=Rating)
-def update_rating(sender,instance, created, **kwargs):
+def update_rating(sender, instance, created, **kwargs):
     if created:
         rated_book = instance.book
-        rated_book.calculated_rating = rated_book.ratings.all().aggregate(Avg('rating'))['rating__avg']
+        rated_book.calculated_rating = rated_book.rating_set.aggregate(Avg('rating'))['rating__avg']
         rated_book.save()
