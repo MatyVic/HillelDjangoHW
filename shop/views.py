@@ -1,6 +1,8 @@
 from asgiref.sync import sync_to_async
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.core.cache import cache
 from django.core.exceptions import PermissionDenied
+from django.http import Http404
 from django.shortcuts import render, get_object_or_404
 from django.db.models import Q, Avg, Count
 from django.urls import reverse, reverse_lazy
@@ -12,6 +14,7 @@ from django.contrib.auth.decorators import permission_required
 
 from shop.models import Book, Category, Rating
 
+CACHE_TTL = 60 * 30
 #Mixin
 
 # Class based views
@@ -47,7 +50,16 @@ class AllCheapBooksView(ListView):
 class SpecificBookView(View):
 
     async def get(self, request, book_id):
-        book = await Book.objects.select_related().aget(pk=book_id)
+        cache_key = f"book:detail:{book_id}"
+        book = await cache.aget(cache_key)
+
+        if book is None:
+            try:
+                book = await Book.objects.select_related().aget(pk=book_id)
+            except Book.DoesNotExist:
+                raise Http404("Book not found")
+            await cache.aset(cache_key, book, CACHE_TTL)
+
         return await sync_to_async(render)(request, "book.html", {"object": book})
 
 class CreateFeedBackView(LoginRequiredMixin, CreateView):
@@ -107,13 +119,13 @@ def get_avg_price_per_category(request):
     avg_price_per_category = Category.objects.annotate(avg_price=Avg("book__price"))
     return render(request, "avg_price.html", {"categories": avg_price_per_category})
 
-@cache_page(60 * 30, key_prefix="avg_price_category")
+@cache_page(60 * 30, key_prefix="books_by_year")
 def get_books_by_year(request):
     param_year = request.GET.get("year", 1800)
     books = Book.objects.filter(published_year__gt=param_year)
     return render(request, "my_template.html", {"books": books})
 
-@cache_page(60 * 30, key_prefix="avg_price_category")
+@cache_page(60 * 30, key_prefix="books_count_by_category")
 def count_books_by_price(request):
     counted_books = Category.objects.annotate(book_count=Count("book"))
     return render(request, "books_counter.html", {"categories": counted_books})

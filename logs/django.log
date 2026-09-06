@@ -1623,3 +1623,30 @@
 2026-09-06 13:42:40,081 [INFO] django.server: "GET /shop/avg-price/ HTTP/1.1" 200 4230
 2026-09-06 13:42:46,058 [INFO] django.server: "GET /shop/cheap-books/ HTTP/1.1" 200 7946
 2026-09-06 13:42:53,163 [ERROR] django.server: "GET /order/new_order/ HTTP/1.1" 500 102821
+2026-09-06 14:08:07,936 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-09-06 14:08:10,974 [WARNING] django.server: "GET / HTTP/1.1" 404 4121
+2026-09-06 14:08:20,585 [WARNING] django.server: "GET /book/1 HTTP/1.1" 404 4157
+2026-09-06 14:08:23,906 [WARNING] django.server: "GET /book/1/ HTTP/1.1" 404 4160
+2026-09-06 14:08:36,640 [WARNING] django.server: "GET /shop/book/1/ HTTP/1.1" 404 6831
+2026-09-06 14:08:46,179 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 7927
+2026-09-06 14:08:47,626 [INFO] django.server: "GET /shop/book/1 HTTP/1.1" 200 4190
+2026-09-06 14:08:51,157 [INFO] django.server: "GET /shop/book/1 HTTP/1.1" 200 4190
+2026-09-06 14:08:55,213 [INFO] django.server: "GET /shop/cheap-books/ HTTP/1.1" 200 7946
+2026-09-06 14:09:05,424 [INFO] django.server: "GET /shop/book/3 HTTP/1.1" 200 4185
+2026-09-06 14:09:10,688 [INFO] django.server: "GET /shop/cheap-books/ HTTP/1.1" 200 7946
+2026-09-06 14:09:15,251 [INFO] django.server: "GET /shop/book/3 HTTP/1.1" 200 4185
+2026-09-06 14:09:53,926 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-09-06 14:09:56,321 [WARNING] django.server: "GET / HTTP/1.1" 404 4121
+2026-09-06 14:10:01,668 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 7927
+2026-09-06 14:10:03,183 [INFO] django.server: "GET /shop/book/1 HTTP/1.1" 200 4190
+2026-09-06 14:10:06,448 [ERROR] django.server: "POST /order/cart/?next=/shop/book/1 HTTP/1.1" 500 90076
+2026-09-06 14:10:27,952 [ERROR] django.server: "POST /order/cart/?next=/shop/book/1 HTTP/1.1" 500 90076
+2026-09-06 14:10:41,513 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-09-06 14:10:45,864 [ERROR] django.server: "POST /order/cart/?next=/shop/book/1 HTTP/1.1" 500 90076
+2026-09-06 14:10:52,966 [ERROR] django.server: "POST /order/cart/?next=/shop/book/1 HTTP/1.1" 500 90076
+2026-09-06 14:14:01,214 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-09-06 14:14:08,365 [INFO] django.server: "GET /shop/book/3 HTTP/1.1" 200 4187
+2026-09-06 14:14:08,466 [INFO] django.server: "GET /static/css/style.css HTTP/1.1" 200 153
+2026-09-06 14:14:08,678 [WARNING] django.server: "GET /favicon.ico HTTP/1.1" 404 4172
+2026-09-06 14:14:11,219 [INFO] django.server: "POST /order/cart/?next=/shop/book/3 HTTP/1.1" 302 0
+2026-09-06 14:14:11,323 [INFO] django.server: "GET /shop/book/3 HTTP/1.1" 200 4190
