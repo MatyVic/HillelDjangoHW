@@ -306,6 +306,6 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 CACHES = {
     "default": {
         "BACKEND": "django.core.cache.backends.redis.RedisCache",
-        "LOCATION": "redis://username:password@127.0.0.1:6379",
+        "LOCATION": f"redis://{os.environ.get('REDIS_HOST', 'localhost')}:6379",
     }
 }

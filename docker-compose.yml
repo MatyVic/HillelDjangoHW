@@ -32,3 +32,5 @@ services:
   redis_cache:
     image: redis:7.2-alpine
     hostname: redis_cache
+    ports:
+      - "6379:6379"

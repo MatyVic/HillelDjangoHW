@@ -1514,3 +1514,15 @@
 2026-08-24 17:40:53,311 [WARNING] django.server: "GET /api/v1/orders/ HTTP/1.1" 401 96
 2026-08-24 17:41:38,532 [INFO] django.server: "POST /api/v1/token/ HTTP/1.1" 200 489
 2026-08-24 17:41:53,975 [INFO] django.server: "GET /api/v1/orders/ HTTP/1.1" 200 6403
+2026-09-06 13:09:26,878 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-09-06 13:10:52,447 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-09-06 13:12:03,752 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-09-06 13:12:54,300 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-09-06 13:12:59,199 [ERROR] django.server: "GET / HTTP/1.1" 500 143228
+2026-09-06 13:13:02,080 [ERROR] django.server: "GET /favicon.ico HTTP/1.1" 500 143049
+2026-09-06 13:14:45,033 [ERROR] django.server: "GET / HTTP/1.1" 500 143050
+2026-09-06 13:16:38,030 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-09-06 13:16:42,251 [ERROR] django.server: "GET / HTTP/1.1" 500 143228
+2026-09-06 13:18:02,895 [INFO] django.utils.autoreload: H:\DjangoHW\bookstoreHW\settings.py changed, reloading.
+2026-09-06 13:18:03,516 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-09-06 13:18:09,402 [ERROR] django.server: "GET / HTTP/1.1" 500 143228
