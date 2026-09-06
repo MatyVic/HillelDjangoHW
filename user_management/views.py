@@ -4,6 +4,7 @@ from django.contrib.auth.models import Group
 from django.shortcuts import render, redirect
 from django.views import View
 from user_management.forms import RegisterForm, LoginForm
+from bookstoreHW.tasks import reg_mail_sender
 import logging
 
 logger = logging.getLogger(__name__)
@@ -20,6 +21,7 @@ def user_register(request):
         register_form = RegisterForm(request.POST)
         if register_form.is_valid():
             user = register_form.save()
+            reg_mail_sender.delay(user.id)
             client_group, _ = Group.objects.get_or_create(name='Users_test')
             user.groups.add(client_group)
             login(request, user)

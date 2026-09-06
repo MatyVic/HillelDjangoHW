@@ -1650,3 +1650,6 @@
 2026-09-06 14:14:08,678 [WARNING] django.server: "GET /favicon.ico HTTP/1.1" 404 4172
 2026-09-06 14:14:11,219 [INFO] django.server: "POST /order/cart/?next=/shop/book/3 HTTP/1.1" 302 0
 2026-09-06 14:14:11,323 [INFO] django.server: "GET /shop/book/3 HTTP/1.1" 200 4190
+2026-09-07 00:22:03,083 [WARNING] user_management.views: Invalid registration attempt: <ul class="errorlist"><li>birth_date<ul class="errorlist" id="id_birth_date_error"><li>Enter a valid date.</li></ul></li></ul>
+2026-09-07 00:22:27,010 [INFO] user_management.views: New user registered: MyNewUSRT
+2026-09-07 00:24:12,990 [INFO] user_management.views: New user registered: MySRTUSER

@@ -309,3 +309,5 @@ CACHES = {
         "LOCATION": f"redis://{os.environ.get('REDIS_HOST', 'localhost')}:6379",
     }
 }
+
+CELERY_BROKER_URL = os.environ.get('CELERY_BROKER_URL', 'redis://localhost:6379')
