@@ -1526,3 +1526,17 @@
 2026-09-06 13:18:02,895 [INFO] django.utils.autoreload: H:\DjangoHW\bookstoreHW\settings.py changed, reloading.
 2026-09-06 13:18:03,516 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
 2026-09-06 13:18:09,402 [ERROR] django.server: "GET / HTTP/1.1" 500 143228
+2026-09-06 13:19:48,136 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-09-06 13:19:52,761 [ERROR] django.server: "GET / HTTP/1.1" 500 143228
+2026-09-06 13:21:14,085 [INFO] django.utils.autoreload: H:\DjangoHW\bookstoreHW\settings.py changed, reloading.
+2026-09-06 13:21:14,713 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-09-06 13:21:21,963 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-09-06 13:21:26,310 [ERROR] django.server: "GET / HTTP/1.1" 500 149289
+2026-09-06 13:22:15,405 [INFO] django.utils.autoreload: H:\DjangoHW\bookstoreHW\settings.py changed, reloading.
+2026-09-06 13:22:16,114 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-09-06 13:24:37,805 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-09-06 13:24:40,083 [WARNING] django.server: "GET / HTTP/1.1" 404 4121
+2026-09-06 13:24:56,393 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 7050
+2026-09-06 13:24:56,509 [INFO] django.server: "GET /static/css/style.css HTTP/1.1" 200 153
+2026-09-06 13:25:02,694 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 7050
+2026-09-06 13:25:03,497 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 7050
