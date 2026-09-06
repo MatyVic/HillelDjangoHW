@@ -1540,3 +1540,86 @@
 2026-09-06 13:24:56,509 [INFO] django.server: "GET /static/css/style.css HTTP/1.1" 200 153
 2026-09-06 13:25:02,694 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 7050
 2026-09-06 13:25:03,497 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 7050
+2026-09-06 13:30:49,543 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-09-06 13:30:51,226 [WARNING] django.server: "GET / HTTP/1.1" 404 4121
+2026-09-06 13:30:58,461 [ERROR] django.server: "POST /order/cart/?next=/shop/ HTTP/1.1" 500 98297
+2026-09-06 13:31:04,332 [INFO] django.server: "GET /user/login/ HTTP/1.1" 200 3170
+2026-09-06 13:31:07,118 [INFO] django.server: "POST /user/login/ HTTP/1.1" 200 3235
+2026-09-06 13:31:10,334 [INFO] django.server: "POST /user/login/ HTTP/1.1" 302 0
+2026-09-06 13:31:10,341 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 7050
+2026-09-06 13:31:13,920 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 7050
+2026-09-06 13:31:15,457 [INFO] django.server: "GET /user/login/ HTTP/1.1" 200 4053
+2026-09-06 13:31:18,694 [INFO] django.server: "POST /user/login/ HTTP/1.1" 302 0
+2026-09-06 13:31:18,701 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 7050
+2026-09-06 13:31:22,937 [WARNING] django.security.csrf: Forbidden (CSRF token from POST incorrect.): /order/cart/
+2026-09-06 13:31:22,948 [WARNING] django.server: "POST /order/cart/?next=/shop/ HTTP/1.1" 403 2503
+2026-09-06 13:31:55,844 [WARNING] django.security.csrf: Forbidden (CSRF token from POST incorrect.): /order/cart/
+2026-09-06 13:31:55,856 [WARNING] django.server: "POST /order/cart/?next=/shop/ HTTP/1.1" 403 2503
+2026-09-06 13:32:00,073 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 7050
+2026-09-06 13:32:09,965 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-09-06 13:32:12,663 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 7050
+2026-09-06 13:32:14,706 [INFO] django.server: "GET /user/login/ HTTP/1.1" 200 4055
+2026-09-06 13:32:24,058 [INFO] django.server: "GET /shop/cheap-books/ HTTP/1.1" 200 7948
+2026-09-06 13:32:28,787 [INFO] django.server: "POST /order/cart/?next=/shop/cheap-books/ HTTP/1.1" 302 0
+2026-09-06 13:32:28,898 [INFO] django.server: "GET /shop/cheap-books/ HTTP/1.1" 200 7951
+2026-09-06 13:32:32,208 [WARNING] django.security.csrf: Forbidden (CSRF token from POST incorrect.): /order/cart/
+2026-09-06 13:32:32,220 [WARNING] django.server: "POST /order/cart/?next=/shop/ HTTP/1.1" 403 2503
+2026-09-06 13:33:05,714 [INFO] django.utils.autoreload: H:\DjangoHW\shop\urls.py changed, reloading.
+2026-09-06 13:33:06,349 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-09-06 13:33:07,934 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 7050
+2026-09-06 13:33:18,303 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-09-06 13:33:20,979 [WARNING] django.server: "GET / HTTP/1.1" 404 4121
+2026-09-06 13:33:30,630 [INFO] django.server: "GET /user/login/ HTTP/1.1" 200 4058
+2026-09-06 13:33:33,964 [INFO] django.server: "POST /user/login/ HTTP/1.1" 302 0
+2026-09-06 13:33:33,971 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 7050
+2026-09-06 13:33:36,192 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 7050
+2026-09-06 13:33:37,469 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 7050
+2026-09-06 13:33:38,333 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 7050
+2026-09-06 13:34:19,455 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-09-06 13:34:23,561 [WARNING] django.server: "GET / HTTP/1.1" 404 4121
+2026-09-06 13:34:28,659 [INFO] django.server: "GET /user/login/ HTTP/1.1" 200 4058
+2026-09-06 13:36:09,623 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 7932
+2026-09-06 13:36:09,714 [INFO] django.server: "GET /static/css/style.css HTTP/1.1" 200 153
+2026-09-06 13:36:09,846 [WARNING] django.server: "GET /favicon.ico HTTP/1.1" 404 4172
+2026-09-06 13:36:12,919 [INFO] django.server: "POST /order/cart/?next=/shop/ HTTP/1.1" 302 0
+2026-09-06 13:36:13,030 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 7932
+2026-09-06 13:36:15,145 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 5717
+2026-09-06 13:36:17,740 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 5717
+2026-09-06 13:36:22,652 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 5717
+2026-09-06 13:36:33,817 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 5717
+2026-09-06 13:36:35,351 [INFO] django.server: "GET /order/cart/ HTTP/1.1" 200 5717
+2026-09-06 13:36:35,370 [INFO] django.server: "GET /static/css/style.css HTTP/1.1" 200 153
+2026-09-06 13:36:35,493 [WARNING] django.server: "GET /favicon.ico HTTP/1.1" 404 4172
+2026-09-06 13:36:43,888 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 7932
+2026-09-06 13:36:45,168 [INFO] django.server: "GET /shop/book/1 HTTP/1.1" 200 4195
+2026-09-06 13:36:48,211 [INFO] django.server: "GET /shop/book/1 HTTP/1.1" 200 4195
+2026-09-06 13:36:48,600 [INFO] django.server: "GET /shop/book/1 HTTP/1.1" 200 4195
+2026-09-06 13:36:48,772 [INFO] django.server: "GET /shop/book/1 HTTP/1.1" 200 4195
+2026-09-06 13:36:48,933 [INFO] django.server: "GET /shop/book/1 HTTP/1.1" 200 4195
+2026-09-06 13:36:49,123 [INFO] django.server: "GET /shop/book/1 HTTP/1.1" 200 4195
+2026-09-06 13:36:49,315 [INFO] django.server: "GET /shop/book/1 HTTP/1.1" 200 4195
+2026-09-06 13:36:49,476 [INFO] django.server: "GET /shop/book/1 HTTP/1.1" 200 4195
+2026-09-06 13:36:49,634 [INFO] django.server: "GET /shop/book/1 HTTP/1.1" 200 4195
+2026-09-06 13:37:00,226 [ERROR] django.server: "POST /order/cart/?next=/shop/book/1 HTTP/1.1" 500 90078
+2026-09-06 13:37:11,002 [ERROR] django.server: "POST /order/cart/?next=/shop/book/1 HTTP/1.1" 500 90078
+2026-09-06 13:40:00,580 [INFO] django.utils.autoreload: H:\DjangoHW\shop\views.py changed, reloading.
+2026-09-06 13:40:01,222 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-09-06 13:42:05,091 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-09-06 13:42:09,642 [WARNING] django.server: "GET / HTTP/1.1" 404 4121
+2026-09-06 13:42:15,112 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 7932
+2026-09-06 13:42:17,937 [WARNING] django.server: "GET /shop/avg-price/ HTTP/1.1" 403 292
+2026-09-06 13:42:21,663 [INFO] django.server: "GET /user/logout/ HTTP/1.1" 302 0
+2026-09-06 13:42:21,791 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 7050
+2026-09-06 13:42:24,001 [INFO] django.server: "GET /user/login/ HTTP/1.1" 200 3170
+2026-09-06 13:42:27,843 [INFO] django.server: "POST /user/login/ HTTP/1.1" 302 0
+2026-09-06 13:42:27,954 [INFO] django.server: "GET /shop/ HTTP/1.1" 200 7927
+2026-09-06 13:42:30,552 [INFO] django.server: "GET /shop/avg-price/ HTTP/1.1" 200 4230
+2026-09-06 13:42:38,281 [INFO] django.server: "GET /shop/avg-price/ HTTP/1.1" 200 4230
+2026-09-06 13:42:39,029 [INFO] django.server: "GET /shop/avg-price/ HTTP/1.1" 200 4230
+2026-09-06 13:42:39,397 [INFO] django.server: "GET /shop/avg-price/ HTTP/1.1" 200 4230
+2026-09-06 13:42:39,565 [INFO] django.server: "GET /shop/avg-price/ HTTP/1.1" 200 4230
+2026-09-06 13:42:39,733 [INFO] django.server: "GET /shop/avg-price/ HTTP/1.1" 200 4230
+2026-09-06 13:42:39,905 [INFO] django.server: "GET /shop/avg-price/ HTTP/1.1" 200 4230
+2026-09-06 13:42:40,081 [INFO] django.server: "GET /shop/avg-price/ HTTP/1.1" 200 4230
+2026-09-06 13:42:46,058 [INFO] django.server: "GET /shop/cheap-books/ HTTP/1.1" 200 7946
+2026-09-06 13:42:53,163 [ERROR] django.server: "GET /order/new_order/ HTTP/1.1" 500 102821

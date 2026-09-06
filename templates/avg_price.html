@@ -1,8 +1,11 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load cache %}
 {% block title %}{% trans "Average Price per Category" %}{% endblock %}
 {% block content %}
 <h2>{% trans "Average Price per Category" %}</h2>
+
+{% cache 1800 avg_price_table %}
 <table border="1">
     <thead>
         <tr>
@@ -23,4 +26,5 @@
         {% endfor %}
     </tbody>
 </table>
+{% endcache %}
 {% endblock %}

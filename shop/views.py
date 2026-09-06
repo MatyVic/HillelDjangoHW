@@ -6,6 +6,7 @@ from django.db.models import Q, Avg, Count
 from django.urls import reverse, reverse_lazy
 from django.contrib.auth import get_user_model
 from django.views import View
+from django.views.decorators.cache import cache_page
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.decorators import permission_required
 
@@ -101,17 +102,18 @@ def search_books(request):
     return render(request, "my_template.html", {"books": search_books_res})
 
 @permission_required('shop.view_avg_price', raise_exception=True)
+@cache_page(60 * 30, key_prefix="avg_price_category")
 def get_avg_price_per_category(request):
     avg_price_per_category = Category.objects.annotate(avg_price=Avg("book__price"))
     return render(request, "avg_price.html", {"categories": avg_price_per_category})
 
-
+@cache_page(60 * 30, key_prefix="avg_price_category")
 def get_books_by_year(request):
     param_year = request.GET.get("year", 1800)
     books = Book.objects.filter(published_year__gt=param_year)
     return render(request, "my_template.html", {"books": books})
 
-
+@cache_page(60 * 30, key_prefix="avg_price_category")
 def count_books_by_price(request):
     counted_books = Category.objects.annotate(book_count=Count("book"))
     return render(request, "books_counter.html", {"categories": counted_books})
