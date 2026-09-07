@@ -16,6 +16,7 @@ def error_403(request, exception):
 def index(request):
     return redirect("/shop/")
 
+
 def health_check(request):
 
     checks = {"database": "ok", "cache": "ok"}
