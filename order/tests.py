@@ -395,7 +395,7 @@ class TestStripeAndSuccessHandlers:
 
     @pytest.mark.django_db
     @patch("order.views.send_order_confirmation_email.delay")
-    @patch("order.views.OrderEmailService.send_confirmation_msg")
+    @patch("order.cart.OrderEmailService.send_confirmation_msg")
     def test_success_handler_valid_session(
         self, mock_send_email, mock_celery_task, client, user, delivery_data
     ):
@@ -440,7 +440,7 @@ class TestIntegrationUserCheckoutFlow:
 
     @pytest.mark.django_db
     @patch("order.views.send_order_confirmation_email.delay")  # Запатчити Celery таску
-    @patch("order.views.OrderEmailService.send_confirmation_msg")
+    @patch("order.cart.OrderEmailService.send_confirmation_msg")
     @patch("stripe.checkout.Session.create")
     def test_full_checkout_flow_success(
         self,
@@ -619,7 +619,7 @@ class TestIntegrationUserCheckoutFlow:
     @patch(
         "order.views.send_order_confirmation_email.delay"
     )  # Замініть шлях на ваш import
-    @patch("order.views.OrderEmailService.send_confirmation_msg")
+    @patch("order.cart.OrderEmailService.send_confirmation_msg")
     def test_idempotent_success_payment_flow(
         self, mock_email, mock_celery_task, client, user, delivery_data
     ):
@@ -726,7 +726,7 @@ class TestIntegrationUserCheckoutFlow:
             assert response.status_code == 302
 
     @patch("order.views.send_order_confirmation_email.delay")
-    @patch("order.views.OrderEmailService.send_confirmation_msg")
+    @patch("order.cart.OrderEmailService.send_confirmation_msg")
     def test_full_checkout_flow_triggers_email(
         self, mock_send_email, mock_celery_task, client, user, delivery_data
     ):
