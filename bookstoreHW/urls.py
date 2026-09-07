@@ -20,7 +20,7 @@ from django.urls import path, include
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView, SpectacularRedocView
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView, TokenVerifyView
 
-from bookstoreHW.views import index
+from bookstoreHW.views import index, trigger_error
 
 handler404 = 'bookstoreHW.views.error_404'
 handler403= 'bookstoreHW.views.error_403'

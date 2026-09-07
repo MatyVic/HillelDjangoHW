@@ -4986,3 +4986,61 @@ Traceback (most recent call last):
     check_arguments(*(args or ()), **(kwargs or {}))
     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 TypeError: reg_mail_sender() takes 1 positional argument but 2 were given
+2026-09-07 03:23:25,475 [ERROR] django.request: Internal Server Error: /sentry-debug/
+Traceback (most recent call last):
+  File "H:\DjangoHW\venv\Lib\site-packages\asgiref\sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "H:\DjangoHW\venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\asgiref\sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "H:\DjangoHW\venv\Lib\site-packages\django\core\handlers\base.py", line 254, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+        request, *callback_args, **callback_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "H:\DjangoHW\venv\Lib\site-packages\asgiref\sync.py", line 506, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "H:\DjangoHW\venv\Lib\site-packages\asgiref\sync.py", line 561, in thread_handler
+    return func(*args, **kwargs)
+  File "H:\DjangoHW\venv\Lib\site-packages\sentry_sdk\integrations\django\views.py", line 92, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "H:\DjangoHW\bookstoreHW\views.py", line 14, in trigger_error
+    return 1 / 0
+           ~~^~~
+ZeroDivisionError: division by zero
+2026-09-07 03:26:47,439 [ERROR] django.request: Internal Server Error: /sentry-debug/
+Traceback (most recent call last):
+  File "H:\DjangoHW\venv\Lib\site-packages\asgiref\sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "H:\DjangoHW\venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\asgiref\sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "H:\DjangoHW\venv\Lib\site-packages\django\core\handlers\base.py", line 254, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+        request, *callback_args, **callback_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "H:\DjangoHW\venv\Lib\site-packages\asgiref\sync.py", line 506, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\DjangoHW\venv\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "H:\DjangoHW\venv\Lib\site-packages\asgiref\sync.py", line 561, in thread_handler
+    return func(*args, **kwargs)
+  File "H:\DjangoHW\venv\Lib\site-packages\sentry_sdk\integrations\django\views.py", line 92, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "H:\DjangoHW\bookstoreHW\views.py", line 14, in trigger_error
+    return 1 / 0
+           ~~^~~
+ZeroDivisionError: division by zero
