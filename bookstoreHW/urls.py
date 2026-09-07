@@ -29,12 +29,13 @@ from rest_framework_simplejwt.views import (
     TokenVerifyView,
 )
 
-from bookstoreHW.views import index, trigger_error
+from bookstoreHW.views import index, piuphealth_check
 
 handler404 = "bookstoreHW.views.error_404"
 handler403 = "bookstoreHW.views.error_403"
 
 urlpatterns = [
+    path('health/', health_check, name='health_check'),
     path("i18n/", include("django.conf.urls.i18n")),
     path("admin/", admin.site.urls),
     path("", index),

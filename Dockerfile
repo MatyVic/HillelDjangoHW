@@ -21,3 +21,8 @@ COPY . .
 
 # Порт, який слухає застосунок
 EXPOSE 8000
+
+CMD ["gunicorn", "bookstoreHW.asgi:application", \
+     "-k", "uvicorn.workers.UvicornWorker", \
+     "--bind", "0.0.0.0:8000", \
+     "--workers", "3"]
