@@ -13,6 +13,7 @@ User = get_user_model()
 # Fixtures
 # ==========================================
 
+
 @pytest.fixture
 def category(db):
     return Category.objects.create(name="Sci-Fi")
@@ -31,18 +32,14 @@ def author(db):
 @pytest.fixture
 def user(db):
     return User.objects.create_user(
-        username="testuser",
-        email="test@example.com",
-        password="password123"
+        username="testuser", email="test@example.com", password="password123"
     )
 
 
 @pytest.fixture
 def other_user(db):
     return User.objects.create_user(
-        username="otheruser",
-        email="other@example.com",
-        password="password123"
+        username="otheruser", email="other@example.com", password="password123"
     )
 
 
@@ -88,17 +85,13 @@ def expensive_book(db, category, publisher):
 
 @pytest.fixture
 def rating(db, user, book):
-    return Rating.objects.create(
-        user=user,
-        book=book,
-        rating=5,
-        feedback="Great book!"
-    )
+    return Rating.objects.create(user=user, book=book, rating=5, feedback="Great book!")
 
 
 # ==========================================
 # Class-Based Views Tests
 # ==========================================
+
 
 @pytest.mark.django_db
 class TestAllBooksView:
@@ -177,7 +170,9 @@ class TestCreateFeedBackView:
 class TestFeedBackUpdateView:
     def test_owner_can_update_feedback(self, client, user, book, rating):
         client.force_login(user)
-        url = reverse("shop:update_feedback", kwargs={"book_id": book.pk, "pk": rating.pk})
+        url = reverse(
+            "shop:update_feedback", kwargs={"book_id": book.pk, "pk": rating.pk}
+        )
         data = {"rating": 4, "feedback": "Updated feedback"}
 
         response = client.post(url, data)
@@ -189,7 +184,9 @@ class TestFeedBackUpdateView:
 
     def test_non_owner_forbidden(self, client, other_user, book, rating):
         client.force_login(other_user)
-        url = reverse("shop:update_feedback", kwargs={"book_id": book.pk, "pk": rating.pk})
+        url = reverse(
+            "shop:update_feedback", kwargs={"book_id": book.pk, "pk": rating.pk}
+        )
 
         response = client.get(url)
         assert response.status_code == 403
@@ -199,7 +196,9 @@ class TestFeedBackUpdateView:
 class TestDeleteFeedBackView:
     def test_owner_can_delete_feedback(self, client, user, book, rating):
         client.force_login(user)
-        url = reverse("shop:delete_feedback", kwargs={"book_id": book.pk, "pk": rating.pk})
+        url = reverse(
+            "shop:delete_feedback", kwargs={"book_id": book.pk, "pk": rating.pk}
+        )
 
         response = client.post(url)
 
@@ -208,7 +207,9 @@ class TestDeleteFeedBackView:
 
     def test_non_owner_cannot_delete(self, client, other_user, book, rating):
         client.force_login(other_user)
-        url = reverse("shop:delete_feedback", kwargs={"book_id": book.pk, "pk": rating.pk})
+        url = reverse(
+            "shop:delete_feedback", kwargs={"book_id": book.pk, "pk": rating.pk}
+        )
 
         response = client.post(url)
         assert response.status_code == 403
@@ -218,6 +219,7 @@ class TestDeleteFeedBackView:
 # ==========================================
 # Function-Based Views Tests
 # ==========================================
+
 
 @pytest.mark.django_db
 def test_search_books(client, book):

@@ -43,6 +43,7 @@ class AuthorFactory(factory.django.DjangoModelFactory):
     last_name = "Doe"
     country = "USA"
 
+
 class CategoryFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = Category
@@ -54,7 +55,7 @@ class BookFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = Book
         skip_postgeneration_save = True
-        
+
     title = factory.Sequence(lambda n: f"Book {n}")
     publisher = factory.SubFactory(PublisherFactory)
     published_year = 2020

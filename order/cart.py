@@ -1,7 +1,8 @@
 from django.core.mail import EmailMultiAlternatives
 from shop.models import Book
 
-#AI reworked whole Cart class
+
+# AI reworked whole Cart class
 class Cart:
 
     def __init__(self, request):
@@ -68,10 +69,9 @@ class Cart:
         return sum(self.cart_data.values())
 
 
-
 class OrderEmailService:
 
-    def __init__(self,  order, user):
+    def __init__(self, order, user):
         self.order = order
         self.user = user
 
@@ -84,7 +84,9 @@ class OrderEmailService:
         <strong>{self.order.total_price} грн</strong> успішно створено.</p>
         <p>Ми повідомимо вас про доставку.</p>
         """
-        email = EmailMultiAlternatives(subject, text_content, None, [self.user.email or "test@example.com"])
+        email = EmailMultiAlternatives(
+            subject, text_content, None, [self.user.email or "test@example.com"]
+        )
         email.attach_alternative(html_content, "text/html")
         email.send()
 
@@ -95,6 +97,8 @@ class OrderEmailService:
            <p>Доброго дня, {self.user.username}!</p>
            <p>На жаль, оплата не пройшла. Спробуйте ще раз або зверніться до підтримки.</p>
            """
-        email = EmailMultiAlternatives(subject, text_content, None, [self.user.email or "test@example.com"])
+        email = EmailMultiAlternatives(
+            subject, text_content, None, [self.user.email or "test@example.com"]
+        )
         email.attach_alternative(html_content, "text/html")
         email.send()

@@ -10,31 +10,47 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('order', '0001_initial'),
-        ('shop', '0001_initial'),
-        ('user_management', '0001_initial'),
+        ("order", "0001_initial"),
+        ("shop", "0001_initial"),
+        ("user_management", "0001_initial"),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='order',
-            name='delivery_address',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='user_management.deliverydata', verbose_name='Delivery Address'),
+            model_name="order",
+            name="delivery_address",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE,
+                to="user_management.deliverydata",
+                verbose_name="Delivery Address",
+            ),
         ),
         migrations.AddField(
-            model_name='order',
-            name='owner',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL, verbose_name='Owner'),
+            model_name="order",
+            name="owner",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE,
+                to=settings.AUTH_USER_MODEL,
+                verbose_name="Owner",
+            ),
         ),
         migrations.AddField(
-            model_name='orderdetail',
-            name='book',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='shop.book', verbose_name='Book'),
+            model_name="orderdetail",
+            name="book",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE,
+                to="shop.book",
+                verbose_name="Book",
+            ),
         ),
         migrations.AddField(
-            model_name='orderdetail',
-            name='order',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='order.order', verbose_name='Order'),
+            model_name="orderdetail",
+            name="order",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE,
+                to="order.order",
+                verbose_name="Order",
+            ),
         ),
     ]

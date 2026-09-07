@@ -10,65 +10,173 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Author',
+            name="Author",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('first_name', models.CharField(max_length=100, verbose_name='First name')),
-                ('last_name', models.CharField(max_length=100, verbose_name='Last name')),
-                ('country', models.CharField(max_length=100, verbose_name='Country')),
-                ('birth_date', models.DateField(default=django.utils.timezone.now, verbose_name='Birth date')),
-                ('bio', models.TextField(default='No bio yet', verbose_name='bio')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "first_name",
+                    models.CharField(max_length=100, verbose_name="First name"),
+                ),
+                (
+                    "last_name",
+                    models.CharField(max_length=100, verbose_name="Last name"),
+                ),
+                ("country", models.CharField(max_length=100, verbose_name="Country")),
+                (
+                    "birth_date",
+                    models.DateField(
+                        default=django.utils.timezone.now, verbose_name="Birth date"
+                    ),
+                ),
+                ("bio", models.TextField(default="No bio yet", verbose_name="bio")),
             ],
         ),
         migrations.CreateModel(
-            name='Category',
+            name="Category",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=100, verbose_name='Category name')),
-                ('bio', models.TextField(default='No bio yet', verbose_name='bio')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "name",
+                    models.CharField(max_length=100, verbose_name="Category name"),
+                ),
+                ("bio", models.TextField(default="No bio yet", verbose_name="bio")),
             ],
             options={
-                'permissions': [('view_avg_price', 'Can view average price per category')],
+                "permissions": [
+                    ("view_avg_price", "Can view average price per category")
+                ],
             },
         ),
         migrations.CreateModel(
-            name='Publisher',
+            name="Publisher",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=100, verbose_name='Publisher name')),
-                ('country', models.CharField(max_length=100, verbose_name='Country')),
-                ('website', models.URLField(verbose_name='Website')),
-                ('bio', models.TextField(default='No bio yet', verbose_name='bio')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "name",
+                    models.CharField(max_length=100, verbose_name="Publisher name"),
+                ),
+                ("country", models.CharField(max_length=100, verbose_name="Country")),
+                ("website", models.URLField(verbose_name="Website")),
+                ("bio", models.TextField(default="No bio yet", verbose_name="bio")),
             ],
         ),
         migrations.CreateModel(
-            name='Book',
+            name="Book",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=100, verbose_name='Title')),
-                ('published_year', models.IntegerField(verbose_name='Published year')),
-                ('added_at', models.DateTimeField(default=django.utils.timezone.now, verbose_name='Added at')),
-                ('amount', models.IntegerField(verbose_name='Amount')),
-                ('price', models.DecimalField(decimal_places=2, max_digits=10, verbose_name='Price')),
-                ('available', models.BooleanField(default=True, verbose_name='Available')),
-                ('calculated_rating', models.DecimalField(decimal_places=2, max_digits=5, null=True, verbose_name='Calculated rating')),
-                ('author', models.ManyToManyField(to='shop.author', verbose_name='Author')),
-                ('category', models.ManyToManyField(to='shop.category', verbose_name='Category')),
-                ('publisher', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='shop.publisher', verbose_name='Publisher')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("title", models.CharField(max_length=100, verbose_name="Title")),
+                ("published_year", models.IntegerField(verbose_name="Published year")),
+                (
+                    "added_at",
+                    models.DateTimeField(
+                        default=django.utils.timezone.now, verbose_name="Added at"
+                    ),
+                ),
+                ("amount", models.IntegerField(verbose_name="Amount")),
+                (
+                    "price",
+                    models.DecimalField(
+                        decimal_places=2, max_digits=10, verbose_name="Price"
+                    ),
+                ),
+                (
+                    "available",
+                    models.BooleanField(default=True, verbose_name="Available"),
+                ),
+                (
+                    "calculated_rating",
+                    models.DecimalField(
+                        decimal_places=2,
+                        max_digits=5,
+                        null=True,
+                        verbose_name="Calculated rating",
+                    ),
+                ),
+                (
+                    "author",
+                    models.ManyToManyField(to="shop.author", verbose_name="Author"),
+                ),
+                (
+                    "category",
+                    models.ManyToManyField(to="shop.category", verbose_name="Category"),
+                ),
+                (
+                    "publisher",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="shop.publisher",
+                        verbose_name="Publisher",
+                    ),
+                ),
             ],
         ),
         migrations.CreateModel(
-            name='Rating',
+            name="Rating",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('rating', models.IntegerField(validators=[django.core.validators.MinValueValidator(1), django.core.validators.MaxValueValidator(5)], verbose_name='Rating')),
-                ('feedback', models.TextField(verbose_name='Feedback')),
-                ('book', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='shop.book', verbose_name='Book')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "rating",
+                    models.IntegerField(
+                        validators=[
+                            django.core.validators.MinValueValidator(1),
+                            django.core.validators.MaxValueValidator(5),
+                        ],
+                        verbose_name="Rating",
+                    ),
+                ),
+                ("feedback", models.TextField(verbose_name="Feedback")),
+                (
+                    "book",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="shop.book",
+                        verbose_name="Book",
+                    ),
+                ),
             ],
         ),
     ]

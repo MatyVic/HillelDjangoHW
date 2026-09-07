@@ -4,6 +4,7 @@ from django.core.mail import EmailMultiAlternatives
 
 User = get_user_model()
 
+
 @shared_task(ignore_result=True)
 def reg_mail_sender(user_id):
     try:
@@ -18,6 +19,8 @@ def reg_mail_sender(user_id):
           <p>Вітаємо з реєстрацією на сайті, надалі усі акції 
           та спецпропозиції будемо надсилати на цю адресу.</p>
           """
-    email = EmailMultiAlternatives(subject, text_content, None, [user.email or "test@example.com"])
+    email = EmailMultiAlternatives(
+        subject, text_content, None, [user.email or "test@example.com"]
+    )
     email.attach_alternative(html_content, "text/html")
     email.send()

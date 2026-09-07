@@ -8,28 +8,92 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Order',
+            name="Order",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('created_at', models.DateTimeField(default=django.utils.timezone.now, verbose_name='Created at')),
-                ('total_price', models.DecimalField(decimal_places=2, max_digits=10, verbose_name='Total Price')),
-                ('order_status', models.CharField(choices=[('PROCESSING', 'Processing'), ('SHIPPED', 'Shipped'), ('DELIVERED', 'Delivered'), ('CANCELED', 'Canceled')], default='PROCESSING', max_length=20, verbose_name='Order Status')),
-                ('payment_status', models.CharField(choices=[('PENDING', 'Pending'), ('PROCESSING', 'Processing'), ('COMPLETED', 'Completed'), ('FAILED', 'Failed')], default='PENDING', max_length=20, verbose_name='Payment Status')),
-                ('ttn', models.CharField(max_length=50, verbose_name='TTN')),
-                ('stripe_session_id', models.CharField(blank=True, max_length=255, null=True, verbose_name='Stripe Session ID')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "created_at",
+                    models.DateTimeField(
+                        default=django.utils.timezone.now, verbose_name="Created at"
+                    ),
+                ),
+                (
+                    "total_price",
+                    models.DecimalField(
+                        decimal_places=2, max_digits=10, verbose_name="Total Price"
+                    ),
+                ),
+                (
+                    "order_status",
+                    models.CharField(
+                        choices=[
+                            ("PROCESSING", "Processing"),
+                            ("SHIPPED", "Shipped"),
+                            ("DELIVERED", "Delivered"),
+                            ("CANCELED", "Canceled"),
+                        ],
+                        default="PROCESSING",
+                        max_length=20,
+                        verbose_name="Order Status",
+                    ),
+                ),
+                (
+                    "payment_status",
+                    models.CharField(
+                        choices=[
+                            ("PENDING", "Pending"),
+                            ("PROCESSING", "Processing"),
+                            ("COMPLETED", "Completed"),
+                            ("FAILED", "Failed"),
+                        ],
+                        default="PENDING",
+                        max_length=20,
+                        verbose_name="Payment Status",
+                    ),
+                ),
+                ("ttn", models.CharField(max_length=50, verbose_name="TTN")),
+                (
+                    "stripe_session_id",
+                    models.CharField(
+                        blank=True,
+                        max_length=255,
+                        null=True,
+                        verbose_name="Stripe Session ID",
+                    ),
+                ),
             ],
         ),
         migrations.CreateModel(
-            name='OrderDetail',
+            name="OrderDetail",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('price', models.DecimalField(decimal_places=2, max_digits=10, verbose_name='Price')),
-                ('amount', models.IntegerField(verbose_name='Amount')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "price",
+                    models.DecimalField(
+                        decimal_places=2, max_digits=10, verbose_name="Price"
+                    ),
+                ),
+                ("amount", models.IntegerField(verbose_name="Amount")),
             ],
         ),
     ]

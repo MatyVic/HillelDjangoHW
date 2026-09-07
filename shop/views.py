@@ -9,13 +9,20 @@ from django.urls import reverse, reverse_lazy
 from django.contrib.auth import get_user_model
 from django.views import View
 from django.views.decorators.cache import cache_page
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.views.generic import (
+    ListView,
+    DetailView,
+    CreateView,
+    UpdateView,
+    DeleteView,
+)
 from django.contrib.auth.decorators import permission_required
 
 from shop.models import Book, Category, Rating
 
 CACHE_TTL = 60 * 30
-#Mixin
+# Mixin
+
 
 # Class based views
 class AllBooksView(ListView):
@@ -25,14 +32,17 @@ class AllBooksView(ListView):
     paginate_by = 4
 
     def get_absolute_url(self):
-        return reverse('book', kwargs={'pk': self.kwargs["book_id"]})
+        return reverse("book", kwargs={"pk": self.kwargs["book_id"]})
 
     def get_queryset(self):
         query = self.request.GET.get("q")
         qs = Book.objects.prefetch_related("author", "category").all()
         if query:
-            qs = qs.filter(Q(title__icontains=query) | Q(author__last_name__icontains=query))
+            qs = qs.filter(
+                Q(title__icontains=query) | Q(author__last_name__icontains=query)
+            )
         return qs
+
 
 class AllCheapBooksView(ListView):
     model = Book
@@ -42,10 +52,13 @@ class AllCheapBooksView(ListView):
 
     def get_queryset(self):
         query = self.request.GET.get("q")
-        qs =  Book.objects.filter(price__lt=500).prefetch_related("author", "category")
+        qs = Book.objects.filter(price__lt=500).prefetch_related("author", "category")
         if query:
-            qs = qs.filter(Q(title__icontains=query) | Q(author__last_name__icontains=query))
+            qs = qs.filter(
+                Q(title__icontains=query) | Q(author__last_name__icontains=query)
+            )
         return qs
+
 
 class SpecificBookView(View):
 
@@ -62,6 +75,7 @@ class SpecificBookView(View):
 
         return await sync_to_async(render)(request, "book.html", {"object": book})
 
+
 class CreateFeedBackView(LoginRequiredMixin, CreateView):
     model = Rating
     fields = ["rating", "feedback"]
@@ -74,12 +88,14 @@ class CreateFeedBackView(LoginRequiredMixin, CreateView):
     def get_success_url(self):
         return reverse("shop:book", kwargs={"book_id": self.kwargs["book_id"]})
 
+
 class EditDeleteByOwnerMixin:
     def dispatch(self, request, *args, **kwargs):
         rating = Rating.objects.filter(user=request.user, id=kwargs["pk"]).first()
         if rating:
             return super().dispatch(request, *args, **kwargs)
         raise PermissionDenied
+
 
 class FeedBackUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Rating
@@ -91,6 +107,7 @@ class FeedBackUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
     def get_success_url(self):
         return reverse("shop:book", kwargs={"book_id": self.kwargs["book_id"]})
+
 
 class DeleteFeedBackView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Rating
@@ -113,17 +130,20 @@ def search_books(request):
     ).distinct()
     return render(request, "my_template.html", {"books": search_books_res})
 
-@permission_required('shop.view_avg_price', raise_exception=True)
+
+@permission_required("shop.view_avg_price", raise_exception=True)
 @cache_page(60 * 30, key_prefix="avg_price_category")
 def get_avg_price_per_category(request):
     avg_price_per_category = Category.objects.annotate(avg_price=Avg("book__price"))
     return render(request, "avg_price.html", {"categories": avg_price_per_category})
+
 
 @cache_page(60 * 30, key_prefix="books_by_year")
 def get_books_by_year(request):
     param_year = request.GET.get("year", 1800)
     books = Book.objects.filter(published_year__gt=param_year)
     return render(request, "my_template.html", {"books": books})
+
 
 @cache_page(60 * 30, key_prefix="books_count_by_category")
 def count_books_by_price(request):

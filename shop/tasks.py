@@ -19,7 +19,7 @@ def generate_leftover_csv():
 
     with open(filepath, "w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
-        writer.writerow(["Book ID","Title", "Amount"])
+        writer.writerow(["Book ID", "Title", "Amount"])
         for book in leftover_data:
             writer.writerow([book.id, book.title, book.amount])
 

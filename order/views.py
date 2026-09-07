@@ -25,7 +25,9 @@ class AddBookForm(Form):
     book_id = IntegerField()
     quantity = IntegerField()
 
+
 # Create your views here.
+
 
 class NewOrderView(LoginRequiredMixin, View):
 
@@ -49,7 +51,9 @@ class CartView(LoginRequiredMixin, View):
     async def get(self, request):
         cart = Cart(request)
         # Асинхронний ORM-запит через async for
-        books = [book async for book in Book.objects.filter(pk__in=cart.cart_data.keys())]
+        books = [
+            book async for book in Book.objects.filter(pk__in=cart.cart_data.keys())
+        ]
 
         for book in books:
             book.amount = cart.cart_data[str(book.id)]
@@ -82,24 +86,32 @@ class OrderChekoutView(LoginRequiredMixin, View):
 
     async def get(self, request):
         cart_data = request.session.get("cart", {})
-        books_to_order = [book async for book in Book.objects.filter(pk__in=list(cart_data.keys())).all()]
+        books_to_order = [
+            book
+            async for book in Book.objects.filter(pk__in=list(cart_data.keys())).all()
+        ]
         user = await request.auser()
-        delivery_adreses = [delivery_adress async for delivery_adress in
-                            DeliveryData.objects.filter(owner=user)]
-        return await sync_to_async(render)(request, "orderchekout.html",
-                                           {'delivery_adreses': delivery_adreses, 'cart_books': books_to_order})
+        delivery_adreses = [
+            delivery_adress
+            async for delivery_adress in DeliveryData.objects.filter(owner=user)
+        ]
+        return await sync_to_async(render)(
+            request,
+            "orderchekout.html",
+            {"delivery_adreses": delivery_adreses, "cart_books": books_to_order},
+        )
 
     async def post(self, request):
         cart_data = request.session.get("cart", {})
         user = await request.auser()
         delivery_address_id = request.POST.get("delivery_address")
 
-        new_order = await sync_to_async(create_new_order)(user, cart_data, delivery_address_id)
+        new_order = await sync_to_async(create_new_order)(
+            user, cart_data, delivery_address_id
+        )
 
         request.session.pop("cart", None)
-        return await sync_to_async(redirect)('order:stripe_hand', order_id=new_order.id)
-
-
+        return await sync_to_async(redirect)("order:stripe_hand", order_id=new_order.id)
 
 
 def create_checkout_session(request, order_id):
@@ -108,24 +120,26 @@ def create_checkout_session(request, order_id):
 
     line_items = []
     for detail in order_details:
-        line_items.append({
-            'price_data': {
-                'currency': 'uah',
-                'product_data': {
-                    'name': detail.book.title,
+        line_items.append(
+            {
+                "price_data": {
+                    "currency": "uah",
+                    "product_data": {
+                        "name": detail.book.title,
+                    },
+                    "unit_amount": int(detail.price * 100),
                 },
-                'unit_amount': int(detail.price * 100),
-            },
-            'quantity': detail.amount,
-        })
+                "quantity": detail.amount,
+            }
+        )
 
     try:
         session = stripe.checkout.Session.create(
-            payment_method_types=['card'],
+            payment_method_types=["card"],
             line_items=line_items,
-            mode='payment',
-            success_url='http://localhost:8000/order/success/?checkout_session={CHECKOUT_SESSION_ID}',
-            cancel_url='http://localhost:8000/order/error/?error=epayment_error',
+            mode="payment",
+            success_url="http://localhost:8000/order/success/?checkout_session={CHECKOUT_SESSION_ID}",
+            cancel_url="http://localhost:8000/order/error/?error=epayment_error",
         )
 
         order.stripe_session_id = session.id
@@ -136,13 +150,15 @@ def create_checkout_session(request, order_id):
 
 
 def success_handler(request):
-    session_id = request.GET.get('checkout_session')  # правильна назва
+    session_id = request.GET.get("checkout_session")  # правильна назва
     if session_id:
         try:
             current_order = Order.objects.get(stripe_session_id=session_id)
             current_order.payment_status = PaymentStatus.COMPLETED.value
             current_order.save()
-            send_order_confirmation_email.delay(current_order.id, current_order.owner.id)
+            send_order_confirmation_email.delay(
+                current_order.id, current_order.owner.id
+            )
             return HttpResponse("Payment success")
 
         except Order.DoesNotExist:

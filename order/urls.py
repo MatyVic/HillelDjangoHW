@@ -1,6 +1,12 @@
 from django.urls import path
 
-from order.views import NewOrderView, CartView, OrderChekoutView, create_checkout_session,success_handler
+from order.views import (
+    NewOrderView,
+    CartView,
+    OrderChekoutView,
+    create_checkout_session,
+    success_handler,
+)
 
 app_name = "order"
 

@@ -2,7 +2,14 @@ from django.urls import path
 from django.views.decorators.cache import cache_page
 
 from . import views
-from .views import AllBooksView, SpecificBookView, CreateFeedBackView, FeedBackUpdateView, DeleteFeedBackView,AllCheapBooksView
+from .views import (
+    AllBooksView,
+    SpecificBookView,
+    CreateFeedBackView,
+    FeedBackUpdateView,
+    DeleteFeedBackView,
+    AllCheapBooksView,
+)
 
 app_name = "shop"
 urlpatterns = [
@@ -13,7 +20,19 @@ urlpatterns = [
     path("count-books/", views.count_books_by_price, name="count_books"),
     path("", AllBooksView.as_view(), name="all_books"),
     path("book/<int:book_id>", SpecificBookView.as_view(), name="book"),
-    path("book/<int:book_id>/feedback/", CreateFeedBackView.as_view(), name="new_feedback"),
-    path("book/<int:book_id>/feedback/<int:pk>/", FeedBackUpdateView.as_view(), name="update_feedback"),
-    path("book/<int:book_id>/feedback/<int:pk>/delete", DeleteFeedBackView.as_view(), name="delete_feedback"),
-    ]
+    path(
+        "book/<int:book_id>/feedback/",
+        CreateFeedBackView.as_view(),
+        name="new_feedback",
+    ),
+    path(
+        "book/<int:book_id>/feedback/<int:pk>/",
+        FeedBackUpdateView.as_view(),
+        name="update_feedback",
+    ),
+    path(
+        "book/<int:book_id>/feedback/<int:pk>/delete",
+        DeleteFeedBackView.as_view(),
+        name="delete_feedback",
+    ),
+]

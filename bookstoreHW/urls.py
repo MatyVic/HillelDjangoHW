@@ -14,31 +14,46 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.conf.urls import handler400
 from django.contrib import admin
 from django.urls import path, include
-from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView, SpectacularRedocView
-from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView, TokenVerifyView
+from drf_spectacular.views import (
+    SpectacularAPIView,
+    SpectacularSwaggerView,
+    SpectacularRedocView,
+)
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+    TokenVerifyView,
+)
 
 from bookstoreHW.views import index, trigger_error
 
-handler404 = 'bookstoreHW.views.error_404'
-handler403= 'bookstoreHW.views.error_403'
+handler404 = "bookstoreHW.views.error_404"
+handler403 = "bookstoreHW.views.error_403"
 
 urlpatterns = [
-    path('i18n/', include('django.conf.urls.i18n')),
-    path('admin/', admin.site.urls),
-    path('',index),
+    path("i18n/", include("django.conf.urls.i18n")),
+    path("admin/", admin.site.urls),
+    path("", index),
     path("shop/", include("shop.urls")),
-    path('order/', include("order.urls")),
-    path('user/', include("user_management.urls")),
-    path('api/v1/', include("bookstore_api.urls")),
-    path('api/v1/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('api/v1/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
-    path('api/v1/token/verify/', TokenVerifyView.as_view(), name='token_verify'),
-    path('api/v1/schema/', SpectacularAPIView.as_view(), name='schema'),
-    path('api/v1/docs/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
-    path('api/v1/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
+    path("order/", include("order.urls")),
+    path("user/", include("user_management.urls")),
+    path("api/v1/", include("bookstore_api.urls")),
+    path("api/v1/token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
+    path("api/v1/token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
+    path("api/v1/token/verify/", TokenVerifyView.as_view(), name="token_verify"),
+    path("api/v1/schema/", SpectacularAPIView.as_view(), name="schema"),
+    path(
+        "api/v1/docs/",
+        SpectacularSwaggerView.as_view(url_name="schema"),
+        name="swagger-ui",
+    ),
+    path(
+        "api/v1/redoc/", SpectacularRedocView.as_view(url_name="schema"), name="redoc"
+    ),
 ]
 
-urlpatterns += [path('silk/', include('silk.urls', namespace='silk'))]
+urlpatterns += [path("silk/", include("silk.urls", namespace="silk"))]

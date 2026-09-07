@@ -1,4 +1,3 @@
-
 from decimal import Decimal
 
 from django.contrib.auth import get_user_model
@@ -104,6 +103,7 @@ class BaseAPITestCase(APITestCase):
     def _password_for(user):
         return "AdminPass123!" if user.username == "admin" else "UserPass123!"
 
+
 class JWTAuthTests(BaseAPITestCase):
 
     def test_token_obtain_success(self):
@@ -151,10 +151,9 @@ class JWTAuthTests(BaseAPITestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     def test_token_verify_invalid_token(self):
-        response = self.client.post(
-            reverse("token_verify"), {"token": "garbage-token"}
-        )
+        response = self.client.post(reverse("token_verify"), {"token": "garbage-token"})
         self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
+
 
 class BooksAPITests(BaseAPITestCase):
     list_url = "/api/v1/books/"
@@ -237,6 +236,7 @@ class BooksAPITests(BaseAPITestCase):
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
         self.assertFalse(Book.objects.filter(pk=self.book.pk).exists())
 
+
 class CategoriesAPITests(BaseAPITestCase):
     list_url = "/api/v1/categories/"
 
@@ -269,6 +269,7 @@ class CategoriesAPITests(BaseAPITestCase):
         response = self.client.delete(self.detail_url(self.category.pk))
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
         self.assertTrue(Category.objects.filter(pk=self.category.pk).exists())
+
 
 class OrdersAPITests(BaseAPITestCase):
     list_url = "/api/v1/orders/"
@@ -316,6 +317,7 @@ class OrdersAPITests(BaseAPITestCase):
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
         self.assertTrue(Order.objects.filter(pk=self.order2.pk).exists())
 
+
 class PaginationTests(BaseAPITestCase):
 
     def test_books_list_is_paginated(self):
@@ -344,6 +346,7 @@ class PaginationTests(BaseAPITestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertIn("next", response.data)
         self.assertIn("previous", response.data)
+
 
 class FilteringTests(BaseAPITestCase):
 
@@ -384,6 +387,7 @@ class FilteringTests(BaseAPITestCase):
         results = response.data.get("results", response.data)
         statuses = {o["order_status"] for o in results}
         self.assertEqual(statuses, {"SHIPPED"})
+
 
 class ThrottlingTests(BaseAPITestCase):
 

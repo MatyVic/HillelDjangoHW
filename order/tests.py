@@ -17,33 +17,36 @@ from order.form import NewOrderForm, OrderDetailForm
 from order.models import Order, OrderDetail, OrderStatus, PaymentStatus
 from order.utils import create_new_order
 
-
 # ---------------------------------------------------------------------------
 # Fixtures
 # ---------------------------------------------------------------------------
 
+
 @pytest.fixture(autouse=True)
 def disable_silk(settings):
     settings.MIDDLEWARE = [
-        m for m in settings.MIDDLEWARE
-        if m != "silk.middleware.SilkyMiddleware"
+        m for m in settings.MIDDLEWARE if m != "silk.middleware.SilkyMiddleware"
     ]
     if "silk" in settings.INSTALLED_APPS:
         settings.INSTALLED_APPS.remove("silk")
 
+
 @pytest.fixture
 def delivery_data(user):
     return DeliveryDataFactory(owner=user)
+
 
 # Фікстура для користувача
 @pytest.fixture
 def user(transactional_db):
     return UserFactory()
 
+
 # Фікстура для книг
 @pytest.fixture
 def books(transactional_db):
     return [BookFactory(), BookFactory()]
+
 
 # ---------------------------------------------------------------------------
 # 1. Tests for Utility Function: create_new_order
@@ -201,6 +204,7 @@ class TestCreateNewOrderSync:
 # 2. Tests for Views
 # ---------------------------------------------------------------------------
 
+
 @pytest.mark.django_db
 class TestCartView:
 
@@ -230,9 +234,7 @@ class TestCartView:
         client.force_login(user)
 
         post_data = {"book_id": str(book1.id), "quantity": 3}
-        response = client.post(
-            reverse("order:cart") + "?next=/shop/", data=post_data
-        )
+        response = client.post(reverse("order:cart") + "?next=/shop/", data=post_data)
 
         assert response.status_code == 302
         assert response.url == "/shop/"
@@ -273,9 +275,7 @@ class TestOrderCheckoutView:
         assert len(response.context["delivery_adreses"]) == 1
         assert len(response.context["cart_books"]) == 1
 
-    def test_checkout_view_post_creates_order(
-        self, client, user, delivery_data, books
-    ):
+    def test_checkout_view_post_creates_order(self, client, user, delivery_data, books):
         book1, _ = books
         client.force_login(user)
 
@@ -284,9 +284,7 @@ class TestOrderCheckoutView:
         session.save()
 
         post_data = {"delivery_address": delivery_data.id}
-        response = client.post(
-            reverse("order:checkout"), data=post_data
-        )
+        response = client.post(reverse("order:checkout"), data=post_data)
 
         assert response.status_code == 302
 
@@ -307,8 +305,10 @@ class TestStripeAndSuccessHandlers:
     ):
         book1, _ = books
         client.force_login(user)
-        
-        order = OrderFactory(owner=user, delivery_address=delivery_data, total_price=200)
+
+        order = OrderFactory(
+            owner=user, delivery_address=delivery_data, total_price=200
+        )
         OrderDetailFactory(order=order, book=book1, amount=2, price=book1.price)
 
         mock_stripe_session = MagicMock()
@@ -327,7 +327,9 @@ class TestStripeAndSuccessHandlers:
 
         mock_stripe_create.assert_called_once()
         kwargs = mock_stripe_create.call_args.kwargs
-        assert kwargs["line_items"][0]["price_data"]["unit_amount"] == int(book1.price * 100)
+        assert kwargs["line_items"][0]["price_data"]["unit_amount"] == int(
+            book1.price * 100
+        )
         assert kwargs["line_items"][0]["quantity"] == 2
 
     @patch("stripe.checkout.Session.create")
@@ -391,7 +393,7 @@ class TestIntegrationUserCheckoutFlow:
     @patch("order.views.OrderEmailService.send_confirmation_msg")
     @patch("stripe.checkout.Session.create")
     def test_full_checkout_flow_success(
-            self, mock_stripe_create, mock_send_email, client, user, delivery_data, books
+        self, mock_stripe_create, mock_send_email, client, user, delivery_data, books
     ):
 
         book1, _ = books
@@ -434,8 +436,14 @@ class TestIntegrationUserCheckoutFlow:
         book1, book2 = books
         client.force_login(user)
 
-        client.post(reverse("order:cart") + "?next=/cart/", data={"book_id": str(book1.id), "quantity": 1})
-        client.post(reverse("order:cart") + "?next=/cart/", data={"book_id": str(book2.id), "quantity": 3})
+        client.post(
+            reverse("order:cart") + "?next=/cart/",
+            data={"book_id": str(book1.id), "quantity": 1},
+        )
+        client.post(
+            reverse("order:cart") + "?next=/cart/",
+            data={"book_id": str(book2.id), "quantity": 3},
+        )
 
         response = client.get(reverse("order:cart"))
         assert response.status_code == 200
@@ -447,7 +455,10 @@ class TestIntegrationUserCheckoutFlow:
         book1, _ = books
         client.force_login(user)
 
-        client.post(reverse("order:cart") + "?next=/cart/", data={"book_id": str(book1.id), "quantity": 2})
+        client.post(
+            reverse("order:cart") + "?next=/cart/",
+            data={"book_id": str(book1.id), "quantity": 2},
+        )
         client.post(reverse("order:cart") + "?next=/cart/", data={"clear": "true"})
 
         session = client.session
@@ -458,8 +469,13 @@ class TestIntegrationUserCheckoutFlow:
         book1, _ = books
         client.force_login(user)
 
-        client.post(reverse("order:cart") + "?next=/cart/", data={"book_id": str(book1.id), "quantity": 2})
-        client.post(reverse("order:checkout"), data={"delivery_address": delivery_data.id})
+        client.post(
+            reverse("order:cart") + "?next=/cart/",
+            data={"book_id": str(book1.id), "quantity": 2},
+        )
+        client.post(
+            reverse("order:checkout"), data={"delivery_address": delivery_data.id}
+        )
 
         assert "cart" not in client.session
 
@@ -481,8 +497,12 @@ class TestIntegrationUserCheckoutFlow:
         client.force_login(user)
         order = OrderFactory(owner=user, delivery_address=delivery_data)
 
-        with patch("stripe.checkout.Session.create", side_effect=Exception("Stripe Down")):
-            response = client.get(reverse("order:stripe_hand", kwargs={"order_id": order.id}))
+        with patch(
+            "stripe.checkout.Session.create", side_effect=Exception("Stripe Down")
+        ):
+            response = client.get(
+                reverse("order:stripe_hand", kwargs={"order_id": order.id})
+            )
             assert response.status_code == 200
             assert "Stripe Down" in response.content.decode()
 
@@ -498,16 +518,20 @@ class TestIntegrationUserCheckoutFlow:
         assert "Order not found" in response.content.decode()
 
     @patch("order.views.OrderEmailService.send_confirmation_msg")
-    def test_idempotent_success_payment_flow(self, mock_email, client, user, delivery_data):
+    def test_idempotent_success_payment_flow(
+        self, mock_email, client, user, delivery_data
+    ):
 
         order = OrderFactory(
             owner=user,
             delivery_address=delivery_data,
             stripe_session_id="cs_repeat_123",
-            payment_status=PaymentStatus.COMPLETED.value
+            payment_status=PaymentStatus.COMPLETED.value,
         )
 
-        response = client.get(reverse("order:success") + "?checkout_session=cs_repeat_123")
+        response = client.get(
+            reverse("order:success") + "?checkout_session=cs_repeat_123"
+        )
         assert response.status_code == 200
         order.refresh_from_db()
         assert order.payment_status == PaymentStatus.COMPLETED.value
@@ -518,14 +542,17 @@ class TestIntegrationUserCheckoutFlow:
         book1, _ = books
         client.force_login(user)
 
-        client.post(reverse("order:cart") + "?next=/cart/", data={"book_id": str(book1.id), "quantity": 1})
+        client.post(
+            reverse("order:cart") + "?next=/cart/",
+            data={"book_id": str(book1.id), "quantity": 1},
+        )
         client.post(reverse("order:checkout"), data={"delivery_address": addr2.id})
 
         order = Order.objects.first()
         assert order.delivery_address == addr2
 
     def test_order_total_price_calculation_flow(
-            self, client, user, delivery_data, books
+        self, client, user, delivery_data, books
     ):
         book1, book2 = books
         client.force_login(user)
@@ -547,7 +574,9 @@ class TestIntegrationUserCheckoutFlow:
         expected_total = (book1.price * 2) + (book2.price * 3)
         assert order.total_price == expected_total
 
-    def test_checkout_page_renders_context_correctly(self, client, user, delivery_data, books):
+    def test_checkout_page_renders_context_correctly(
+        self, client, user, delivery_data, books
+    ):
         book1, _ = books
         client.force_login(user)
 
@@ -578,21 +607,25 @@ class TestIntegrationUserCheckoutFlow:
             mock_session.url = "https://checkout.stripe.com/pay/cs_zero_123"
             mock_stripe.return_value = mock_session
 
-            response = client.get(reverse("order:stripe_hand", kwargs={"order_id": order.id}))
+            response = client.get(
+                reverse("order:stripe_hand", kwargs={"order_id": order.id})
+            )
             assert response.status_code == 302
 
     @patch("order.views.OrderEmailService.send_confirmation_msg")
     def test_full_checkout_flow_triggers_email(
-            self, mock_send_email, client, user, delivery_data
+        self, mock_send_email, client, user, delivery_data
     ):
         order = OrderFactory(
             owner=user,
             delivery_address=delivery_data,
             stripe_session_id="cs_email_check_777",
-            payment_status=PaymentStatus.PENDING.value
+            payment_status=PaymentStatus.PENDING.value,
         )
 
-        response = client.get(reverse("order:success") + "?checkout_session=cs_email_check_777")
+        response = client.get(
+            reverse("order:success") + "?checkout_session=cs_email_check_777"
+        )
         assert response.status_code == 200
         mock_send_email.assert_called_once()
 
@@ -600,6 +633,7 @@ class TestIntegrationUserCheckoutFlow:
 # ---------------------------------------------------------------------------
 # Unit Tests: Models
 # ---------------------------------------------------------------------------
+
 
 @pytest.mark.django_db
 class TestOrderModels:
@@ -623,6 +657,7 @@ class TestOrderModels:
 # ---------------------------------------------------------------------------
 # Unit Tests: Forms
 # ---------------------------------------------------------------------------
+
 
 @pytest.mark.django_db
 class TestOrderForms:

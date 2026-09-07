@@ -5,6 +5,7 @@ from django.conf import settings
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
+
 class Category(models.Model):
     name = models.CharField(max_length=100, verbose_name=_("Category name"))
     bio = models.TextField(default="No bio yet", verbose_name=_("bio"))
@@ -16,6 +17,7 @@ class Category(models.Model):
         permissions = [
             ("view_avg_price", "Can view average price per category"),
         ]
+
 
 class Author(models.Model):
     first_name = models.CharField(max_length=100, verbose_name=_("First name"))
@@ -37,23 +39,33 @@ class Publisher(models.Model):
     def __str__(self):
         return self.name
 
-#AI rewroked price field
+
+# AI rewroked price field
 class Book(models.Model):
     title = models.CharField(max_length=100, verbose_name=_("Title"))
     author = models.ManyToManyField(Author, verbose_name=_("Author"))
     category = models.ManyToManyField(Category, verbose_name=_("Category"))
-    publisher = models.ForeignKey('Publisher', on_delete=models.CASCADE, verbose_name=_("Publisher"))
+    publisher = models.ForeignKey(
+        "Publisher", on_delete=models.CASCADE, verbose_name=_("Publisher")
+    )
     published_year = models.IntegerField(verbose_name=_("Published year"))
     added_at = models.DateTimeField(verbose_name=_("Added at"), default=timezone.now)
     amount = models.IntegerField(verbose_name=_("Amount"))
-    price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name=_("Price"))
-    available = models.BooleanField(default=True,verbose_name=_("Available"))
-    calculated_rating = models.DecimalField(max_digits=5, decimal_places=2, null=True, verbose_name=_("Calculated rating"))
+    price = models.DecimalField(
+        max_digits=10, decimal_places=2, verbose_name=_("Price")
+    )
+    available = models.BooleanField(default=True, verbose_name=_("Available"))
+    calculated_rating = models.DecimalField(
+        max_digits=5, decimal_places=2, null=True, verbose_name=_("Calculated rating")
+    )
 
-#AI rewroked whole model
+
+# AI rewroked whole model
 class Rating(models.Model):
     book = models.ForeignKey(Book, on_delete=models.CASCADE, verbose_name=_("Book"))
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, verbose_name=_("User"))
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, verbose_name=_("User")
+    )
     rating = models.IntegerField(
         verbose_name=_("Rating"),
         validators=[MinValueValidator(1), MaxValueValidator(5)],
@@ -62,7 +74,9 @@ class Rating(models.Model):
 
     class Meta:
         constraints = [
-            models.UniqueConstraint(fields=["book", "user"], name="unique_rating_per_user_per_book"),
+            models.UniqueConstraint(
+                fields=["book", "user"], name="unique_rating_per_user_per_book"
+            ),
         ]
 
     def get_absolute_url(self):
