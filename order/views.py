@@ -126,7 +126,7 @@ def create_checkout_session(request, order_id):
             payment_method_types=["card"],
             line_items=line_items,
             mode="payment",
-            success_url="http://localhost:8000/order/success/?checkout_session={CHECKOUT_SESSION_ID}",
+            success_url="http://localhost:8000/order/success/?checkout_session={CHECKOUT_SESSION_ID}",  # noqa: E501
             cancel_url="http://localhost:8000/order/error/?error=epayment_error",
         )
 

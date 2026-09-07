@@ -647,7 +647,6 @@ class TestIntegrationUserCheckoutFlow:
     ):
         monkeypatch.setenv("DJANGO_ALLOW_ASYNC_UNSAFE", "true")
 
-        addr1 = DeliveryDataFactory(owner=user)
         addr2 = DeliveryDataFactory(owner=user)
         book1, _ = books
         client.force_login(user)
