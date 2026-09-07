@@ -1,5 +1,4 @@
 from django.urls import path
-from . import views
 from .views import UserFeedBackView, user_logout, user_login, user_register
 
 app_name = "user"

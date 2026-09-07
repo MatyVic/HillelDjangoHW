@@ -5,13 +5,11 @@ from django.core.exceptions import PermissionDenied
 from django.http import Http404
 from django.shortcuts import render, get_object_or_404
 from django.db.models import Q, Avg, Count
-from django.urls import reverse, reverse_lazy
-from django.contrib.auth import get_user_model
+from django.urls import reverse
 from django.views import View
 from django.views.decorators.cache import cache_page
 from django.views.generic import (
     ListView,
-    DetailView,
     CreateView,
     UpdateView,
     DeleteView,
