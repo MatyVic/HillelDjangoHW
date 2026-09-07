@@ -4,7 +4,7 @@ from rest_framework.pagination import PageNumberPagination
 from rest_framework.permissions import IsAdminUser, IsAuthenticatedOrReadOnly
 from rest_framework.throttling import UserRateThrottle
 
-from order.models import Order, OrderDetail, OrderStatus, PaymentStatus
+from order.models import Order, OrderDetail
 from shop.models import Book, Author, Category, Publisher
 from user_management.models import DeliveryData
 from .permissions import IsOwnerOrReadOnly

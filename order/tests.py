@@ -15,7 +15,7 @@ from order.factories import (
     UserFactory,
 )
 from order.form import NewOrderForm, OrderDetailForm
-from order.models import Order, OrderDetail, OrderStatus, PaymentStatus
+from order.models import Order, OrderStatus, PaymentStatus
 from order.utils import create_new_order
 
 # ---------------------------------------------------------------------------
@@ -221,7 +221,9 @@ class TestCartView:
 
     @pytest.mark.django_db
     @pytest.mark.asyncio
-    async def test_cart_view_get_with_items(self, async_client, user, books, monkeypatch):
+    async def test_cart_view_get_with_items(
+        self, async_client, user, books, monkeypatch
+    ):
         monkeypatch.setenv("DJANGO_ALLOW_ASYNC_UNSAFE", "true")
         book1, _ = books
         await async_client.aforce_login(user)
@@ -230,6 +232,7 @@ class TestCartView:
             session = async_client.session
             session["cart"] = {str(book1.id): 2}
             session.save()
+
         await sync_to_async(update_session)()
 
         response = await async_client.get(reverse("order:cart"))
@@ -250,7 +253,7 @@ class TestCartView:
     @pytest.mark.django_db
     @pytest.mark.asyncio
     async def test_cart_view_post_add_book(
-            self, async_client, user, books, monkeypatch
+        self, async_client, user, books, monkeypatch
     ):
         monkeypatch.setenv("DJANGO_ALLOW_ASYNC_UNSAFE", "true")
 
@@ -275,7 +278,7 @@ class TestCartView:
     @pytest.mark.django_db
     @pytest.mark.asyncio
     async def test_cart_view_post_clear_cart(
-            self, async_client, user, books, monkeypatch
+        self, async_client, user, books, monkeypatch
     ):
         monkeypatch.setenv("DJANGO_ALLOW_ASYNC_UNSAFE", "true")
 
@@ -394,7 +397,7 @@ class TestStripeAndSuccessHandlers:
     @patch("order.views.send_order_confirmation_email.delay")
     @patch("order.views.OrderEmailService.send_confirmation_msg")
     def test_success_handler_valid_session(
-            self, mock_send_email, mock_celery_task, client, user, delivery_data
+        self, mock_send_email, mock_celery_task, client, user, delivery_data
     ):
         client.force_login(user)
 
@@ -440,15 +443,15 @@ class TestIntegrationUserCheckoutFlow:
     @patch("order.views.OrderEmailService.send_confirmation_msg")
     @patch("stripe.checkout.Session.create")
     def test_full_checkout_flow_success(
-            self,
-            mock_stripe_create,
-            mock_send_email,
-            mock_celery_task,  # Приймаємо мок таски
-            client,
-            user,
-            delivery_data,
-            books,
-            monkeypatch,
+        self,
+        mock_stripe_create,
+        mock_send_email,
+        mock_celery_task,  # Приймаємо мок таски
+        client,
+        user,
+        delivery_data,
+        books,
+        monkeypatch,
     ):
         monkeypatch.setenv("DJANGO_ALLOW_ASYNC_UNSAFE", "true")
 
@@ -494,7 +497,9 @@ class TestIntegrationUserCheckoutFlow:
     from django.urls import reverse
 
     @pytest.mark.django_db
-    def test_add_multiple_different_books_to_cart_flow(self, client, user, books, monkeypatch):
+    def test_add_multiple_different_books_to_cart_flow(
+        self, client, user, books, monkeypatch
+    ):
         # Дозволяємо асинхронні/синхронні виклики ORM у тесті
         monkeypatch.setenv("DJANGO_ALLOW_ASYNC_UNSAFE", "true")
 
@@ -523,9 +528,6 @@ class TestIntegrationUserCheckoutFlow:
         assert cart_data is not None, "Ключ 'cart_data' відсутній у response.context"
         assert len(cart_data) == 2
 
-    import pytest
-    from django.urls import reverse
-
     @pytest.mark.django_db
     def test_clear_cart_flow(self, client, user, books, monkeypatch):
         monkeypatch.setenv("DJANGO_ALLOW_ASYNC_UNSAFE", "true")
@@ -539,8 +541,7 @@ class TestIntegrationUserCheckoutFlow:
         )
 
         response = client.post(
-            reverse("order:cart") + "?next=/cart/",
-            data={"clear": "true"}
+            reverse("order:cart") + "?next=/cart/", data={"clear": "true"}
         )
         assert response.status_code in (200, 302)
 
@@ -550,7 +551,9 @@ class TestIntegrationUserCheckoutFlow:
         assert cart == {} or cart is None
 
     @pytest.mark.django_db
-    def test_checkout_clears_session_cart(self, client, user, delivery_data, books, monkeypatch):
+    def test_checkout_clears_session_cart(
+        self, client, user, delivery_data, books, monkeypatch
+    ):
         monkeypatch.setenv("DJANGO_ALLOW_ASYNC_UNSAFE", "true")
 
         book1, _ = books
@@ -563,8 +566,7 @@ class TestIntegrationUserCheckoutFlow:
         assert cart_res.status_code in (200, 302)
 
         checkout_res = client.post(
-            reverse("order:checkout"),
-            data={"delivery_address": delivery_data.id}
+            reverse("order:checkout"), data={"delivery_address": delivery_data.id}
         )
         assert checkout_res.status_code in (200, 302)
 
@@ -614,10 +616,12 @@ class TestIntegrationUserCheckoutFlow:
         assert response.status_code == 200
         assert "Order not found" in response.content.decode()
 
-    @patch("order.views.send_order_confirmation_email.delay")  # Замініть шлях на ваш import
+    @patch(
+        "order.views.send_order_confirmation_email.delay"
+    )  # Замініть шлях на ваш import
     @patch("order.views.OrderEmailService.send_confirmation_msg")
     def test_idempotent_success_payment_flow(
-            self, mock_email, mock_celery_task, client, user, delivery_data
+        self, mock_email, mock_celery_task, client, user, delivery_data
     ):
         order = OrderFactory(
             owner=user,
@@ -637,12 +641,9 @@ class TestIntegrationUserCheckoutFlow:
         # Перевіряємо, що таска Celery була викликана
         mock_celery_task.assert_called_once_with(order.id, user.id)
 
-    import pytest
-    from django.urls import reverse
-
     @pytest.mark.django_db
     def test_checkout_with_multiple_addresses_selection(
-            self, client, user, books, monkeypatch
+        self, client, user, books, monkeypatch
     ):
         monkeypatch.setenv("DJANGO_ALLOW_ASYNC_UNSAFE", "true")
 
@@ -662,7 +663,7 @@ class TestIntegrationUserCheckoutFlow:
 
     @pytest.mark.django_db
     def test_order_total_price_calculation_flow(
-            self, client, user, delivery_data, books, monkeypatch
+        self, client, user, delivery_data, books, monkeypatch
     ):
         monkeypatch.setenv("DJANGO_ALLOW_ASYNC_UNSAFE", "true")
 
@@ -701,7 +702,7 @@ class TestIntegrationUserCheckoutFlow:
         assert "delivery_adreses" in response.context
         assert "cart_books" in response.context
 
-    def test_cart_view_handles_empty_cart_display(self, client, user,monkeypatch):
+    def test_cart_view_handles_empty_cart_display(self, client, user, monkeypatch):
         monkeypatch.setenv("DJANGO_ALLOW_ASYNC_UNSAFE", "true")
 
         client.force_login(user)
@@ -728,7 +729,7 @@ class TestIntegrationUserCheckoutFlow:
     @patch("order.views.send_order_confirmation_email.delay")
     @patch("order.views.OrderEmailService.send_confirmation_msg")
     def test_full_checkout_flow_triggers_email(
-            self, mock_send_email, mock_celery_task, client, user, delivery_data
+        self, mock_send_email, mock_celery_task, client, user, delivery_data
     ):
         order = OrderFactory(
             owner=user,

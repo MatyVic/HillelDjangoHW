@@ -2,31 +2,27 @@ import os
 
 import stripe
 from asgiref.sync import sync_to_async
-from django.db import transaction
 
 from order.utils import create_new_order
-
-stripe.api_key = os.environ["STRIPE_SECRET_KEY"]
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.forms import IntegerField, Form
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, redirect
 from django.views import View
 
-from order.cart import Cart, OrderEmailService
+from order.cart import Cart
 from order.form import NewOrderForm
-from order.models import Order, OrderDetail, PaymentStatus, OrderStatus
+from order.models import Order, OrderDetail, PaymentStatus
 from shop.models import Book
 from user_management.models import DeliveryData
 from order.tasks import send_order_confirmation_email
+
+stripe.api_key = os.environ["STRIPE_SECRET_KEY"]
 
 
 class AddBookForm(Form):
     book_id = IntegerField()
     quantity = IntegerField()
-
-
-# Create your views here.
 
 
 class NewOrderView(LoginRequiredMixin, View):
@@ -86,13 +82,9 @@ class OrderChekoutView(LoginRequiredMixin, View):
 
     def get(self, request):
         cart_data = request.session.get("cart", {})
-        books_to_order = list(
-            Book.objects.filter(pk__in=list(cart_data.keys())).all()
-        )
+        books_to_order = list(Book.objects.filter(pk__in=list(cart_data.keys())).all())
         user = request.user
-        delivery_adreses = list(
-            DeliveryData.objects.filter(owner=user)
-        )
+        delivery_adreses = list(DeliveryData.objects.filter(owner=user))
         return render(
             request,
             "orderchekout.html",
@@ -104,9 +96,7 @@ class OrderChekoutView(LoginRequiredMixin, View):
         user = request.user
         delivery_address_id = request.POST.get("delivery_address")
 
-        new_order = create_new_order(
-            user, cart_data, delivery_address_id
-        )
+        new_order = create_new_order(user, cart_data, delivery_address_id)
 
         request.session.pop("cart", None)
         return redirect("order:stripe_hand", order_id=new_order.id)
