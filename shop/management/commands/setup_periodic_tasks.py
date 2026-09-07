@@ -6,12 +6,12 @@ class Command(BaseCommand):
     help = "Створює/оновлює periodic tasks для Celery Beat"
 
     def handle(self, *args, **options):
-        schedule, _ = CrontabSchedule.objects.get_or_create(minute="0", hour="24")
+        schedule, _ = CrontabSchedule.objects.get_or_create(minute="0", hour="8,20")
         task, created = PeriodicTask.objects.update_or_create(
-            name="Очищення сесій щоночі",
+            name="Звіт по залишкам книжок",
             defaults={
                 "crontab": schedule,
-                "task": "user_management.tasks.cleanup_sessions",
+                "task": "shop.tasks.generate_leftover_csv",
             },
         )
         if created:

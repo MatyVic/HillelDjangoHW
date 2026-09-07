@@ -18,7 +18,7 @@ from order.form import NewOrderForm
 from order.models import Order, OrderDetail, PaymentStatus, OrderStatus
 from shop.models import Book
 from user_management.models import DeliveryData
-
+from order.tasks import send_order_confirmation_email
 
 
 class AddBookForm(Form):
@@ -142,7 +142,7 @@ def success_handler(request):
             current_order = Order.objects.get(stripe_session_id=session_id)
             current_order.payment_status = PaymentStatus.COMPLETED.value
             current_order.save()
-            OrderEmailService(current_order, current_order.owner).send_confirmation_msg()
+            send_order_confirmation_email.delay(current_order.id, current_order.owner.id)
             return HttpResponse("Payment success")
 
         except Order.DoesNotExist:
