@@ -16,7 +16,7 @@ def reg_mail_sender(user_id):
     text_content = f"Вітаємо {user.username}, реєстрація пройшла успішно"
     html_content = f"""
           <p>Доброго дня, {user.username}!</p>
-          <p>Вітаємо з реєстрацією на сайті, надалі усі акції 
+          <p>Вітаємо з реєстрацією на сайті, надалі усі акції
           та спецпропозиції будемо надсилати на цю адресу.</p>
           """
     email = EmailMultiAlternatives(

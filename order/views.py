@@ -84,34 +84,32 @@ class CartView(LoginRequiredMixin, View):
 
 class OrderChekoutView(LoginRequiredMixin, View):
 
-    async def get(self, request):
+    def get(self, request):
         cart_data = request.session.get("cart", {})
-        books_to_order = [
-            book
-            async for book in Book.objects.filter(pk__in=list(cart_data.keys())).all()
-        ]
-        user = await request.auser()
-        delivery_adreses = [
-            delivery_adress
-            async for delivery_adress in DeliveryData.objects.filter(owner=user)
-        ]
-        return await sync_to_async(render)(
+        books_to_order = list(
+            Book.objects.filter(pk__in=list(cart_data.keys())).all()
+        )
+        user = request.user
+        delivery_adreses = list(
+            DeliveryData.objects.filter(owner=user)
+        )
+        return render(
             request,
             "orderchekout.html",
             {"delivery_adreses": delivery_adreses, "cart_books": books_to_order},
         )
 
-    async def post(self, request):
+    def post(self, request):
         cart_data = request.session.get("cart", {})
-        user = await request.auser()
+        user = request.user
         delivery_address_id = request.POST.get("delivery_address")
 
-        new_order = await sync_to_async(create_new_order)(
+        new_order = create_new_order(
             user, cart_data, delivery_address_id
         )
 
         request.session.pop("cart", None)
-        return await sync_to_async(redirect)("order:stripe_hand", order_id=new_order.id)
+        return redirect("order:stripe_hand", order_id=new_order.id)
 
 
 def create_checkout_session(request, order_id):

@@ -80,7 +80,7 @@ class OrderEmailService:
         text_content = f"Ваше замовлення на суму {self.order.total_price} грн прийнято."
         html_content = f"""
         <p>Доброго дня, {self.user.username}!</p>
-        <p>Ваше замовлення <strong>№{self.order.id}</strong> на суму 
+        <p>Ваше замовлення <strong>№{self.order.id}</strong> на суму
         <strong>{self.order.total_price} грн</strong> успішно створено.</p>
         <p>Ми повідомимо вас про доставку.</p>
         """
