@@ -29,7 +29,7 @@ from rest_framework_simplejwt.views import (
     TokenVerifyView,
 )
 
-from bookstoreHW.views import index, piuphealth_check
+from bookstoreHW.views import index, health_check
 
 handler404 = "bookstoreHW.views.error_404"
 handler403 = "bookstoreHW.views.error_403"
