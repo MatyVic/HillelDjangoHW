@@ -9,7 +9,6 @@ from django.forms import IntegerField, Form
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, redirect
 from django.views import View
-from order.cart import OrderEmailService
 from order.cart import Cart
 from order.form import NewOrderForm
 from order.models import Order, OrderDetail, PaymentStatus
