@@ -7,7 +7,10 @@ import sys
 
 def main():
     """Run administrative tasks."""
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "bookstoreHW.settings")
+    # Default to development settings for plain `python manage.py ...` calls.
+    # Production always sets DJANGO_SETTINGS_MODULE explicitly as a real
+    # platform env var, which setdefault() will not override.
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "bookstoreHW.settings.development")
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

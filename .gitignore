@@ -22,7 +22,6 @@ db.old____sqlite3
 .env
 .env_local
 .env_docker
-.env.*
 
 # Testing / coverage
 .coverage

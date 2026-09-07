@@ -11,6 +11,9 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "bookstoreHW.settings")
+# Default to development; production sets DJANGO_SETTINGS_MODULE explicitly
+# as a real platform env var (Railway/Render/Heroku), which setdefault()
+# will not override.
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "bookstoreHW.settings.development")
 
 application = get_wsgi_application()
