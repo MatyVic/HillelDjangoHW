@@ -1,6 +1,39 @@
+# IDE
 .idea/
+.vscode/
+
+# Python
 __pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Django
+*.log
+logs/
+media/
+staticfiles/
+db.sqlite3
+db.sqlite3-journal
+db.old____sqlite3
+
+# Env / secrets
+.env
 .env_local
 .env_docker
+.env.*
+
+# Testing / coverage
 .coverage
-.coveragerc
+.coverage.*
+htmlcov/
+.pytest_cache/
+coverage_report.txt
+
+# Misc project artefacts
+dbmigration_sqlite.json
+
+# OS
+.DS_Store
+Thumbs.db
