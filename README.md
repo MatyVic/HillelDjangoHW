@@ -1,4 +1,4 @@
-# 📚 Bookstore Homework API
+# 📚 Bookstore + Bookstore API Homework
 
 [![CI Pipeline](https://github.com/myuser/bookstore/actions/workflows/ci.yml/badge.svg)](https://github.com/myuser/bookstore/actions)
 ![Python Version](https://img.shields.io/badge/python-3.12-blue?logo=python)
