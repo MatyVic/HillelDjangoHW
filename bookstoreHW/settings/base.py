@@ -348,5 +348,6 @@ if SENTRY_DSN:
         send_default_pii=False,
     )
 
+WAREHOUSE_SERVICE_URL = os.environ.get("WAREHOUSE_SERVICE_URL", "http://localhost:8001")
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
