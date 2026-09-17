@@ -6,7 +6,7 @@ from bookstore_api.views import (
     AuthorsVeiewSet,
     CategorysVeiewSet,
     PublishersVeiewSet,
-    OrdersVeiewSet,
+    OrdersVeiewSet, BookSyncView,
 )
 
 router = routers.DefaultRouter()
@@ -17,5 +17,6 @@ router.register("publishers", PublishersVeiewSet, "publishers")
 router.register("orders", OrdersVeiewSet, "orders")
 app_name = "api"
 urlpatterns = [
+    path("books/sync/", BookSyncView.as_view(), name="book-sync"),
     path("", include(router.urls)),
 ]

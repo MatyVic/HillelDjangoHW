@@ -1,8 +1,11 @@
 from django_filters.rest_framework import DjangoFilterBackend
+from h11 import Response
 from rest_framework import viewsets, serializers, permissions
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.permissions import IsAdminUser, IsAuthenticatedOrReadOnly
 from rest_framework.throttling import UserRateThrottle
+from rest_framework.response import Response
+from rest_framework.views import APIView
 
 from order.models import Order, OrderDetail
 from shop.models import Book, Author, Category, Publisher
@@ -163,3 +166,64 @@ class OrdersVeiewSet(viewsets.ModelViewSet):
         if user.is_staff:
             return Order.objects.all()
         return Order.objects.filter(owner=user)
+logger = logging.getLogger(__name__)
+
+
+class BookSyncView(APIView):
+
+    permission_classes = [permissions.AllowAny]
+
+    def post(self, request):
+        title = request.data.get("title")
+        isbn = request.data.get("isbn")
+        published_year = request.data.get("published_year")
+
+        if not title or not published_year:
+            return Response(
+                {"detail": "title and published_year are required"}, status=400
+            )
+
+        if isbn and Book.objects.filter(isbn=isbn).exists():
+            return Response({"detail": "Book with this isbn already exists"}, status=200)
+
+        publisher_name = request.data.get("publisher") or "Unknown"
+        publisher, _ = Publisher.objects.get_or_create(
+            name=publisher_name,
+            defaults={"country": "Unknown", "website": "https://example.com"},
+        )
+
+        category_names = [
+            c.strip() for c in (request.data.get("category") or "").split(",") if c.strip()
+        ] or ["Uncategorized"]
+        categories = [
+            Category.objects.get_or_create(name=name)[0] for name in category_names
+        ]
+
+        author_names = [
+            a.strip() for a in (request.data.get("authors") or "").split(",") if a.strip()
+        ] or ["Unknown Author"]
+        authors = []
+        for full_name in author_names:
+            first_name, _, last_name = full_name.partition(" ")
+            author, _ = Author.objects.get_or_create(
+                first_name=first_name,
+                last_name=last_name,
+                defaults={"country": "Unknown"},
+            )
+            authors.append(author)
+
+        book = Book.objects.create(
+            title=title,
+            publisher=publisher,
+            published_year=published_year,
+            isbn=isbn,
+            price=0,
+            amount=0,
+            available=False,
+        )
+        book.author.set(authors)
+        book.category.set(categories)
+
+        logger.info("Book '%s' (isbn=%s) received from warehouse service", title, isbn)
+
+        return Response({"id": book.id, "isbn": book.isbn}, status=201)
