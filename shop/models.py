@@ -62,6 +62,7 @@ class Book(models.Model):
         max_length=20, unique=True, blank=True, null=True, verbose_name=_("ISBN")
     )
 
+
 # AI rewroked whole model
 class Rating(models.Model):
     book = models.ForeignKey(Book, on_delete=models.CASCADE, verbose_name=_("Book"))
