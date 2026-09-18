@@ -166,6 +166,8 @@ class OrdersVeiewSet(viewsets.ModelViewSet):
         if user.is_staff:
             return Order.objects.all()
         return Order.objects.filter(owner=user)
+
+
 logger = logging.getLogger(__name__)
 
 
@@ -184,7 +186,9 @@ class BookSyncView(APIView):
             )
 
         if isbn and Book.objects.filter(isbn=isbn).exists():
-            return Response({"detail": "Book with this isbn already exists"}, status=200)
+            return Response(
+                {"detail": "Book with this isbn already exists"}, status=200
+            )
 
         publisher_name = request.data.get("publisher") or "Unknown"
         publisher, _ = Publisher.objects.get_or_create(
@@ -193,14 +197,18 @@ class BookSyncView(APIView):
         )
 
         category_names = [
-            c.strip() for c in (request.data.get("category") or "").split(",") if c.strip()
+            c.strip()
+            for c in (request.data.get("category") or "").split(",")
+            if c.strip()
         ] or ["Uncategorized"]
         categories = [
             Category.objects.get_or_create(name=name)[0] for name in category_names
         ]
 
         author_names = [
-            a.strip() for a in (request.data.get("authors") or "").split(",") if a.strip()
+            a.strip()
+            for a in (request.data.get("authors") or "").split(",")
+            if a.strip()
         ] or ["Unknown Author"]
         authors = []
         for full_name in author_names:

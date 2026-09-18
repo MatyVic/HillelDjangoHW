@@ -26,12 +26,12 @@ def deduct_stock(isbn: str, quantity: int) -> bool:
         if exc.response is not None and exc.response.status_code == 409:
             logger.error(
                 "Warehouse reports insufficient stock for isbn=%s (requested %s): %s",
-                isbn, quantity, exc.response.text,
+                isbn,
+                quantity,
+                exc.response.text,
             )
         else:
-            logger.error(
-                "Warehouse rejected deduct request for isbn=%s: %s", isbn, exc
-            )
+            logger.error("Warehouse rejected deduct request for isbn=%s: %s", isbn, exc)
     except requests.exceptions.Timeout:
         logger.warning("Warehouse service timed out while deducting isbn=%s", isbn)
     except requests.exceptions.ConnectionError:

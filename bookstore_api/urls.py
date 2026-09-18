@@ -6,7 +6,8 @@ from bookstore_api.views import (
     AuthorsVeiewSet,
     CategorysVeiewSet,
     PublishersVeiewSet,
-    OrdersVeiewSet, BookSyncView,
+    OrdersVeiewSet,
+    BookSyncView,
 )
 
 router = routers.DefaultRouter()
