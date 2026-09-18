@@ -1,3 +1,5 @@
+import logging
+
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import viewsets, serializers, permissions
 from rest_framework.pagination import PageNumberPagination
@@ -10,6 +12,8 @@ from order.models import Order, OrderDetail
 from shop.models import Book, Author, Category, Publisher
 from user_management.models import DeliveryData
 from .permissions import IsOwnerOrReadOnly
+
+logger = logging.getLogger(__name__)
 
 
 class PublishersSerializer(serializers.ModelSerializer):
@@ -165,9 +169,6 @@ class OrdersVeiewSet(viewsets.ModelViewSet):
         if user.is_staff:
             return Order.objects.all()
         return Order.objects.filter(owner=user)
-
-
-logger = logging.getLogger(__name__)
 
 
 class BookSyncView(APIView):

@@ -15,6 +15,7 @@ from order.models import Order, OrderDetail, PaymentStatus
 from shop.models import Book
 from user_management.models import DeliveryData
 from order.tasks import send_order_confirmation_email
+from shop.warehouse_client import deduct_stock
 
 stripe.api_key = os.environ["STRIPE_SECRET_KEY"]
 
@@ -134,9 +135,6 @@ def create_checkout_session(request, order_id):
         return redirect(session.url)
     except Exception as e:
         return HttpResponse(str(e))
-
-
-from shop.warehouse_client import deduct_stock
 
 
 def success_handler(request):
