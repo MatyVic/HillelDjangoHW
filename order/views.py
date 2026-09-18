@@ -136,6 +136,9 @@ def create_checkout_session(request, order_id):
         return HttpResponse(str(e))
 
 
+from shop.warehouse_client import deduct_stock
+
+
 def success_handler(request):
     session_id = request.GET.get("checkout_session")  # правильна назва
     if session_id:
@@ -143,6 +146,13 @@ def success_handler(request):
             current_order = Order.objects.get(stripe_session_id=session_id)
             current_order.payment_status = PaymentStatus.COMPLETED.value
             current_order.save()
+
+            order_details = OrderDetail.objects.select_related("book").filter(
+                order=current_order
+            )
+            for detail in order_details:
+                deduct_stock(detail.book.isbn, detail.amount)
+
             send_order_confirmation_email.delay(
                 current_order.id, current_order.owner.id
             )
