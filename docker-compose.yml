@@ -38,16 +38,26 @@ services:
     build: .
     env_file:
       - .env_docker
+    volumes:
+      - .:/app
+    restart: unless-stopped
     depends_on:
-      - db
-      - redis_cache
+      db:
+        condition: service_healthy
+      redis_cache:
+        condition: service_started
     command: ["celery", "-A", "bookstoreHW", "worker", "--loglevel=info"]
 
   celery-beat:
     build: .
     env_file:
       - .env_docker
+    volumes:
+      - .:/app
+    restart: unless-stopped
     depends_on:
-      - db
-      - redis_cache
+      db:
+        condition: service_healthy
+      redis_cache:
+        condition: service_started
     command: ["celery", "-A", "bookstoreHW", "beat", "--loglevel=info", "--scheduler=django_celery_beat.schedulers:DatabaseScheduler"]
